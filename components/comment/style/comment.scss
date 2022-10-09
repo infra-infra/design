@@ -1,0 +1,56 @@
+.zzf-comment{
+  display: flex;
+  line-height: 1.5715;
+  margin-top: 20px;
+  padding-top:10px;
+  &-avatar{
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-fill-4);
+    white-space: nowrap;
+    color: var(--color-white);
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-right: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  &-content-container{
+    flex-grow: 1;
+  }
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-3);
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  &-content{
+    font-size: 14px;
+    color: var(--color-text-1);
+  }
+  &-actions{
+    font-size:14px;
+    margin-top:8px;
+    padding: 0 4px;
+    line-height: 24px;
+    border-radius: 2px;
+    background: transparent;
+    transition: all 0.1s ease;
+    color: var(--color-text-1);
+    cursor: pointer;
+    display: inline-block;
+    &:hover{
+      background: var(--color-fill-3);
+    }
+  }
+  &-comment{
+
+  }
+}
