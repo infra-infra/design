@@ -5,9 +5,8 @@ import * as icons from '@dekopon/icon';
 export default function () {
   return (
     <div>
-      {Object.keys(icons).map(icon =>{
-        // @ts-ignore
-        const Tag =icons[icon]
+      {Object.keys(icons).map((icon: any) =>{
+        const Tag =(icons as any)[icon]
         return <Tag></Tag>
       })}
     </div>

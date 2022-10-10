@@ -14,7 +14,7 @@ module.exports = merge(base, {
   mode: "production",
   devtool: 'source-map',
   output: {
-    publicPath: "https://oss-zzf.zzfzzf.com/design",
+    publicPath: "https://cdn.orluma.ltd/design",
   },
   optimization: {
     runtimeChunk: "single",
