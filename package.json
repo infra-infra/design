@@ -38,7 +38,6 @@
   },
   "homepage": "https://github.com/cocoplums/dekopon-design#readme",
   "devDependencies": {
-    "@arco-design/web-react": "^2.40.2",
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/plugin-transform-runtime": "^7.19.1",
@@ -87,10 +86,10 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-env": "^0.8.0",
+    "@dekopon/icon": "^1.0.12",
     "zx": "^7.1.1"
   },
   "dependencies": {
-    "@dekopon/icon": "^1.0.12",
     "rc-checkbox": "^2.3.2",
     "rc-notification": "^4.6.0",
     "rc-select": "^14.1.13",
