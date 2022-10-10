@@ -1,6 +1,6 @@
 {
   "name": "@ootd/design",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -9,6 +9,7 @@
     "dist",
     "lib"
   ],
+  "type": "module",
   "scripts": {
     "cache-clean": "rm -fr node_modules",
     "clean": "zx bin/clean.mjs",

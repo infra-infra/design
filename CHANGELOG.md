@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.2 (2022-10-10)
+
+
+### Features
+
+* commit ([994cce3](https://github.com/cocoplums/dekopon-design/commit/994cce3d45c5fd06a3450bce9ec352b5f978f093))
+* commit ([fead7d8](https://github.com/cocoplums/dekopon-design/commit/fead7d8e13d76d7ac437e145e85d8798b6e2499f))
+* commit ([2b2dc98](https://github.com/cocoplums/dekopon-design/commit/2b2dc98e39240b2852f2e7fd778264032757f329))
+* commit ([e182b23](https://github.com/cocoplums/dekopon-design/commit/e182b23724f5ab1e0d464493bf864eb9cc9745ea))
+* commit ([aafad60](https://github.com/cocoplums/dekopon-design/commit/aafad60fecbb6912e7466e8eb494b66909c4b6a5))
+* commit ([ee03fcf](https://github.com/cocoplums/dekopon-design/commit/ee03fcfd2e18d997d80779149411ad24dfec5a34))
+
 ### [0.1.37](https://github.com/cocoplums/dekopon-design/compare/v0.1.36...v0.1.37) (2022-09-16)
 
 ### [0.1.36](https://github.com/cocoplums/dekopon-design/compare/v0.1.35...v0.1.36) (2022-09-16)
