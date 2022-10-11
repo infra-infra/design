@@ -4,7 +4,7 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
-const base = require("./webpack.base");
+const base = require("./webpack.base.cjs");
 const TerserPlugin = require("terser-webpack-plugin");
 const handler = (percentage, message, ...args) => {
   // e.g. Output each progress message directly to the console:
