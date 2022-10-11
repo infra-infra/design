@@ -16,7 +16,7 @@
     "lint": "exit 0",
     "doc:dev": "cross-env NODE_ENV=development webpack server --config build/webpack.dev.js",
     "doc:build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
-    "build": "cross-env NODE_ENV=production node build/esbuild&&tsc",
+    "build": "cross-env NODE_ENV=production node build/esbuild.cjs&&tsc",
     "minor": "standard-version --release-as minor",
     "patch": "standard-version",
     "prepublishOnly": "npm run build"

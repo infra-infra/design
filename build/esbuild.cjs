@@ -1,4 +1,4 @@
-const postcssPlugin = require("./postcss-with-esbuild");
+const postcssPlugin = require("./postcss-with-esbuild.cjs");
 const postcssPresetEnv = require("postcss-preset-env");
 const autoprefixer = require("autoprefixer");
 const fs = require("fs/promises");
