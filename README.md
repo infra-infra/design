@@ -1,8 +1,8 @@
-<h1 align="center">Ootd Design</h1>
+<h1 align="center">OC Design</h1>
 
 <div align="center">
 
-个人博客使用的 React 组件库。
+适合博客使用的 React 组件库。
 
 </div>
 
@@ -21,7 +21,8 @@
 ## 📦 安装
 
 ```bash
-npm install @ootd/design --save
+npm install @oc/oc --save
+pnpm add @oc/oc
 ```
 
 ## 本地调试指南
@@ -29,12 +30,12 @@ npm install @ootd/design --save
 > install
 
 1. `pnpm link --global`
-2. 目标项目执行`pnpm link @ootd/design --global`
+2. 目标项目执行`pnpm link @oc/oc --global`
 
 > uninstall
 
-1. 目标项目执行`pnpm unlink @ootd/design`
-2. `pnpm remove @zzf/design --global`
+1. 目标项目执行`pnpm unlink @oc/oc`
+2. `pnpm remove @oc/oc --global`
 
 ## 本地实时预览
 
