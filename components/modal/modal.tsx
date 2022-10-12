@@ -1,10 +1,11 @@
 import React from "react";
 import type { ReactNode } from "react";
-import Portal from "../common/Portal";
+import { Portal } from "../tooltip/portal";
 import { Button } from "../button";
 import useOutsideClick from "../_hooks/useOutsideClick";
 import classNames from "../_util/classNames";
 import { IconClose } from "@dekopon/icon";
+import { CSSTransition } from "react-transition-group";
 
 type ModalType = {
   title?: string;
@@ -24,25 +25,34 @@ const Modal = (props: ModalType) => {
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
 
   return (
-    <Portal id="modal">
-      <div
-        className={classNames("zzf-modal-mask", visible && "zzf-modal-show")}
-      >
-        <div ref={ref} className={"zzf-modal-container"}>
-          <header className={"zzf-modal-header"}>
-            <div>{title}</div>
-            <IconClose className={"zzf-model-close"} onClick={onCancel} />
-          </header>
-          <div>{children}</div>
-          <footer className={"zzf-modal-footer"}>
-            <Button onClick={onCancel}>取消</Button>
-            <Button type="primary" onClick={onConfirm}>
-              确定
-            </Button>
-          </footer>
+    <CSSTransition
+      appear
+      classNames="my-node"
+      unmountOnExit
+      mountOnEnter
+      timeout={300}
+      in={visible}
+    >
+      <Portal>
+        <div
+          className={classNames("zzf-modal-mask")}
+        >
+          <div ref={ref} className={"zzf-modal-container"}>
+            <header className={"zzf-modal-header"}>
+              <div>{title}</div>
+              <IconClose className={"zzf-model-close"} onClick={onCancel} />
+            </header>
+            <div>{children}</div>
+            <footer className={"zzf-modal-footer"}>
+              <Button onClick={onCancel}>取消</Button>
+              <Button type="primary" onClick={onConfirm}>
+                确定
+              </Button>
+            </footer>
+          </div>
         </div>
-      </div>
-    </Portal>
+      </Portal>
+    </CSSTransition>
   );
 };
 
