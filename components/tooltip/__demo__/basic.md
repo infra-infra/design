@@ -14,12 +14,18 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Tooltip } from '@dekopon/design';
+import { Tooltip,Space } from '@dekopon/design';
 
 const App = () => {
-  return <Tooltip content="This is tooltip content">
-    <span>Mouse over to display tooltip</span>
-  </Tooltip>
+  return (
+      <Space>
+        {
+            ['left','leftTop','leftBottom','right','rightTop','rightBottom','top','topLeft','topRight','bottom','bottomLeft','bottomRight'].map(_=> <Tooltip placement={_} content="This is tooltip content">
+              <span>{_}</span>
+            </Tooltip>)
+        }
+      </Space>
+  )
 }
 
 export default App
