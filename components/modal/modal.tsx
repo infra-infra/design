@@ -1,6 +1,6 @@
 import React from "react";
 import type { ReactNode } from "react";
-import { Portal } from "../tooltip/portal";
+import { Portal } from "../portal";
 import { Button } from "../button";
 import useOutsideClick from "../_hooks/useOutsideClick";
 import classNames from "../_util/classNames";

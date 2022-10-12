@@ -1,9 +1,9 @@
 import React, { ReactNode, useRef } from "react";
 import { Position } from "./Position";
-import { Portal } from "./portal";
+import { Portal } from "../portal";
 import { useToggle } from "../_hooks/useToggle";
 import { CSSTransition } from "react-transition-group";
-import {Placement} from "./getPlacement";
+import { Placement } from "./getPlacement";
 
 interface ITooltipsProps {
   content?: ReactNode;
@@ -11,11 +11,7 @@ interface ITooltipsProps {
   children: React.ReactElement;
 }
 
-const Tooltip: React.FC<ITooltipsProps> = ({
-  content,
-  placement,
-  children,
-}) => {
+const Tooltip = ({ content, placement, children }: ITooltipsProps) => {
   const [isOpen, show, hide] = useToggle();
   const triggerEl = useRef<HTMLElement>(null);
   const nodeRef = useRef(null);

@@ -7,8 +7,6 @@ import '../modal/style';
 import '../comment/style';
 import '../card/style';
 import '../input/style';
-import '../select/style';
-import '../radio/style';
 import '../message/style';
 import '../tag/style';
 import '../SvgIcon/style';
