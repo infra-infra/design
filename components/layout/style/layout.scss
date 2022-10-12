@@ -29,16 +29,14 @@
 }
 
 .zzf-layout-content {
+  width: 100%;
   flex-grow: 1;
   display: grid;
   column-gap: 22px;
   padding: 22.5px 11.25px;
   @media (min-width: 768px) {
-    grid-template-columns: 12fr 25fr;
-    padding: 22.5px;
-  }
-  @media (min-width: 1280px) {
-    grid-template-columns: 23fr 54fr 23fr;
+    grid-template-columns:3fr 10fr;
+    padding: 22.5px 11.25px
   }
 }
 

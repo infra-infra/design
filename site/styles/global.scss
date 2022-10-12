@@ -40,49 +40,6 @@ body {
   }
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 11fr;
-
-  .nav {
-    min-height: 100vh;
-    background-color: var(--color-fill-2);
-
-    .nav-item {
-      height: 40px;
-      line-height: 40px;
-      text-align: right;
-      padding: 0 15px;
-      cursor: pointer;
-      color: var(--color-text-primary);
-    }
-
-    .active {
-      background-color: var(--color-primary-1);
-    }
-  }
-
-  .content {
-    background-color: var(--color-bg-default);
-    padding: 20px;
-
-    h2 {
-      margin: 10px 0;
-    }
-  }
-}
-.web-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-}
-
-.web-main {
-  flex-grow: 1;
-  width: 100%;
-}
-
 .markdown-body table {
   background-color: var(--color-bg-1);
   width: 100%;
@@ -359,5 +316,9 @@ h2 {
         background-color: var(--color-primary-1);
       }
     }
+  }
+  .main{
+    margin: auto;
+    width: 80%;
   }
 }

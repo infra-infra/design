@@ -15,14 +15,14 @@ const CommonLayout = () => {
   }
   return (
     <Layout className='site'>
-      <Layout.Header>
+      <Layout.Header className='container'>
         <header className='header'>
           组件库文档
           {theme === 'dark' && <IconMoon className={'icon'} onClick={() => setThemeAction('light')} />}
           {theme === 'light' && <IconSunFill className={'icon'} onClick={() => setThemeAction('dark')} />}
         </header>
       </Layout.Header>
-      <Layout.Content>
+      <Layout.Content className={'container'}>
         <Layout.Aside>
           <ul className={'nav'}>
               <li>
@@ -46,7 +46,7 @@ const CommonLayout = () => {
             ))}
           </ul>
         </Layout.Aside>
-        <Layout.Center>
+        <Layout.Center className={'main'}>
           <Outlet />
         </Layout.Center>
       </Layout.Content>

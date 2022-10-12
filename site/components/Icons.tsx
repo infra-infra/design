@@ -7,7 +7,7 @@ export default function () {
     <div>
       {Object.keys(icons).map((icon: any) =>{
         const Tag =(icons as any)[icon]
-        return <Tag></Tag>
+        return <Tag key={icon}></Tag>
       })}
     </div>
   );
