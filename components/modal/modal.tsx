@@ -34,9 +34,7 @@ const Modal = (props: ModalType) => {
       in={visible}
     >
       <Portal>
-        <div
-          className={classNames("zzf-modal-mask")}
-        >
+        <div className={classNames("zzf-modal-mask")}>
           <div ref={ref} className={"zzf-modal-container"}>
             <header className={"zzf-modal-header"}>
               <div>{title}</div>
