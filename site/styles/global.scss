@@ -330,3 +330,34 @@ h2 {
   width: 880px;
   padding-top: 48px;
 }
+.site {
+  .header {
+    width: 100%;
+    display: flex;
+    .icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  .nav {
+    width: 100%;
+    border-right: 1px solid var(--color-border-4);
+    min-height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
+    li {
+      text-align: center;
+      line-height: 40px;
+      a {
+        color: var(--color-text-1);
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: var(--color-fill-1);
+      }
+      &:has(.active) {
+        background-color: var(--color-primary-1);
+      }
+    }
+  }
+}

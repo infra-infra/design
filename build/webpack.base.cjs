@@ -21,18 +21,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|gif|jpe?g)$/,
-        type: "asset",
-        generator: {
-          filename: "static/images/[name].[contenthash:8][ext]",
-        },
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024, //10kb
-          },
-        },
-      },
-      {
         test: /\.tsx|ts|js$/,
         exclude: /(node_modules|\.png|svg|jpe?g$)/,
         use: [
@@ -67,27 +55,6 @@ module.exports = {
         test: /\.scss$/,
         exclude: /\.module\.(scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.module\.(scss)$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 3,
-              modules: {
-                exportLocalsConvention: "camelCaseOnly",
-              },
-              sourceMap: true,
-            },
-          },
-          "sass-loader",
-        ],
-      },
-      {
-        test: /\.(less)$/,
-        use: ["style-loader", "css-loader", "less-loader"],
       },
       {
         test: /\.md$/,

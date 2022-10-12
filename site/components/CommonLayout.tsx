@@ -2,8 +2,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import useMenu from './useMenu';
 import {IconMoon,IconSunFill} from '@dekopon/icon'
-// @ts-ignore
-import styles from './layout.module.scss';
 import { Layout } from '@dekopon/design';
 import React from 'react';
 
@@ -16,20 +14,20 @@ const CommonLayout = () => {
     setTheme(theme);
   }
   return (
-    <Layout className={styles.container}>
+    <Layout className='site'>
       <Layout.Header>
-        <header className={styles.webHeader}>
+        <header className='header'>
           组件库文档
           {theme === 'dark' && <IconMoon className={'icon'} onClick={() => setThemeAction('light')} />}
           {theme === 'light' && <IconSunFill className={'icon'} onClick={() => setThemeAction('dark')} />}
         </header>
       </Layout.Header>
-      <Layout.Content className={styles.webContent}>
-        <Layout.Aside className={styles.aside}>
-          <ul>
+      <Layout.Content>
+        <Layout.Aside>
+          <ul className={'nav'}>
               <li>
                   <NavLink
-                      className={({ isActive }) => (isActive ? styles.active : '')}
+                      className={({ isActive }) => (isActive ? 'active' : '')}
                       to={'/icon'}
                   >
                       icon
@@ -38,7 +36,7 @@ const CommonLayout = () => {
             {list.map((item) => (
               <li key={item.path}>
                 <NavLink
-                  className={({ isActive }) => (isActive ? styles.active : '')}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
                   key={item.path}
                   to={item.path}
                 >
@@ -48,11 +46,11 @@ const CommonLayout = () => {
             ))}
           </ul>
         </Layout.Aside>
-        <Layout.Center className={styles.center}>
+        <Layout.Center>
           <Outlet />
         </Layout.Center>
       </Layout.Content>
-      <Layout.Footer className='container'>power by cc</Layout.Footer>
+      <Layout.Footer>power by cc</Layout.Footer>
     </Layout>
   );
 };
