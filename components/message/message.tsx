@@ -1,100 +1,128 @@
-import RCNotification from "rc-notification";
-import type { NotificationInstance as RCNotificationInstance } from "rc-notification/lib/Notification";
-import {
-  IconInfoCircleFill,
-  IconCheckCircleFill,
-  IconCloseCircleFill,
-  IconExclamationCircleFill,
-  IconLoading,
-  IconClose
-} from "@dekopon/icon";
+import React, { useState, useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import { TransitionGroup } from 'react-transition-group'
+import Message, { MessageType } from './asd'
+import {Portal, PortalContext} from "../portal";
 
-import React from "react";
+export interface MessageApi {
+  info: (text: string) => void;
+  success: (text: string) => void;
+  warning: (text: string) => void;
+  error: (text: string) => void;
+  loading: (text: string) => void;
+}
 
-let messageInstance: RCNotificationInstance | null;
+export interface Notice {
+  text: string;
+  key: string;
+  type: MessageType;
+}
 
-function getRCNotificationInstance(args: any, callback: (info: {instance:RCNotificationInstance}) => void) {
-  if (messageInstance) {
-    callback({ instance: messageInstance });
-    return;
+let seed = 0
+const now = Date.now()
+const getUuid = (): string => {
+  const id = seed
+  seed += 1
+  return `MESSAGE_${now}_${id}`
+}
+
+let add: (notice: Notice) => void
+
+export const MessageContainer = () => {
+  const [notices, setNotices] = useState<Notice[]>([])
+  const timeout = 3 * 10000
+  const maxCount = 10
+
+  const remove = (notice: Notice) => {
+    const { key } = notice
+
+    setNotices((prevNotices) => (
+        prevNotices.filter(({ key: itemKey }) => key !== itemKey)
+    ))
   }
-  RCNotification.newInstance(
-    {
-      prefixCls: "dekopon-notification",
-    },
-    (instance: any) => {
-      if (messageInstance) {
-        callback({ instance: messageInstance });
-        return;
-      }
-      messageInstance = instance;
 
-      callback({ instance });
+  add = (notice: Notice) => {
+
+    setNotices((prevNotices) => [...prevNotices, notice])
+    setTimeout(() => {
+      remove(notice)
+    }, timeout)
+  }
+
+  useEffect(() => {
+    if (notices.length > maxCount) {
+      const [firstNotice] = notices
+      remove(firstNotice)
     }
-  );
-}
-function attachTypeApi(originalApi: any, type: any) {
-  originalApi[type] = (content: any, duration?: any, onClose?: any) => {
-    return originalApi.open({ content, duration, type, onClose });
-  };
+  }, [notices])
+
+  return (
+      <Portal>
+        <div className="message-container">
+          <TransitionGroup>
+            {
+              notices.map(({ text, key, type }) => (
+                  <Message type={type} text={text} />
+              ))
+            }
+          </TransitionGroup>
+        </div>
+      </Portal>
+
+  )
 }
 
-function notice(args: any): any {
-  const target = args.key;
-  const { content, duration, type } = args;
-  const closePromise = new Promise((resolve) => {
-    const callback = () => {
-      if (typeof args.onClose === 'function') {
-        args.onClose();
-      }
-      return resolve(true);
-    };
-    getRCNotificationInstance(args, ({ instance }) => {
-      instance.notice({
-        key:Date.now(),
-        duration: 3,
-        closable:true,
-        closeIcon:<IconClose/>,
-        onClose:callback,
-        content: (
-          <div>
-            {React.createElement(typeToIcon[type as NoticeType])}
-            {content}
-          </div>
-        ),
-      });
-    });
-  });
-  const result: any = () => {
-    if (messageInstance) {
-      messageInstance.removeNotice(target);
-    }
-  };
-  result.then = (filled: any, rejected: any) =>
-    closePromise.then(filled, rejected);
-  result.promise = closePromise;
-  return result;
+let el = document.querySelector('#message-wrapper')
+if (!el) {
+  el = document.createElement('div')
+  el.className = 'message-wrapper'
+  el.id = 'message-wrapper'
+  document.body.append(el)
 }
 
-const Message = {
-  open: notice,
-};
-const typeToIcon = {
-  info: IconInfoCircleFill,
-  success: IconCheckCircleFill,
-  error: IconCloseCircleFill,
-  warning: IconExclamationCircleFill,
-  loading: IconLoading,
-};
-type NoticeType = keyof typeof typeToIcon;
-const typeList = Object.keys(typeToIcon) as NoticeType[];
-typeList.forEach((type) => attachTypeApi(Message, type));
-type MessageInstance = {
-  info(content: React.ReactNode, duration?: number): void;
-  success(content: React.ReactNode, duration?: number): void;
-  error(content: React.ReactNode, duration?: number): void;
-  warning(content: React.ReactNode, duration?: number): void;
-  loading(content: React.ReactNode, duration?: number): void;
-  open(content: React.ReactNode, duration?: number): void;
-};
-export default Message as MessageInstance;
+ReactDOM.render(
+    <Portal>
+      <MessageContainer/>
+    </Portal>,
+    el
+)
+
+const api: MessageApi = {
+  info: (text) => {
+    add({
+      text,
+      key: getUuid(),
+      type: 'info'
+    })
+  },
+  success: (text) => {
+    add({
+      text,
+      key: getUuid(),
+      type: 'success'
+    })
+  },
+  warning: (text) => {
+    add({
+      text,
+      key: getUuid(),
+      type: 'warning'
+    })
+  },
+  error: (text) => {
+    add({
+      text,
+      key: getUuid(),
+      type: 'error'
+    })
+  },
+  loading: (text) => {
+    add({
+      text,
+      key: getUuid(),
+      type: 'loading'
+    })
+  }
+}
+
+export default api
