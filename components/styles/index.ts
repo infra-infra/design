@@ -13,4 +13,3 @@ import '../SvgIcon/style';
 import '../loading/style';
 import '../progress/style';
 import '../popover/style';
-import '../image/style';

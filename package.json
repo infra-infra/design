@@ -88,8 +88,6 @@
     "zx": "^7.1.1"
   },
   "dependencies": {
-    "rc-checkbox": "^2.3.2",
-    "rc-image": "^5.9.0",
     "rc-notification": "^4.6.0",
     "rc-tooltip": "^5.2.2",
     "react-transition-group": "^4.4.5"

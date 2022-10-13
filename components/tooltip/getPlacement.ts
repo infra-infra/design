@@ -11,7 +11,6 @@ interface IUsePlacementProps {
 }
 
 const getPosition = (triggerRect: DOMRect | null, contentRect: DOMRect | null, placement: Placement) => {
-  console.log(1111,triggerRect,contentRect,placement)
   let position = {
     top: document.documentElement.scrollTop,
     left: document.documentElement.scrollLeft,
@@ -72,7 +71,6 @@ const getPosition = (triggerRect: DOMRect | null, contentRect: DOMRect | null, p
         break;
     }
   }
-  console.log(position)
   return position;
 };
 

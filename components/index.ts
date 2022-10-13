@@ -1,4 +1,3 @@
-
 export { Alert } from './alert';
 export { Tooltip } from './tooltip'
 export { Layout } from './layout'
@@ -14,4 +13,3 @@ export { SvgIcon } from './SvgIcon'
 export { Loading } from './loading'
 export { Progress } from './progress'
 export { Popover } from './popover'
-export { Image } from './image'
