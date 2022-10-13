@@ -32,7 +32,18 @@
   animation:load 1.1s infinite linear;
   color:var(--color-primary-4)
 }
-
+.icon.success{
+  color:var(--color-success-4)
+}
+.icon.info{
+  color:rgb(var(--primary-6))
+}
+.icon.error{
+  color:var(--color-danger-4)
+}
+.icon.warning{
+  color:var(--color-warning-4)
+}
 @-webkit-keyframes load{
   from{
     transform: rotate(0deg);
