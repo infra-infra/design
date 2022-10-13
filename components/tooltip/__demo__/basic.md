@@ -20,7 +20,7 @@ const App = () => {
   return (
       <Space>
         {
-            ['left','leftTop','leftBottom','right','rightTop','rightBottom','top','topLeft','topRight','bottom','bottomLeft','bottomRight'].map(_=> <Tooltip placement={_} content="This is tooltip content">
+            ['left','leftTop','leftBottom','right','rightTop','rightBottom','top','topLeft','topRight','bottom','bottomLeft','bottomRight'].map(_=> <Tooltip key={_} placement={_} content="This is tooltip content">
               <span>{_}</span>
             </Tooltip>)
         }

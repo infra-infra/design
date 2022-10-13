@@ -4,7 +4,6 @@ import { Button, Message, Tooltip } from "@dekopon/design";
 import { IconCode, IconCopy } from "@dekopon/icon";
 import ClipboardJS from "clipboard";
 import Css from "./css";
-import Short from "./short";
 
 interface CellCodeProps {
   tsx?: ReactNode;
@@ -75,14 +74,6 @@ class CellCode extends React.Component<
     });
   }
 
-  toggleCodeType = () => {
-    this.setState((prevState) => {
-      return {
-        codeType: prevState.codeType === CODE_TSX ? CODE_JSX : CODE_TSX,
-      };
-    });
-  };
-
   toggleCode = (e: any) => {
     // 修正点击展开按钮时，页面向上滚动而不是向下滚动的问题
     if (!this.state.showAll) {
@@ -94,12 +85,12 @@ class CellCode extends React.Component<
   };
 
   renderOperations = () => {
-    const { showAll, codeType } = this.state;
+    const { showAll } = this.state;
     const t = locales["zh-CN"];
 
     return (
       <div className="arco-code-operations">
-        <Tooltip id={"code"} content={showAll ? t.collapse : t.expand}>
+        <Tooltip content={showAll ? t.collapse : t.expand}>
           <span>
             <Button
               aria-describedby={"code"}
@@ -145,9 +136,8 @@ class CellCode extends React.Component<
   }
 }
 
-type CellCodeType = typeof CellCode & { Css: any; Short: any };
+type CellCodeType = typeof CellCode & { Css: any; };
 
 (CellCode as CellCodeType).Css = Css;
-(CellCode as CellCodeType).Short = Short;
 
 export default CellCode as CellCodeType;

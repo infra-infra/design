@@ -1,9 +1,8 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import useMenu from './useMenu';
 import {IconMoon,IconSunFill} from '@dekopon/icon'
 import { Layout } from '@dekopon/design';
-import React from 'react';
 
 const CommonLayout = () => {
   const list = useMenu();

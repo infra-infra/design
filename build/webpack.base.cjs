@@ -64,7 +64,7 @@ module.exports = {
             loader: "babel-loader",
           },
           {
-            loader: require.resolve("@dekopon/cli"),
+            loader: '@oc/doc-loader',
             options: {
               demoDir: "__demo__",
               babelConfig: {
