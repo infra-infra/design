@@ -1,128 +1,97 @@
-import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import { TransitionGroup } from 'react-transition-group'
-import Message, { MessageType } from './asd'
-import {Portal, PortalContext} from "../portal";
+import React from 'react'
+import {createRoot} from "react-dom/client";
+import {TransitionGroup,CSSTransition} from 'react-transition-group'
+import Notice, {MessageType} from './notice'
 
-export interface MessageApi {
-  info: (text: string) => void;
-  success: (text: string) => void;
-  warning: (text: string) => void;
-  error: (text: string) => void;
-  loading: (text: string) => void;
-}
+
 
 export interface Notice {
-  text: string;
-  key: string;
-  type: MessageType;
+    text: string;
+    key: string;
+    type: MessageType;
 }
 
 let seed = 0
+let messageInstance: Message | null = null;
+
 const now = Date.now()
 const getUuid = (): string => {
-  const id = seed
-  seed += 1
-  return `MESSAGE_${now}_${id}`
+    const id = seed
+    seed += 1
+    return `MESSAGE_${now}_${id}`
 }
-
-let add: (notice: Notice) => void
-
-export const MessageContainer = () => {
-  const [notices, setNotices] = useState<Notice[]>([])
-  const timeout = 3 * 10000
-  const maxCount = 10
-
-  const remove = (notice: Notice) => {
-    const { key } = notice
-
-    setNotices((prevNotices) => (
-        prevNotices.filter(({ key: itemKey }) => key !== itemKey)
-    ))
-  }
-
-  add = (notice: Notice) => {
-
-    setNotices((prevNotices) => [...prevNotices, notice])
-    setTimeout(() => {
-      remove(notice)
-    }, timeout)
-  }
-
-  useEffect(() => {
-    if (notices.length > maxCount) {
-      const [firstNotice] = notices
-      remove(firstNotice)
+function addInstance(type: string, text: string) {
+    if (messageInstance) {
+        const notices = messageInstance.state.notices;
+        messageInstance.add({type, text})
+    } else {
+        const div = document.createElement('div');
+        div.setAttribute("class", "notice-container");
+        document.body.appendChild(div);
+        createRoot(div).render(<Message ref={(instance) => {
+            messageInstance = instance
+            messageInstance?.add({type, text})
+        }}/>)
     }
-  }, [notices])
+}
 
-  return (
-      <Portal>
-        <div className="message-container">
-          <TransitionGroup>
+class Message extends React.Component<any, any> {
+    static success: (text: string) => void;
+    static info: (text: string) => void;
+    static warning: (text: string) => void;
+    static error: (text: string) => void;
+    static loading: (text: string) => void;
+
+    constructor(props: any) {
+        super(props);
+        this.remove = this.remove.bind(this);
+        this.state = {
+            notices: [],
+        };
+    }
+
+    add(noticeProps: any) {
+        const id = getUuid()
+        this.setState({notices: [...this.state.notices, {key: id, ...noticeProps}]});
+        return id
+    }
+
+    remove(id: string) {
+        setTimeout(() => {
+            const newNotices = this.state.notices.filter((_: any) => _.key !== id)
+            this.setState({notices: newNotices})
+        }, 100);
+    }
+
+    render() {
+        const {notices} = this.state
+        return <TransitionGroup component={null} className='oc'>
             {
-              notices.map(({ text, key, type }) => (
-                  <Message type={type} text={text} />
-              ))
+                notices.map(({text, key, type,onClose}: any) => (
+                    <CSSTransition key={key} onExited={onClose} timeout={{
+                        enter: 100,
+                        exit: 300
+                    }}>
+                        <Notice id={key} onClose={this.remove} type={type} text={text}/>
+                    </CSSTransition>
+                ))
             }
-          </TransitionGroup>
-        </div>
-      </Portal>
-
-  )
+        </TransitionGroup>
+    };
 }
-
-let el = document.querySelector('#message-wrapper')
-if (!el) {
-  el = document.createElement('div')
-  el.className = 'message-wrapper'
-  el.id = 'message-wrapper'
-  document.body.append(el)
+Message.success = function (text: string) {
+    addInstance('success', text)
 }
-
-ReactDOM.render(
-    <Portal>
-      <MessageContainer/>
-    </Portal>,
-    el
-)
-
-const api: MessageApi = {
-  info: (text) => {
-    add({
-      text,
-      key: getUuid(),
-      type: 'info'
-    })
-  },
-  success: (text) => {
-    add({
-      text,
-      key: getUuid(),
-      type: 'success'
-    })
-  },
-  warning: (text) => {
-    add({
-      text,
-      key: getUuid(),
-      type: 'warning'
-    })
-  },
-  error: (text) => {
-    add({
-      text,
-      key: getUuid(),
-      type: 'error'
-    })
-  },
-  loading: (text) => {
-    add({
-      text,
-      key: getUuid(),
-      type: 'loading'
-    })
-  }
+Message.info = function (text: string) {
+    addInstance('info', text)
 }
-
-export default api
+Message.warning = function (text: string) {
+    addInstance('warning', text)
+}
+Message.error = function (text: string) {
+    addInstance('error', text)
+}
+Message.loading = function (text: string) {
+    addInstance('loading', text)
+}
+export default Message;

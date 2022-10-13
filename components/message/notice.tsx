@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react'
+import React, {FC, ReactElement, useEffect} from 'react'
 import {
     IconInfoCircleFill,
     IconCheckCircleFill,
@@ -13,7 +13,9 @@ export type MessageType = 'info' | 'success' | 'error' | 'warning'|'loading'
 
 export interface MessageProps {
     text: string;
+    id: string;
     type: MessageType
+    onClose: (id:string)=>void
 }
 const renderIcon = {
     info: IconInfoCircleFill,
@@ -22,11 +24,13 @@ const renderIcon = {
     warning: IconExclamationCircleFill,
     loading: IconLoading,
 };
-const Message: FC<MessageProps> = (props: MessageProps) => {
-    const { text, type } = props
-
+const Notice: FC<MessageProps> = (props: MessageProps) => {
+    const { text, type,onClose,id } = props
+    useEffect(()=>{
+        window.setTimeout(()=>onClose(id),3000)
+    },[])
     return (
-        <div className="message" data-testid="test-message">
+        <div className="message">
             <div className="message-content">
                 <div className={classNames('icon',type)}>
                     {React.createElement(renderIcon[type])}
@@ -39,4 +43,4 @@ const Message: FC<MessageProps> = (props: MessageProps) => {
     )
 }
 
-export default Message
+export default Notice
