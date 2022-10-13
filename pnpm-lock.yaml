@@ -32,8 +32,6 @@ specifiers:
   postcss: ^8.4.17
   postcss-loader: ^7.0.1
   postcss-preset-env: ^7.8.2
-  rc-checkbox: ^2.3.2
-  rc-image: ^5.9.0
   rc-notification: ^4.6.0
   rc-tooltip: ^5.2.2
   react: ^18.2.0
@@ -55,8 +53,6 @@ specifiers:
   zx: ^7.1.1
 
 dependencies:
-  rc-checkbox: 2.3.2_biqbaboplfbrettd7655fr4n2y
-  rc-image: 5.9.0_biqbaboplfbrettd7655fr4n2y
   rc-notification: 4.6.0_biqbaboplfbrettd7655fr4n2y
   rc-tooltip: 5.2.2_biqbaboplfbrettd7655fr4n2y
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
@@ -1970,20 +1966,6 @@ packages:
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
-
-  /@rc-component/portal/1.0.0-9_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-BZDwiywTukywZvm4shQmpGUuZ6Ge/eW5TEFeM43vfrMABVGAl/TTHj+dK1P7G0p4trDsmtTMebaRvAFqAHeKZQ==}
-    engines: {node: '>=8.x'}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.19.0
-      classnames: 2.3.2
-      rc-util: 5.24.4_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
 
   /@remix-run/router/1.0.2:
     resolution: {integrity: sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==}
@@ -8139,47 +8121,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       resize-observer-polyfill: 1.5.1
-    dev: false
-
-  /rc-checkbox/2.3.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-afVi1FYiGv1U0JlpNH/UaEXdh6WUJjcWokj/nUN2TgG80bfG+MDdbfHKlLcNNba94mbjy2/SXJ1HDgrOkXGAjg==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.19.0
-      classnames: 2.3.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /rc-dialog/9.0.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-oBi8kD3R+fAvvbJyQJr+Qs1WKCsAfRID1l14zVMjE3VDQ2R4jt4ouJDkgpSkE9YeckmNRA20Dn6HxetyYGZq3A==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.19.0
-      '@rc-component/portal': 1.0.0-9_biqbaboplfbrettd7655fr4n2y
-      classnames: 2.3.2
-      rc-motion: 2.6.2_biqbaboplfbrettd7655fr4n2y
-      rc-util: 5.24.4_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /rc-image/5.9.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-qyHXhIc7eotsX8HLm0bRaSO5J4Lb2wE/FafFQMJ+SnMtRQy1uKjEwOJ8UADHyyyfikd4WtT4fghN6JxiVCYslA==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.19.0
-      classnames: 2.3.2
-      rc-dialog: 9.0.0_biqbaboplfbrettd7655fr4n2y
-      rc-util: 5.24.4_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /rc-motion/2.6.2_biqbaboplfbrettd7655fr4n2y:
