@@ -20,6 +20,9 @@ const App = () => {
   return <Space>
   <Button onClick={()=>Message.success("success",null)}>success</Button>
   <Button onClick={()=>Message.info("info")}>info</Button>
+  <Button onClick={()=>Message.error("error")}>error</Button>
+  <Button onClick={()=>Message.warning("warning")}>warning</Button>
+  <Button onClick={()=>Message.loading("loading")}>loading</Button>
   </Space>
 }
 

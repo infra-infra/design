@@ -41,16 +41,16 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test"
+      - run: echo "t.tsx"
   test2:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test"
+      - run: echo "t.tsx"
   test3:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test"
+      - run: echo "t.tsx"
   test4:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "test"
+      - run: echo "t.tsx"
