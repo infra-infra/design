@@ -4,7 +4,6 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV === "development";
-
 module.exports = {
   entry: path.resolve(__dirname, "../site/index.tsx"),
   cache: {
@@ -64,20 +63,9 @@ module.exports = {
             loader: "babel-loader",
           },
           {
-            loader: '@oc/doc-loader',
+            loader: require.resolve('@oc/doc-loader'),
             options: {
-              demoDir: "__demo__",
-              babelConfig: {
-                filename: "",
-                presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
-                plugins: [
-                  '@babel/plugin-proposal-export-default-from',
-                  // '@babel/plugin-transform-runtime',
-                  // '@babel/plugin-syntax-dynamic-import',
-                  // '@babel/plugin-proposal-class-properties',
-                  // '@babel/plugin-transform-react-jsx-source',
-                ],
-              },
+              demoDir: "__demo__"
             },
           },
         ],
