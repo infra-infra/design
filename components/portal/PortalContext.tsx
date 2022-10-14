@@ -6,6 +6,6 @@ const PortalContext = createContext({
   container: HTMLElement;
 });
 
-const { Provider, Consumer } = PortalContext;
+const { Provider } = PortalContext;
 
-export { Provider as PortalProvider, Consumer as PortalConsumer, PortalContext };
+export { Provider as PortalProvider, PortalContext };

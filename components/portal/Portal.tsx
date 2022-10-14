@@ -20,7 +20,7 @@ export const Portal = (props:PortalType) => {
 
   // 当组件销毁时，移除 container 节点。
   useEffect(() => {
-    return function cleanup() {
+    return ()=> {
       if (containerRef.current) {
         container.removeChild(containerRef.current);
       }
