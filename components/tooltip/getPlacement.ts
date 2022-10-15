@@ -18,7 +18,6 @@ const getPosition = (triggerRect: DOMRect | null, contentRect: DOMRect | null, p
   if (triggerRect && contentRect) {
     const dWidth = contentRect.width-triggerRect.width;
     const dHeight = triggerRect.height - contentRect.height;
-
     switch (placement) {
       case 'top':
         position.left += triggerRect.left - dWidth/2;
@@ -35,15 +34,14 @@ const getPosition = (triggerRect: DOMRect | null, contentRect: DOMRect | null, p
       case 'bottom':
         position.left = triggerRect.left - dWidth / 2;
         position.top += triggerRect.top + triggerRect.height;
-        console.log(22222,position)
         break;
       case 'bottomLeft':
         position.left += triggerRect.left;
-        position.top += triggerRect.top + triggerRect.height;
+        position.top += triggerRect.top + contentRect.height;
         break;
       case 'bottomRight':
-        position.left += triggerRect.left + dWidth;
-        position.top += triggerRect.top + triggerRect.height;
+        position.left += triggerRect.left - dWidth;
+        position.top += triggerRect.top + contentRect.height;
         break;
       case 'left':
         position.left += triggerRect.left - contentRect.width;

@@ -9,7 +9,6 @@ const Popover = ({
   content,
   children,
   placement,
-  className,
   defaultVisible = false,
 }: any) => {
   const triggerEl = useRef<HTMLElement>(null);
