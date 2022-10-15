@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import type { ReactNode } from "react";
 import { Portal } from "../portal";
 import { Button } from "../button";
@@ -23,9 +23,11 @@ const Modal = (props: ModalType) => {
     onCancel = () => {},
   } = props;
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <CSSTransition
+      nodeRef={containerRef}
       appear
       classNames="my-node"
       unmountOnExit
@@ -34,7 +36,7 @@ const Modal = (props: ModalType) => {
       in={visible}
     >
       <Portal>
-        <div className={classNames("zzf-modal-mask")}>
+        <div ref={containerRef} className={classNames("zzf-modal-mask")}>
           <div ref={ref} className={"zzf-modal-container"}>
             <header className={"zzf-modal-header"}>
               <div>{title}</div>

@@ -1,5 +1,4 @@
-import React, { ReactElement, useContext, useEffect, useRef } from "react";
-import { PortalContext } from "./index";
+import React, { ReactElement, useEffect, useRef } from "react";
 
 interface IClickAwayListenerProps {
   children: ReactElement<any>;
@@ -7,14 +6,13 @@ interface IClickAwayListenerProps {
 }
 
 export const ClickAwayListener: React.FC<IClickAwayListenerProps> = ({ children, onClickAway }) => {
-  const { container } = useContext(PortalContext);
   const childrenEl = useRef<HTMLDivElement>(null);
 
 
   useEffect(() => {
     const handleOutSideClick = (evt: Event) => {
       const node = childrenEl.current!;
-      if ((node && node.contains(evt.target as HTMLElement)) || container.contains(evt.target as HTMLElement)) {
+      if ((node && node.contains(evt.target as HTMLElement)) || document.body.contains(evt.target as HTMLElement)) {
         return;
       }
 

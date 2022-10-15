@@ -4,6 +4,7 @@ import {getPlacement, Placement} from "./getPlacement";
 import { useClientRect } from "../_hooks/useClientRect";
 import { useResize } from "../_hooks/useResize";
 import { useScroll } from "../_hooks/useScroll";
+import classNames from "../_util/classNames";
 
 interface IPositionProps {
   triggerRef: RefObject<HTMLElement | null>;
@@ -15,8 +16,8 @@ interface IPositionProps {
 export const Position = ({
   triggerRef,
   placement = 'bottomLeft',
+   className,
   children,
-    className
 }: IPositionProps) => {
   const contentEl = useRef<HTMLDivElement>(null);
   const [triggerRect, updateTriggerRect] = useClientRect(triggerRef);
@@ -32,7 +33,7 @@ export const Position = ({
 
   return (
     <div
-      className={className}
+      className={classNames('oc-position', className)}
       style={{
         position: "absolute",
         left: position.left,
