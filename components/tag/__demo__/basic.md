@@ -11,7 +11,7 @@ title:
 
 ```js
 import React from 'react';
-import { Tag,Space } from '@dekopon/design';
+import { Tag,Space } from '@oc/design';
 
 const App = () => {
   return (

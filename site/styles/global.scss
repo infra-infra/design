@@ -303,19 +303,18 @@ h2 {
     min-height: calc(100vh - 60px);
     position: sticky;
     top: 60px;
-    li {
+    a {
+      display: block;
+      color: var(--color-text-1);
+      text-decoration: none;
       text-align: center;
       line-height: 40px;
-      a {
-        color: var(--color-text-1);
-        text-decoration: none;
-      }
       &:hover {
         background-color: var(--color-fill-1);
       }
-      &:has(.active) {
-        background-color: var(--color-primary-1);
-      }
+    }
+    .active {
+      background-color: var(--color-primary-1);
     }
   }
   .main{

@@ -15,7 +15,7 @@ A basic comment component with author, avatar, time and actions.
 
 ```js
 import React from 'react';
-import { Input } from '@dekopon/design';
+import { Input } from '@oc/design';
 
 const App = () => {
   return (

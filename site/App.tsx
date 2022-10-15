@@ -10,7 +10,14 @@ function App(): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<CommonLayout />}>
-          <Route path="/" element={<div>欢迎使用👏</div>} />
+          <Route path="/" element={<div>
+              <h3>欢迎使用👏</h3>
+              <pre>
+                  <code>
+                      npm i @oc/design
+                  </code>
+              </pre>
+          </div>} />
           <Route path="/icon" element={<IconDemo/>} />
           {list.map((item) => (
             <Route

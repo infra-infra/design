@@ -14,7 +14,7 @@ title:
 There are four types of warnings: `info`, `success`, `warning`, and `error`.
 
 ```js
-import { Alert } from '@dekopon/design';
+import { Alert } from '@oc/design';
 
 const App = () => {
   return (

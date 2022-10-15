@@ -16,7 +16,7 @@
     "baseUrl": "./",
     "paths": {
       "@oc/site": ["site/components/*"],
-      "@dekopon/design": ["components/index.ts"],
+      "@oc/design": ["components/index.ts"],
     },
     "typeRoots": ["./node_modules/@types/", "./typings"],
     "types": ["node", "webpack-env","jest"],

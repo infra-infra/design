@@ -15,7 +15,7 @@ A basic comment component with author, avatar, time and actions.
 
 ```js
 import React from 'react';
-import { Card } from '@dekopon/design';
+import { Card } from '@oc/design';
 
 const App = () => {
   const [like, setLike] = React.useState();

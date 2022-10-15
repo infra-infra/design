@@ -14,7 +14,7 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Popover, Button } from "@dekopon/design";
+import { Popover, Button } from "@oc/design";
 
 function App() {
   const [visible, setVisible] = React.useState(false);

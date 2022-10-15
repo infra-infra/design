@@ -1,5 +1,5 @@
 {
-  "name": "@ootd/design",
+  "name": "@oc/design",
   "version": "0.0.2",
   "description": "不知火组件库",
   "main": "dist/index.js",

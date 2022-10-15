@@ -14,7 +14,7 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Message,Button,Space } from '@dekopon/design';
+import { Message,Button,Space } from '@oc/design';
 
 const App = () => {
   return <Space>
