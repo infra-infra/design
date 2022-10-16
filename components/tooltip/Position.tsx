@@ -16,7 +16,7 @@ interface IPositionProps {
 export const Position = ({
   triggerRef,
   placement = 'bottomLeft',
-   className,
+  className,
   children,
 }: IPositionProps) => {
   const contentEl = useRef<HTMLDivElement>(null);

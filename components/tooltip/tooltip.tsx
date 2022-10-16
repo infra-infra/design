@@ -23,6 +23,7 @@ const Tooltip = ({ content, placement, children }: ITooltipsProps) => {
         onMouseLeave: hide,
       })}
       <CSSTransition
+          nodeRef={nodeRef}
         appear
         classNames="my-node"
         unmountOnExit

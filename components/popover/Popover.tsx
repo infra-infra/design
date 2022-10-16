@@ -12,18 +12,15 @@ const Popover = ({
   defaultVisible = false,
 }: any) => {
   const triggerEl = useRef<HTMLElement>(null);
-  const [isOpen, show, hide] = useToggle(defaultVisible);
+  const [isOpen, show, hide,toggle] = useToggle(defaultVisible);
   const ref = useOutsideClick<HTMLDivElement>(hide);
 
   return (
     <>
-        <span onClick={show} ref={triggerEl}>
-            {children}
-        </span>
-      {/*{React.cloneElement(React.Children.only(children), {*/}
-      {/*  ref: node=>triggerEl=node,*/}
-      {/*  onClick: show,*/}
-      {/*})}*/}
+      {React.cloneElement(<span>{React.Children.only(children)}</span>, {
+        ref:triggerEl,
+        onClick: toggle,
+      })}
       <CSSTransition nodeRef={ref}
         appear
         classNames="my-node"
