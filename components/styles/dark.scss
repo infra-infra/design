@@ -192,6 +192,7 @@
   --color-white: hsla(0,0%,100%,0.9);
   --color-black: #000;
   --color-border: #333335;
+  --color-bg-popup: var(--color-bg-5);
   --color-bg-1: #17171a;
   --color-bg-2: #232324;
   --color-bg-3: #2a2a2b;
@@ -236,5 +237,6 @@
   --color-menu-bg: #232324;
   --color-menu-dark-hover: var(--color-fill-2);
   --color-mask-bg: rgba(23,23,26,0.6);
-  --color-header-bg: hsla(240, 6%, 10%,.8);
+  --color-header-bg: hsla(210, 3%, 15%,.8);
+  --web-wash: #18191A;
 }
