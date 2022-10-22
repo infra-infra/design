@@ -1,11 +1,12 @@
 .zzf-card {
   border: 1px solid var(--color-neutral-3);
   border-radius: var(--border-radius-large);
-  background-color: var(--color-bg-2);
+  background-color: var(--surface-background);
   transition: box-shadow .2s linear;
   font-size: 16px;
   font-weight: 500;
   color: var(--color-text-1);
+  box-shadow: 0 1px 2px var(--shadow-2);
 
   &-header {
     display: flex;
