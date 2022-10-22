@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { IconMessage } from "@dekopon/icon";
 interface CommentProps {
-  author?: string;
+  author?: ReactNode;
   avatar?: string;
   content?: string;
   datetime?: string;
