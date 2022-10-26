@@ -9,8 +9,9 @@ specifiers:
   '@babel/preset-typescript': ^7.18.6
   '@babel/runtime-corejs3': ^7.19.1
   '@dekopon/cli': ^0.0.2
-  '@dekopon/icon': ^1.0.12
+  '@multiavatar/multiavatar': ^1.0.7
   '@oc/doc-loader': ^0.0.3
+  '@oc/icon': ^1.0.13
   '@types/jest': ^28.1.8
   '@types/node': ^18.8.3
   '@types/react': ^18.0.21
@@ -55,6 +56,7 @@ specifiers:
 
 dependencies:
   '@oc/doc-loader': 0.0.3
+  '@oc/icon': 1.0.13
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -66,7 +68,7 @@ devDependencies:
   '@babel/preset-typescript': 7.18.6_@babel+core@7.19.3
   '@babel/runtime-corejs3': 7.19.1
   '@dekopon/cli': 0.0.2
-  '@dekopon/icon': 1.0.12
+  '@multiavatar/multiavatar': 1.0.7
   '@types/jest': 28.1.8
   '@types/node': 18.8.3
   '@types/react': 18.0.21
@@ -1654,10 +1656,6 @@ packages:
       - supports-color
     dev: true
 
-  /@dekopon/icon/1.0.12:
-    resolution: {integrity: sha512-KkJADNUyT7xGRsBxRVK8ch2TonBuYdSElePsMmqOO81u1JgKwQK6X3YoU+KjFXNEkhjLu0BJh27Fo/pxluvnKw==}
-    dev: true
-
   /@discoveryjs/json-ext/0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
@@ -1996,6 +1994,10 @@ packages:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: true
 
+  /@multiavatar/multiavatar/1.0.7:
+    resolution: {integrity: sha512-Yg9Uw57bmlErsWL0CSv4d6D4ZqVBE00OZmYr9MRgygoXZdboNtsEI6FbBRw1AY8l88Sm1ARcyojtlm2uwUn0Zg==}
+    dev: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2041,6 +2043,10 @@ packages:
       xss: 1.0.14
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@oc/icon/1.0.13:
+    resolution: {integrity: sha512-ALhlWJaD03xG4pN8EaR83EAXOY2+AaLyOjtmcXqJBflOWSjj87/Afc3RNUYaFngypchQ7e3XWsVFSCq5QAn6aQ==}
     dev: false
 
   /@polka/url/1.0.0-next.21:

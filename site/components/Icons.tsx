@@ -1,5 +1,5 @@
 import React from 'react';
-import * as icons from '@dekopon/icon';
+import * as icons from '@oc/icon';
 
 
 export default function () {

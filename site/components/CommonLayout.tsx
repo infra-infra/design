@@ -1,7 +1,7 @@
 import {NavLink, Outlet} from 'react-router-dom';
 import React, {useState} from 'react';
 import useMenu from './useMenu';
-import {IconMoon, IconSunFill} from '@dekopon/icon'
+import {IconMoon, IconSunFill} from '@oc/icon'
 import {Layout} from '@oc/design';
 
 const CommonLayout = () => {

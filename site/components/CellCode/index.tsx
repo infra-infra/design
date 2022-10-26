@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { findDOMNode } from "react-dom";
 import { Button, Message, Tooltip } from "@oc/design";
-import { IconCode, IconCopy } from "@dekopon/icon";
+import { IconCode, IconCopy } from "@oc/icon";
 import ClipboardJS from "clipboard";
 import Css from "./css";
 

@@ -5,7 +5,7 @@ import {
   IconCheckCircleFill,
   IconCloseCircleFill,
   IconExclamationCircleFill,
-} from "@dekopon/icon";
+} from "@oc/icon";
 interface AlertProps {
   children: React.ReactNode;
   className?: string;

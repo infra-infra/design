@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -47,7 +47,8 @@
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime-corejs3": "^7.19.1",
     "@dekopon/cli": "^0.0.2",
-    "@dekopon/icon": "^1.0.12",
+    "@oc/icon": "^1.0.13",
+    "@multiavatar/multiavatar": "^1.0.7",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.8.3",
     "@types/react": "^18.0.21",
@@ -91,6 +92,7 @@
   },
   "dependencies": {
     "@oc/doc-loader": "^0.0.3",
+    "@oc/icon": "^1.0.13",
     "react-transition-group": "^4.4.5"
   }
 }

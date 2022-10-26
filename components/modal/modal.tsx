@@ -4,7 +4,7 @@ import { Portal } from "../portal";
 import { Button } from "../button";
 import useOutsideClick from "../_hooks/useOutsideClick";
 import classNames from "../_util/classNames";
-import { IconClose } from "@dekopon/icon";
+import { IconClose } from "@oc/icon";
 import { CSSTransition } from "react-transition-group";
 
 type ModalType = {

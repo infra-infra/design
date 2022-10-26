@@ -18,22 +18,25 @@ import React from "react";
 import { Comment } from "@oc/design";
 
 const App = () => {
-  const [like, setLike] = React.useState();
-  const [star, setStar] = React.useState();
   return (
-    <Comment
-      author="Socrates"
-      avatar={'https://source.unsplash.com/1600x900/?nature,water&t=1'}
-      content={<div>Comment body content.</div>}
-      datetime="1 hour"
-    >
-      <Comment
-        author="Socrates"
-        avatar={'https://source.unsplash.com/1600x900/?nature,water&t=2'}
-        content={<div>Comment body content.</div>}
-        datetime="1 hour"
-      />
-    </Comment>
+      <>
+        <Comment
+                author="Socrates"
+                avatar={'https://source.unsplash.com/1600x900/?nature,water&t=1'}
+                content='Comment body content.Comment body content.Comment body content.Comment body content.'
+                datetime="1 hour"
+                actions={[<div>Action</div>]}
+        >
+          <Comment
+                  author="Socrates"
+                  avatar={'https://source.unsplash.com/1600x900/?nature,water&t=2'}
+                  content='Comment body content.'
+                  datetime="1 hour"
+                  actions={[<div>Action</div>]}
+          >
+          </Comment>
+        </Comment>
+      </>
   );
 };
 
