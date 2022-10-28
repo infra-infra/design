@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="zzf-alert zzf-alert-info"
+<span
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   Facebook
-</div>
+</span>
 `;
 
 exports[`renders correctly 2`] = `
-<div
-  className="zzf-alert zzf-alert-info"
+<span
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   Facebook
-</div>
+</span>
 `;

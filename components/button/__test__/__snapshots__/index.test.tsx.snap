@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <button
-  className="zzf-btn zzf-btn"
+  className="zzf-btn zzf-btn-type-secondary zzf-btn-size-default"
 >
   Facebook
 </button>
@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly 2`] = `
 <button
-  className="zzf-btn zzf-btn"
+  className="zzf-btn zzf-btn-type-secondary zzf-btn-size-default"
 >
   Facebook
 </button>
