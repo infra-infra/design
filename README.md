@@ -30,12 +30,12 @@ pnpm add @oc/oc
 > install
 
 1. `pnpm link --global`
-2. 目标项目执行`pnpm link @oc/oc --global`
+2. 目标项目执行`pnpm link @oc/design --global`
 
 > uninstall
 
-1. 目标项目执行`pnpm unlink @oc/oc`
-2. `pnpm remove @oc/oc --global`
+1. 目标项目执行`pnpm unlink @oc/design`
+2. `pnpm remove @oc/design --global`
 
 ## 本地实时预览
 

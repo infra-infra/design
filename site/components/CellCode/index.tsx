@@ -24,16 +24,6 @@ const locales = {
     copied: "复制成功",
     expand: "展开代码",
     collapse: "收起代码",
-    codePen: "在 CodePen 打开",
-    codeSandbox: "在 CodeSandBox 打开",
-  },
-  "en-US": {
-    copy: "Copy",
-    copied: "Copied Success!",
-    expand: "Expand Code",
-    collapse: "Collapse Code",
-    codePen: "Open in CodePen",
-    codeSandbox: "Open in CodeSandBox",
   },
 };
 

@@ -191,7 +191,7 @@ h2 {
   padding: 16px 48px;
   box-sizing: border-box;
 }
-.ac-nav-intro {
+.oc-nav-intro {
   padding-right: 240px;
   height: 194px;
   border-bottom: 1px solid var(--color-border);
@@ -321,4 +321,12 @@ h2 {
     margin: 0 auto;
     width: 80%;
   }
+}
+.oc-demo-title{
+  font-size: 20px;
+  margin-top: 48px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  display: block;
+  color: var(--primary-text);
 }

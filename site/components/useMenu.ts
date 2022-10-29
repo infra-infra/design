@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 const useMenu = () => {
   const [list, setList] = useState<any[]>([]);
   useEffect(() => {
-    const files = require.context("../../components/", true, /index.zh-CN.md$/);
+    const files = require.context("../../components/", true, /demo.md$/);
     const components = files
       .keys()
       .map((item) => {
         return {
-          path: item.replace("./", "").replace("/index.zh-CN.md", ""),
+          path: item.replace("./", "").replace("/demo.md", ""),
           component: files(item).default,
         };
       })
