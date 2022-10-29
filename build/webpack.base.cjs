@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
-const Dotenv = require("dotenv-webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV === "development";
 module.exports = {
@@ -66,10 +65,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv({
-      systemvars: true,
-      path: `./.env.${process.env.NODE_ENV}`,
-    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../site/public/index.html"),
       favicon: path.resolve(__dirname,'../site/public/favicon.ico')

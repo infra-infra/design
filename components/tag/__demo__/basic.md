@@ -1,10 +1,7 @@
 ---
 order: 0
-title:
-  zh-CN: 基础用法
+title: 基础用法
 ---
-
-## zh-CN
 
 标签的基础用法。
 

@@ -1,17 +1,9 @@
 ---
 order: 0
-title:
-  zh-CN: 基础用法
-  en-US: Basic
+title: 基础用法
 ---
 
-## zh-CN
-
 一个基本的评论组件，带有作者、头像、时间和操作。
-
-##  en-US
-
-A basic comment component with author, avatar, time and actions.
 
 ```js
 import React from 'react';

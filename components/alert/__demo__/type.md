@@ -1,17 +1,10 @@
 ---
 order: 1
-title:
-  zh-CN: 不同类型
-  en-US: Different type
+title: 不同类型
 ---
-
-## zh-CN
 
 警告提示的类型有 `info`, `success`, `warning`, `error` 四种。
 
-## en-US
-
-There are four types of warnings: `info`, `success`, `warning`, and `error`.
 
 ```js
 import { Alert } from '@oc/design';

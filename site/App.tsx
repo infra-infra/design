@@ -14,7 +14,7 @@ function App(): JSX.Element {
               <h3>欢迎使用👏</h3>
               <pre>
                   <code>
-                      npm i @oc/design
+                      npm i @oc/design --registry=https://npm.zzfzzf.com
                   </code>
               </pre>
           </div>} />
