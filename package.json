@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cocoplums/dekopon-design.git"
+    "url": "git+https://github.com/oocc-run/oc-design.git"
   },
   "keywords": [
     "design",
@@ -38,9 +38,9 @@
   "author": "oocc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cocoplums/dekopon-design/issues"
+    "url": "https://github.com/oocc-run/oc-design/issues"
   },
-  "homepage": "https://github.com/cocoplums/dekopon-design#readme",
+  "homepage": "https://github.com/oocc-run/oc-design#readme",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-export-default-from": "^7.18.10",
