@@ -59,15 +59,8 @@ module.exports = {
         test: /\.md$/,
         exclude: /\.(tsx|ts)$/,
         use: [
-          {
-            loader: "babel-loader",
-          },
-          {
-            loader: require.resolve('@oc/doc-loader'),
-            options: {
-              demoDir: "__demo__"
-            },
-          },
+            "babel-loader",
+            "@oc/doc-loader"
         ],
       },
     ],
