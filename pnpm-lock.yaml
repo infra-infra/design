@@ -55,7 +55,6 @@ specifiers:
   zx: ^7.1.1
 
 dependencies:
-  '@oc/icon': 0.0.1
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
 
@@ -69,6 +68,7 @@ devDependencies:
   '@babel/runtime-corejs3': 7.20.0
   '@multiavatar/multiavatar': 1.0.7
   '@oc/doc-loader': 0.0.3
+  '@oc/icon': 0.0.1
   '@types/jest': 29.2.0
   '@types/node': 18.11.7
   '@types/react': 18.0.24
@@ -1979,6 +1979,7 @@ packages:
 
   /@oc/icon/0.0.1:
     resolution: {integrity: sha512-arksWGbsjesVaL8ZZQDpV+5YSdosd0kAP4hXBcXTO2bqRBDu9P7bDwxHIgpNdBQUY6lKjm0dZocrFkWdqL5OTQ==}
+    dev: true
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}

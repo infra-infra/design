@@ -12,13 +12,13 @@
     text: rgb(var(--primary-6)),
   );
   $bg-map: (
-    primary: rgb(var(--primary-6)),
+    primary: var(--primary-button-background),
     secondary: var(--color-secondary),
     outline: transparent,
     text: transparent,
   );
   $bg-hover-map: (
-    primary: rgb(var(--primary-5)),
+    primary: var(--primary-button-background),
     secondary: var(--color-secondary-hover),
     outline: transparent,
     text: transparent,
@@ -68,7 +68,7 @@
     mini: 24px,
   );
   $border-radius-map: (
-    default: var(--border-radius-small),
+    default: var(--button-corner-radius),
     large: var(--border-radius-small),
     small: var(--border-radius-small),
     mini: var(--border-radius-small),

@@ -9,29 +9,29 @@
   z-index: 1000;
 }
 .zzf-modal-container {
-  background: var(--color-bg-2);
+  background-color: var(--card-background);
   position: relative;
   display: flex;
   width: 448px;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: var(--color-bg-2);
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--card-corner-radius);
+  box-shadow: 0 12px 28px 0 var(--shadow-2),0 2px 4px 0 var(--shadow-1),inset 0 0 0 1px var(--shadow-inset);
   padding: 0 24px;
   background-clip: padding-box;
   overflow: hidden;
-  box-shadow: var(--shadow-elevated);
   margin-top: 80px;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
 .zzf-modal-header {
-  color: var(--color-primary);
+  color: var(--primary-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
+  font-size: 1.25rem;
   margin: 24px 0;
 }
 .zzf-modal-footer {

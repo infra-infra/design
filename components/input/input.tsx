@@ -3,6 +3,7 @@ import classNames from '../_util/classNames';
 
 interface InputType {
     className?: string;
+    round?: boolean;
     type?: string;
     autoFocus?: boolean;
     placeholder?: string;
@@ -11,7 +12,7 @@ interface InputType {
 }
 
 const Input = (props: InputType) => {
-    const {type = 'text', className, autoFocus = false, placeholder, value, onChange} = props;
+    const {type = 'text', className, autoFocus = false, placeholder, value, onChange, round} = props;
 
     return (
         type === 'textarea' ? <textarea value={value}
@@ -25,7 +26,7 @@ const Input = (props: InputType) => {
                 placeholder={placeholder}
                 autoFocus={autoFocus}
                 type={type}
-                className={classNames('zzf-ipt', className)}
+                className={classNames('zzf-ipt',round&&'zzf-ipt-round', className)}
             />
     );
 };

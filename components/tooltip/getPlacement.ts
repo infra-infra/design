@@ -35,52 +35,53 @@ const getPosition = (triggerRect: DOMRect | null, contentRect: DOMRect | null, p
         const dHeight = triggerRect.height - contentRect.height;
         switch (placement) {
             case 'top':
-                position.left =left+ triggerRect.left - dWidth / 2;
-                position.top =top+ triggerRect.top - contentRect.height;
+                position.left = left + triggerRect.left - dWidth / 2;
+                position.top = top + triggerRect.top - contentRect.height;
                 break;
             case 'topLeft':
                 position.left += triggerRect.left;
-                position.top += triggerRect.top - contentRect.height;
+                position.top += top + triggerRect.top - contentRect.height;
                 break;
             case 'topRight':
                 position.left += triggerRect.left - dWidth;
-                position.top += triggerRect.top - contentRect.height;
+                position.top += top + triggerRect.top - contentRect.height;
                 break;
             case 'bottom':
-                position.left =left+ triggerRect.left - dWidth / 2;
-                position.top =top+ triggerRect.top + triggerRect.height;
+                position.left = left + triggerRect.left - dWidth / 2;
+                position.top = top + triggerRect.top + triggerRect.height;
                 break;
             case 'bottomLeft':
-                position.left =left +triggerRect.left;
-                position.top =top+ triggerRect.top + triggerRect.height;
+                position.left = left + triggerRect.left;
+                position.top = top + triggerRect.top + triggerRect.height;
                 break;
             case 'bottomRight':
                 position.left = left + triggerRect.left - dWidth;
                 position.top = top + triggerRect.top + triggerRect.height;
                 break;
             case 'left':
+                console.log(triggerRect, contentRect)
                 position.left += triggerRect.left - contentRect.width;
-                position.top += triggerRect.top + dHeight / 2;
+                position.top += top + triggerRect.top + dHeight / 2;
                 break;
             case 'leftTop':
                 position.left += triggerRect.left - contentRect.width;
-                position.top += triggerRect.top;
+                position.top += top + triggerRect.top;
                 break;
             case 'leftBottom':
                 position.left += triggerRect.left - contentRect.width;
-                position.top += triggerRect.top + dHeight;
+                position.top += top + triggerRect.top + dHeight;
                 break;
             case 'right':
                 position.left += triggerRect.left + triggerRect.width;
-                position.top += triggerRect.top + dHeight / 2;
+                position.top += top + triggerRect.top + dHeight / 2;
                 break;
             case 'rightTop':
                 position.left += triggerRect.left + triggerRect.width;
-                position.top += triggerRect.top;
+                position.top += top + triggerRect.top;
                 break;
             case 'rightBottom':
                 position.left += triggerRect.left + triggerRect.width;
-                position.top += triggerRect.top + dHeight;
+                position.top += top + triggerRect.top + dHeight;
                 break;
         }
     }

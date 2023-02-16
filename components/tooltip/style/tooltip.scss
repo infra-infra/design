@@ -1,14 +1,18 @@
+@import "../../styles/theme.scss";
 .oc-position{
   z-index: 99;
 }
 .oc-tooltip{
-  padding: 8px 12px;
-  background-color: var(--color-tooltip-bg);
+  padding: 12px;
+  background-color: var(--overlay-alpha-80-reverse);
   font-size: 14px;
-  border-radius: var(--border-radius-small);
-  color: #fff;
+  border-radius: 8px;
+  color: var(--primary-text-reverse);
   line-height: 1.5715;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 4px 0 var(--shadow-5-reverse);
+  transition-property: opacity;
+  transition-duration: var(--fds-duration-extra-extra-short-in);
+  transition-timing-function: var(--fds-animation-fade-in);
 }
 .my-node-enter {
   opacity: 0;

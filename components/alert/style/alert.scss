@@ -1,12 +1,13 @@
 .zzf-alert {
-  color: var(--color-text-1);
+  color: var(--primary-text);
   padding: 8px 15px;
   border-radius: var(--border-radius-small);
   font-size:14px;
+  display: flex;
   &-info {
-    background-color: var(--color-primary-1);
+    background-color: var(--primary-deemphasized-button-background);
     &-icon{
-      color: rgb(var(--primary-6));
+        color: var(--primary-deemphasized-button-text);
     }
   }
   &-success {

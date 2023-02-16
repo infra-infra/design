@@ -1,10 +1,10 @@
 .zzf-tag {
   display: inline-flex;
   padding: 0 8px;
-  border-radius: var(--border-radius-small);
-  color: var(--color-text-1);
+  border-radius: 20px;
+  color: var(--blue-link);
   font-size: 12px;
-  border: 1px solid transparent;
+  border: 2px solid var(--primary-deemphasized-button-background);
   box-sizing: border-box;
   font-weight: 500;
   vertical-align: middle;
@@ -15,10 +15,8 @@
   background-color: var(--color-fill-2);
 
   &:hover {
-    background-color: rgb(var(--primary-6));
-    color: var(--web-wash);
-    transform: scale(1.1);
     transition: all 0.3s ease 0s;
+    background-color: var(--hover-overlay);
   }
 
   &-size {
