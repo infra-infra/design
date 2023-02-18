@@ -12,9 +12,9 @@ const Card = ({ children, title, className,classNameWrap }:CardProps) => {
   return (
     <section className={classNames('zzf-card',classNameWrap)}>
       {title && (
-        <title className={classNames('zzf-card-header')}>
+        <div className={classNames('zzf-card-header')}>
             {title}
-        </title>
+        </div>
       )}
       <section className={classNames('zzf-card-body',className)}>
         {children}
