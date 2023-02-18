@@ -21,8 +21,8 @@
 ## 📦 安装
 
 ```bash
-npm install @oc/oc --save
-pnpm add @oc/oc
+npm i @oc/design --registry=https://npm.zzfzzf.com
+pnpm add @oc/design --registry=https://npm.zzfzzf.com
 ```
 
 ## 本地调试指南

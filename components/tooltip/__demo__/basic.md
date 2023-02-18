@@ -6,7 +6,7 @@ title: 基本用法
 警告提示，展现需要关注的信息，适用于简短的警告提示。
 
 ```js
-import { Tooltip, Space } from "@oc/design";
+import { Tooltip, Space, Button } from "@oc/design";
 
 const App = () => {
     return (
@@ -26,7 +26,7 @@ const App = () => {
                 "bottomRight",
             ].map((_) => (
                 <Tooltip key={_} placement={_} content="This is tooltip content">
-                    <span>{_}</span>
+                    <Button>{_}</Button>
                 </Tooltip>
             ))}
         </Space>
