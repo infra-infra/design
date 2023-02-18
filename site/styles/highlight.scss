@@ -22,6 +22,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  overflow-x: auto;
 }
 
 /* Code blocks */
@@ -41,6 +42,8 @@ pre[class*="language-"] > code {
   background-size: 3em 3em;
   background-origin: content-box;
   background-attachment: local;
+  overflow-x: auto;
+
 }
 
 code[class*="language"] {

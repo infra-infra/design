@@ -17,15 +17,15 @@ const CommonLayout = () => {
     return (
         <Layout>
             <Layout.Header>
-                <header>
-                    组件库文档
+                <header className='layout-header'>
+                    <span>组件库文档</span>
                     {theme === 'dark' && <IconMoon className={'icon'} onClick={() => setThemeAction('light')}/>}
                     {theme === 'light' && <IconSunFill className={'icon'} onClick={() => setThemeAction('dark')}/>}
                 </header>
             </Layout.Header>
-            <Layout.Content>
-                <Layout.Center>
-                    <div>
+            <Layout.Main>
+                <div className='main'>
+                    <Card className={'left'}>
                         <NavLink
                             className={({isActive}) => (isActive ? 'active' : '')}
                             to={'/icon'}
@@ -38,13 +38,13 @@ const CommonLayout = () => {
                                 key={item.path}
                                 to={item.path}
                             >
-                                -{item.path}
+                                {item.path}
                             </NavLink>
                         ))}
-                    </div>
-                    <Card><Outlet/></Card>
-                </Layout.Center>
-            </Layout.Content>
+                    </Card>
+                    <Card className='right'><Outlet/></Card>
+                </div>
+            </Layout.Main>
             <Layout.Footer>power by cc</Layout.Footer>
         </Layout>
     );

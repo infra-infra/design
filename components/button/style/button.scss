@@ -13,13 +13,13 @@
   );
   $bg-map: (
     primary: var(--primary-button-background),
-    secondary: var(--color-secondary),
+    secondary: var(--secondary-button-background),
     outline: transparent,
     text: transparent,
   );
   $bg-hover-map: (
     primary: var(--primary-button-background),
-    secondary: var(--color-secondary-hover),
+    secondary: var(--hover-overlay),
     outline: transparent,
     text: transparent,
   );

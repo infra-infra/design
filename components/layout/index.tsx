@@ -1,7 +1,5 @@
 import Footer from './Footer';
-import Content from './Content';
-import Aside from './Aside';
-import Center from './Center';
+import Main from './Main';
 import Header from './Header';
 import Basic, { BasicProps } from './Basic';
 import React from 'react';
@@ -10,17 +8,13 @@ interface LayoutType extends React.FC<BasicProps> {
   children: React.ReactNode;
   Header: typeof Header;
   Footer: typeof Footer;
-  Content: typeof Content;
-  Aside: typeof Aside;
-  Center: typeof Center;
+  Main: typeof Main;
 }
 
 const Layout = Basic as LayoutType;
 
 Layout.Header = Header;
 Layout.Footer = Footer;
-Layout.Content = Content;
-Layout.Aside = Aside;
-Layout.Center = Center;
+Layout.Main = Main;
 
 export { Layout };
