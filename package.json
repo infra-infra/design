@@ -94,6 +94,8 @@
     "zx": "^7.1.1"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.6",
+    "@emotion/react": "^11.10.6",
     "@testing-library/react": "^14.0.0",
     "react-transition-group": "^4.4.5"
   },
