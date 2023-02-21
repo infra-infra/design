@@ -88,7 +88,6 @@ class CellCode extends React.Component<
               onClick={this.toggleCode}
               type="secondary"
               aria-label={t.collapse}
-              className={showAll ? "ac-btn-expanded" : ""}
             >
               <IconCode />
             </Button>
@@ -102,7 +101,7 @@ class CellCode extends React.Component<
               type="secondary"
               aria-label={t.copy}
             >
-              <IconCopy className="copy-icon" />
+              <IconCopy />
             </Button>
           </span>
         </Tooltip>
