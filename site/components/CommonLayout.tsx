@@ -5,6 +5,7 @@ import {IconMoon, IconSunFill} from '@oc/icon'
 import {Card, Layout} from '@oc/design';
 import {css} from "@emotion/css";
 import classNames from "../../components/_util/classNames";
+import {Progress} from "@oc/design";
 
 const headerStyle = css`
   width: 100%;
@@ -64,6 +65,7 @@ const CommonLayout = () => {
     return (
         <Layout>
             <Layout.Header>
+                <Progress/>
                 <header className={headerStyle}>
                     <span>组件库文档</span>
                     {theme === 'dark' && <IconMoon className={iconStyle} onClick={() => setThemeAction('light')}/>}
