@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",

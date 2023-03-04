@@ -10,17 +10,17 @@
   appearance: none;
   border: none;
   background-color: transparent;
-  color: var(--color-text-primary);
+  color: var(--accent);
 
   &::-webkit-progress-bar {
     background-color: transparent;
   }
 
   &::-webkit-progress-value {
-    background-color: var(--color-text-primary);
+    background-color: var(--accent);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--color-text-primary);
+    background-color: var(--accent);
   }
 }
