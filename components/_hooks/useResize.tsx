@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect } from 'react';
 
 export const useResize = (onResize: (evt: Event) => any) => {
   useLayoutEffect(() => {
@@ -6,9 +6,9 @@ export const useResize = (onResize: (evt: Event) => any) => {
       onResize(evt);
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return function cleanup() {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 };

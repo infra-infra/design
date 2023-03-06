@@ -1,5 +1,5 @@
 function getParentNode(element: Element) {
-  if (element.nodeName === "HTML") {
+  if (element.nodeName === 'HTML') {
     return element;
   }
   return element.parentNode || (element as any).host;
@@ -20,10 +20,10 @@ export function getScrollParent(element?: Element): Element {
   }
 
   switch (element.nodeName) {
-    case "HTML":
-    case "BODY":
+    case 'HTML':
+    case 'BODY':
       return element.ownerDocument!.body;
-    case "#document":
+    case '#document':
       return (element as any).body as Element;
   }
 
@@ -41,7 +41,7 @@ export const getScrollParents = (element: Element): Element[] => {
 
   let scrollParent = getScrollParent(element);
 
-  while (scrollParent.nodeName !== "BODY") {
+  while (scrollParent.nodeName !== 'BODY') {
     scrollParents.push(scrollParent);
     scrollParent = getScrollParent(scrollParent.parentNode as Element);
   }

@@ -1,8 +1,8 @@
+import React from 'react';
 import Footer from './Footer';
 import Main from './Main';
 import Header from './Header';
 import Basic, { BasicProps } from './Basic';
-import React from 'react';
 
 interface LayoutType extends React.FC<BasicProps> {
   children: React.ReactNode;

@@ -36,7 +36,7 @@ export const off = (function () {
   };
 })();
 
-export const contains = function (root: HTMLElement, ele:any) {
+export const contains = function (root: HTMLElement, ele: any) {
   if (!root) {
     return false;
   }
@@ -53,9 +53,8 @@ export const contains = function (root: HTMLElement, ele:any) {
   return false;
 };
 
-export const isScrollElement = (element: HTMLElement) => {
-  return element.scrollHeight > element.offsetHeight || element.scrollWidth > element.offsetWidth;
-};
+export const isScrollElement = (element: HTMLElement) =>
+  element.scrollHeight > element.offsetHeight || element.scrollWidth > element.offsetWidth;
 
 /**
  * 从当前节点向上查找所有的滚动元素

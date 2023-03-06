@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
-import Button from '../button';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import Button from '../button';
 
 it('renders correctly', () => {
   const component = renderer.create(<Button>Facebook</Button>);

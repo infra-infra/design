@@ -1,20 +1,24 @@
-import {RefObject, useLayoutEffect, useMemo, useState} from "react";
+import { RefObject, useCallback, useEffect, useState } from 'react';
+import debounce from '../_util/debounce';
 
-export const useClientRect = (ele: RefObject<HTMLElement | null>) => {
-  const [clientRect, setClientRect] = useState<DOMRect | null>(null);
-
-  const updateClientRect = useMemo(() => {
-    return () => {
-      setClientRect(ele.current!.getBoundingClientRect());
-    };
-  }, []);
-
-  // 只有当 React 组件 didMount 时，才能取到元素的 ClientRect，所以这里要使用 useLayoutEffect
-  useLayoutEffect(() => {
-    if (ele.current) {
-      updateClientRect();
+export const useClientRect = (rectRef: RefObject<HTMLElement>): DOMRect | undefined => {
+  const [clientRect, setClientRect] = useState<DOMRect>();
+  const updateClientRect = useCallback(() => {
+    if (rectRef.current) {
+      setClientRect(rectRef.current.getBoundingClientRect());
     }
-  }, []);
+  }, [rectRef]);
 
-  return [clientRect, updateClientRect] as [typeof clientRect, typeof updateClientRect];
+  useEffect(() => {
+    updateClientRect();
+    const debouncedUpdateClientRect = debounce(updateClientRect, 100);
+    window.addEventListener('resize', debouncedUpdateClientRect);
+    window.addEventListener('scroll', debouncedUpdateClientRect);
+    return () => {
+      window.removeEventListener('resize', debouncedUpdateClientRect);
+      window.removeEventListener('scroll', debouncedUpdateClientRect);
+    };
+  }, [updateClientRect]);
+
+  return clientRect;
 };

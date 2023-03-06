@@ -11,7 +11,7 @@ function addRootElement(rootElem: HTMLElement): void {
 }
 
 function usePortal(id: string): HTMLElement | null {
-  let rootElemRef = useRef<HTMLElement | null>(null);
+  const rootElemRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
     const existingParent = document.querySelector(`#${id}`);
     const parentElem = existingParent || createRootElement(id);
@@ -21,7 +21,7 @@ function usePortal(id: string): HTMLElement | null {
     if (!rootElemRef.current) {
       rootElemRef.current = document.createElement('div');
     }
-    if (parentElem&&rootElemRef.current) {
+    if (parentElem && rootElemRef.current) {
       parentElem.appendChild(rootElemRef.current as Node);
     }
 

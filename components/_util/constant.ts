@@ -6,7 +6,7 @@ export function newArray(length: number) {
   return Array.apply(null, Array(length));
 }
 
-export function pickTriggerPropsFromRest(rest:any) {
+export function pickTriggerPropsFromRest(rest: any) {
   return pick(rest, [
     'onMouseEnter',
     'onMouseLeave',

@@ -1,5 +1,5 @@
 function classNames(...args: any[]): string {
-  const length = args.length;
+  const { length } = args;
   let classNames: string[] = [];
   for (let i = 0; i < length; i++) {
     const v = args[i];

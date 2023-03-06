@@ -11,25 +11,26 @@ export interface PortalProps {
   children?: React.ReactNode;
 }
 
-const Portal = (props: PortalProps) => {
+function Portal(props: PortalProps) {
   const { getContainer, children } = props;
-  const containerRef = useRef<HTMLElement|null>();
+  const containerRef = useRef<HTMLElement | null>();
   const isFirstRender = useIsFirstRender();
 
   if ((isFirstRender || containerRef.current === null) && !isServerRendering) {
     containerRef.current = getContainer();
   }
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       const container = containerRef.current;
       if (container && container.parentNode) {
         container.parentNode.removeChild(container);
         containerRef.current = null;
       }
-    };
-  }, []);
+    },
+    []
+  );
   return containerRef.current ? ReactDOM.createPortal(children, containerRef.current) : null;
-};
+}
 
 export default Portal;

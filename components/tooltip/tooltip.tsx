@@ -1,9 +1,9 @@
-import React, { ReactNode, useRef } from "react";
-import { Position } from "./Position";
-import { Portal } from "../portal";
-import { useToggle } from "../_hooks/useToggle";
-import { CSSTransition } from "react-transition-group";
-import { Placement } from "./getPlacement";
+import React, { ReactNode, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { Position } from './Position';
+import { Portal } from '../portal';
+import { useToggle } from '../_hooks/useToggle';
+import { Placement } from './getPlacement';
 
 interface ITooltipsProps {
   content?: ReactNode;
@@ -11,7 +11,11 @@ interface ITooltipsProps {
   children: React.ReactElement;
 }
 
-const Tooltip = ({ content, placement, children }: ITooltipsProps) => {
+const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
+  content,
+  placement,
+  children,
+}) {
   const [isOpen, show, hide] = useToggle();
   const triggerEl = useRef<HTMLElement>(null);
   const nodeRef = useRef(null);
@@ -22,7 +26,8 @@ const Tooltip = ({ content, placement, children }: ITooltipsProps) => {
         onMouseEnter: show,
         onMouseLeave: hide,
       })}
-      <CSSTransition nodeRef={nodeRef}
+      <CSSTransition
+        nodeRef={nodeRef}
         appear
         classNames="my-node"
         unmountOnExit
@@ -31,11 +36,7 @@ const Tooltip = ({ content, placement, children }: ITooltipsProps) => {
         timeout={300}
       >
         <Portal>
-          <Position
-            className={"oc-tooltip"}
-            triggerRef={triggerEl}
-            placement={placement}
-          >
+          <Position className="oc-tooltip" triggerRef={triggerEl} placement={placement}>
             <span ref={nodeRef}>{content}</span>
           </Position>
         </Portal>

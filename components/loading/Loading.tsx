@@ -11,7 +11,7 @@ const Loading: React.FC<LoadingProps> = ({ children, loading, noMore, onLoad }) 
   const loadingRef = useRef<HTMLDivElement>(null);
   const Observer = useRef<IntersectionObserver>();
   useEffect(() => {
-    Observer.current = new IntersectionObserver(function (entries) {
+    Observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           onLoad();
@@ -31,7 +31,7 @@ const Loading: React.FC<LoadingProps> = ({ children, loading, noMore, onLoad }) 
     <>
       {children}
       {noMore ? (
-        <section className={'zzf-loading-no-more'}>暂无更多</section>
+        <section className="zzf-loading-no-more">暂无更多</section>
       ) : (
         <section ref={loadingRef}>
           <section>{loading}</section>

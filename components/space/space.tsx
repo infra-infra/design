@@ -7,8 +7,8 @@ interface ButtonProps {
   type?: string;
 }
 
-const Space: React.FC<ButtonProps> = ({ children, className, type }) => {
-  return <div className={classNames('zzf-space')}>{children}</div>;
-};
+const Space: React.FC<ButtonProps> = ({ children, className, type }) => (
+  <div className={classNames('zzf-space')}>{children}</div>
+);
 
 export default Space;

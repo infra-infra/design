@@ -1,7 +1,7 @@
-import React, { ReactElement, ReactNode, useEffect, useRef } from "react";
-import {Placement} from "../tooltip/getPlacement";
-import {Portal} from "./Portal";
-import {Position} from "../tooltip/Position";
+import React, { ReactElement, ReactNode, useEffect, useRef } from 'react';
+import { Placement } from '../tooltip/getPlacement';
+import { Portal } from './Portal';
+import { Position } from '../tooltip/Position';
 
 export interface IOverlayTriggerProps {
   children: ReactElement<any>; // 不能是 undefined、boolean、null 或者 text，只能是一个 react element（不一定有 DOM，所以要用 invariant 来控制），但是可以把 ref 绑上去
@@ -10,7 +10,12 @@ export interface IOverlayTriggerProps {
   visible?: boolean;
 }
 
-export const OverlayTrigger: React.FC<IOverlayTriggerProps> = ({ content, children, placement, visible = false }) => {
+export const OverlayTrigger: React.FC<IOverlayTriggerProps> = ({
+  content,
+  children,
+  placement,
+  visible = false,
+}) => {
   // TODO: visible 状态的控制，究竟是在内部还是在外部？
 
   const triggerEl = useRef<HTMLElement>(null);
