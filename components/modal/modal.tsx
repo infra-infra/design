@@ -22,10 +22,8 @@ function Modal(props: ModalType) {
   return (
     <CSSTransition
       nodeRef={containerRef}
-      appear
-      classNames="my-node"
+      classNames="modal-transition"
       unmountOnExit
-      mountOnEnter
       timeout={300}
       in={visible}
     >

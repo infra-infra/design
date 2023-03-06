@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject, useRef } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import { getPlacement, Placement } from './getPlacement';
 import { useClientRect } from '../_hooks/useClientRect';
 import classNames from '../_util/classNames';
@@ -10,17 +10,13 @@ interface IPositionProps {
   className?: string;
 }
 
-export function Position({
-  triggerRef,
-  placement = 'bottomLeft',
-  className,
-  children,
-}: IPositionProps): JSX.Element {
-  const contentEl = useRef<HTMLDivElement>(null);
+const Position: React.ForwardRefRenderFunction<HTMLDivElement, IPositionProps> = function Position(
+  { triggerRef, placement = 'bottomLeft', className, children },
+  ref
+): JSX.Element {
   const triggerRect = useClientRect(triggerRef);
-  const contentRect = useClientRect(contentEl);
+  const contentRect = useClientRect(ref as RefObject<HTMLElement>);
 
-  // 根据触发元素和内容元素的 ClientRect，以及摆放位置，计算出内容元素的坐标
   const position = getPlacement({ triggerRect, contentRect, placement });
 
   return (
@@ -32,9 +28,12 @@ export function Position({
         top: position.top,
         willChange: 'transform',
       }}
-      ref={contentEl}
+      ref={ref}
     >
       {children}
     </div>
   );
-}
+};
+
+const PositionRef = React.forwardRef(Position);
+export { PositionRef as Position };

@@ -17,27 +17,32 @@ const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
   children,
 }) {
   const [isOpen, show, hide] = useToggle();
-  const triggerEl = useRef<HTMLElement>(null);
+  const triggerEl = useRef<HTMLDivElement>(null);
   const nodeRef = useRef(null);
   return (
     <>
       {React.cloneElement(React.Children.only(children), {
-        ref: triggerEl,
+        ref: nodeRef,
         onMouseEnter: show,
         onMouseLeave: hide,
       })}
       <CSSTransition
-        nodeRef={nodeRef}
+        nodeRef={triggerEl}
         appear
-        classNames="my-node"
+        classNames="oc-transition"
         unmountOnExit
         mountOnEnter
         in={isOpen}
         timeout={300}
       >
         <Portal>
-          <Position className="oc-tooltip" triggerRef={triggerEl} placement={placement}>
-            <span ref={nodeRef}>{content}</span>
+          <Position
+            ref={triggerEl}
+            className="oc-tooltip"
+            triggerRef={nodeRef}
+            placement={placement}
+          >
+            <span>{content}</span>
           </Position>
         </Portal>
       </CSSTransition>

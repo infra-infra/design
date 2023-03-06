@@ -3,38 +3,36 @@ import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
 import { useToggle } from '../_hooks/useToggle';
 import { Position } from '../tooltip/Position';
-import { ClickAwayListener } from '../portal/ClickAwayListener';
 import useOutsideClick from '../_hooks/useOutsideClick';
 
 function Popover({ content, children, placement, defaultVisible = false }: any) {
-  const triggerEl = useRef<HTMLElement>(null);
+  const nodeEl = useRef<HTMLElement>(null);
   const [isOpen, show, hide, toggle] = useToggle(defaultVisible);
   const ref = useOutsideClick<HTMLDivElement>(hide);
 
   return (
     <>
-      {React.cloneElement(<span>{React.Children.only(children)}</span>, {
-        ref: triggerEl,
+      {React.cloneElement(React.Children.only(children), {
+        ref: nodeEl,
         onClick: toggle,
       })}
       <CSSTransition
         nodeRef={ref}
         appear
-        classNames="my-node"
+        classNames="oc-transition"
         unmountOnExit
         mountOnEnter
         in={isOpen}
         timeout={300}
       >
         <Portal>
-          <Position triggerRef={triggerEl} placement={placement}>
-            {/* <ClickAwayListener onClickAway={hide}> */}
-            <div ref={ref}>{content}</div>
-            {/* </ClickAwayListener> */}
+          <Position className="oc-tooltip" ref={ref} triggerRef={nodeEl} placement={placement}>
+            <span>{content}</span>
           </Position>
         </Portal>
       </CSSTransition>
     </>
   );
 }
+
 export default Popover;

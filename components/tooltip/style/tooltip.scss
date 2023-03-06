@@ -1,8 +1,8 @@
-@import "../../styles/theme.scss";
-.oc-position{
+@import '../../styles/theme.scss';
+.oc-position {
   z-index: 99;
 }
-.oc-tooltip{
+.oc-tooltip {
   padding: 12px;
   background-color: var(--overlay-alpha-80-reverse);
   font-size: 14px;
@@ -14,34 +14,37 @@
   transition-duration: var(--fds-duration-extra-extra-short-in);
   transition-timing-function: var(--fds-animation-fade-in);
 }
-.my-node-enter {
+.oc-tooltip-transition-enter {
   opacity: 0;
+  transform: scale(0.9);
 }
-.my-node-enter-active {
+.oc-tooltip-transition-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transform: translateX(0);
+  transition: opacity 300ms;
 }
-.my-node-exit {
+.oc-tooltip-transition-exit {
   opacity: 1;
 }
-.my-node-exit-active {
+.oc-tooltip-transition-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transform: scale(0.9);
+  transition: opacity 300ms;
 }
 
-
-
-.my-node-appear-enter {
+.oc-tooltip-appear-enter {
+  transform: scale(0.9);
   opacity: 0;
 }
-.my-node-appear-enter-active {
+.oc-tooltip-appear-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity 300ms;
 }
-.my-node-appear-exit {
+.oc-tooltip-appear-exit {
   opacity: 1;
 }
-.my-node-appear-exit-active {
+.oc-tooltip-appear-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transform: scale(0.9);
+  transition: opacity 300ms;
 }

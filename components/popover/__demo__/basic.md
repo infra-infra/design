@@ -19,7 +19,7 @@ function App() {
         </span>
       }
     >
-      <div type="primary">Click</div>
+      <Button type="primary">Click</Button>
     </Popover>
   );
 }

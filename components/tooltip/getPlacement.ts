@@ -30,7 +30,7 @@ const getPosition = (
 ) => {
   const top = document.documentElement.scrollTop;
   const left = document.documentElement.scrollLeft;
-  let position = {
+  const position = {
     top: 0,
     left: 0,
   } as IPosition;
