@@ -54,7 +54,7 @@
     "@babel/runtime-corejs3": "^7.21.0",
     "@multiavatar/multiavatar": "^1.0.7",
     "@oc/doc-loader": "^0.0.3",
-    "@oc/icon": "^0.0.11",
+    "@oc/icon": "^0.0.12",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
