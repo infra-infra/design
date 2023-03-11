@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import useRequestIdleScroll from './useRequestIdleScroll';
+import { style } from './style';
 
-const Progress: React.FC = () => {
+function Progress(): JSX.Element {
   const [max, setMax] = useState(0);
   const [value, setValue] = useState(0);
 
-  function scroll() {
+  function scroll(): void {
     const winHeight = window.innerHeight;
     const docHeight = document.documentElement.scrollHeight;
     setMax(docHeight - winHeight);
@@ -13,7 +14,7 @@ const Progress: React.FC = () => {
   }
 
   useRequestIdleScroll(scroll);
-  return <progress className="zzf-progress" max={max} value={value} />;
-};
+  return <progress className={style} max={max} value={value} />;
+}
 
 export default Progress;

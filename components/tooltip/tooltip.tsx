@@ -4,6 +4,7 @@ import { Position } from './Position';
 import { Portal } from '../portal';
 import { useToggle } from '../_hooks/useToggle';
 import { Placement } from './getPlacement';
+import { style } from './style';
 
 interface ITooltipsProps {
   content?: ReactNode;
@@ -29,7 +30,7 @@ const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
       <CSSTransition
         nodeRef={triggerEl}
         appear
-        classNames="oc-transition"
+        classNames={style.transition}
         unmountOnExit
         mountOnEnter
         in={isOpen}
@@ -38,7 +39,7 @@ const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
         <Portal>
           <Position
             ref={triggerEl}
-            className="oc-tooltip"
+            className={style.tooltip}
             triggerRef={nodeRef}
             placement={placement}
           >

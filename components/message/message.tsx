@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Notice, { MessageType } from './notice';
+import { style } from './style';
 
 export interface Notice {
   text: string;
@@ -18,13 +19,14 @@ const getUuid = (): string => {
   seed += 1;
   return `MESSAGE_${now}_${id}`;
 };
-function addInstance(type: string, text: string) {
+
+function addInstance(type: string, text: string): void {
   if (messageInstance) {
     const { notices } = messageInstance.state;
     messageInstance.add({ type, text });
   } else {
     const div = document.createElement('div');
-    div.setAttribute('class', 'notice-container');
+    div.setAttribute('class', style.container);
     document.body.appendChild(div);
     createRoot(div).render(
       <Message
@@ -89,6 +91,7 @@ class Message extends React.Component<any, any> {
     );
   }
 }
+
 Message.success = function (text: string) {
   addInstance('success', text);
 };

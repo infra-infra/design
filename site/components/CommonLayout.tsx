@@ -1,15 +1,14 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
-import useMenu from './useMenu';
-import { IconMoon, IconSunFill } from '@oc/icon';
-import { Card, Layout } from '@oc/design';
+import { IconMoon, IconSun } from '@oc/icon';
+import { Card, Layout, Progress } from '@oc/design';
 import { css } from '@emotion/css';
 import classNames from '../../components/_util/classNames';
-import { Progress } from '@oc/design';
+import useMenu from './useMenu';
 
 const headerStyle = css`
   width: 100%;
-  color: var(--accent);
+  color: var(--md-sys-color-primary);
   height: 60px;
   padding: 0 20px;
   display: flex;
@@ -44,7 +43,7 @@ const aStyle = css`
   text-decoration: none;
 
   &[class~='active'] {
-    color: var(--accent);
+    color: var(--md-sys-color-primary);
     font-weight: 600;
   }
 
@@ -52,7 +51,7 @@ const aStyle = css`
     background-color: var(--hover-overlay);
   }
 `;
-const CommonLayout = () => {
+function CommonLayout() {
   const list = useMenu();
   const [theme, setTheme] = useState('light');
 
@@ -72,7 +71,7 @@ const CommonLayout = () => {
             <IconMoon className={iconStyle} onClick={() => setThemeAction('light')} />
           )}
           {theme === 'light' && (
-            <IconSunFill className={iconStyle} onClick={() => setThemeAction('dark')} />
+            <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
           )}
         </header>
       </Layout.Header>
@@ -82,7 +81,7 @@ const CommonLayout = () => {
             <div className={navStyle}>
               <NavLink
                 className={({ isActive }) => classNames(aStyle, isActive && 'active')}
-                to={'/icon'}
+                to="/icon"
               >
                 icon
               </NavLink>
@@ -105,5 +104,5 @@ const CommonLayout = () => {
       <Layout.Footer>power by cc</Layout.Footer>
     </Layout>
   );
-};
+}
 export default CommonLayout;

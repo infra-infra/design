@@ -1,14 +1,13 @@
 import React from 'react';
 import classNames from '../_util/classNames';
+import { style } from './style';
 
 interface ButtonProps {
   children: React.ReactNode;
-  className?: string;
-  type?: string;
 }
 
-const Space: React.FC<ButtonProps> = ({ children, className, type }) => (
-  <div className={classNames('zzf-space')}>{children}</div>
+const Space: React.FC<ButtonProps> = ({ children }) => (
+  <div className={classNames(style)}>{children}</div>
 );
 
 export default Space;

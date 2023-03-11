@@ -25,7 +25,7 @@ const App = () => {
         'bottomLeft',
         'bottomRight',
       ].map((_) => (
-        <Tooltip key={_} placement={_} content="This is tooltip content">
+        <Tooltip key={_} placement={_} content={`This is ${_} content`}>
           <Button>{_}</Button>
         </Tooltip>
       ))}

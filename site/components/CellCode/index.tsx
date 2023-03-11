@@ -1,5 +1,4 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
-import { findDOMNode } from 'react-dom';
 import { Button, Message, Tooltip } from '@oc/design';
 import { IconCode, IconCopy } from '@oc/icon';
 import ClipboardJS from 'clipboard';
@@ -81,14 +80,14 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
               aria-label={t.collapse}
               variant="outlined"
             >
-              <IconCode />
+              <IconCode fontSize={16} />
             </Button>
           </span>
         </Tooltip>
         <Tooltip content={t.copy}>
           <span>
             <Button ref={(ref: any) => (this.btnCopy = ref)} variant="outlined" aria-label={t.copy}>
-              <IconCopy />
+              <IconCopy fontSize={16} />
             </Button>
           </span>
         </Tooltip>

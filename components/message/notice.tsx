@@ -1,13 +1,7 @@
-import React, { FC, ReactElement, useEffect } from 'react';
-import {
-  IconInfoCircleFill,
-  IconCheckCircleFill,
-  IconCloseCircleFill,
-  IconExclamationCircleFill,
-  IconLoading,
-  IconClose,
-} from '@oc/icon';
+import React, { FC, useEffect } from 'react';
+import { IconClose } from '@oc/icon';
 import classNames from '../_util/classNames';
+import { style } from './style';
 
 export type MessageType = 'info' | 'success' | 'error' | 'warning' | 'loading';
 
@@ -19,11 +13,11 @@ export interface MessageProps {
 }
 
 const renderIcon = {
-  info: IconInfoCircleFill,
-  success: IconCheckCircleFill,
-  error: IconCloseCircleFill,
-  warning: IconExclamationCircleFill,
-  loading: IconLoading,
+  info: IconClose,
+  success: IconClose,
+  error: IconClose,
+  warning: IconClose,
+  loading: IconClose,
 };
 const Notice: FC<MessageProps> = (props: MessageProps) => {
   const { text, type, onClose, id } = props;
@@ -31,7 +25,7 @@ const Notice: FC<MessageProps> = (props: MessageProps) => {
     window.setTimeout(() => onClose(id), 3000);
   }, []);
   return (
-    <div className="message">
+    <div className={style.message}>
       <div className="message-content">
         {React.createElement(renderIcon[type], { className: classNames('icon', type) })}
         <div className="text">{text}</div>

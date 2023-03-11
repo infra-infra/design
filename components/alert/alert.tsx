@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  IconInfoCircleFill,
-  IconCheckCircleFill,
-  IconCloseCircleFill,
-  IconExclamationCircleFill,
-} from '@oc/icon';
+import { IconClose } from '@oc/icon';
 import classNames from '../_util/classNames';
 
 interface AlertProps {
@@ -13,10 +8,10 @@ interface AlertProps {
   type?: 'info' | 'success' | 'warning' | 'error';
 }
 const getIcon = {
-  info: IconInfoCircleFill,
-  success: IconCheckCircleFill,
-  warning: IconExclamationCircleFill,
-  error: IconCloseCircleFill,
+  info: IconClose,
+  success: IconClose,
+  warning: IconClose,
+  error: IconClose,
 };
 function Alert({ children, className, type = 'info' }: AlertProps): JSX.Element {
   return (

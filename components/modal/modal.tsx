@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import type { ReactNode } from 'react';
-import { IconClose } from '@oc/icon';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
 import { Button } from '../button';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import classNames from '../_util/classNames';
+import { style } from './style';
 
 type ModalType = {
   title?: string;
@@ -15,22 +15,22 @@ type ModalType = {
   onCancel?: () => void;
 };
 
-function Modal(props: ModalType) {
-  const { title, children, visible, onConfirm = () => {}, onCancel = () => {} } = props;
+function Modal(props: ModalType): JSX.Element {
+  const { title, children, visible, onConfirm, onCancel } = props;
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <CSSTransition
       nodeRef={containerRef}
-      classNames="modal-transition"
+      classNames={style.transition}
       unmountOnExit
       timeout={300}
       in={visible}
     >
       <Portal>
-        <div ref={containerRef} className={classNames('zzf-modal-mask')}>
-          <div ref={ref} className="zzf-modal-container">
+        <div ref={containerRef} className={classNames(style.backDrop)}>
+          <div ref={ref} className={style.container}>
             <header className="zzf-modal-header">{title}</header>
             <div>{children}</div>
             <footer className="zzf-modal-footer">

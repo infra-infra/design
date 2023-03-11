@@ -1,7 +1,6 @@
 @import "reset.css";
 @import "../../components/styles/theme";
 @import "../../components/styles/theme.css";
-@import "@oc/icon/dist/dist.min";
 @import "./highlight";
 :root,
 [data-color-mode="light"] {
@@ -11,7 +10,11 @@
 [data-color-mode="dark"] {
   @include colors-dark;
 }
-
+.oc-icon{
+  width: 1em;
+  height: 1em;
+  vertical-align: -2px;
+}
 body {
   color: var(--primary-text);
   background-color: var(--wash);
