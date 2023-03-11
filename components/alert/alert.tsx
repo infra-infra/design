@@ -18,7 +18,7 @@ const getIcon = {
   warning: IconExclamationCircleFill,
   error: IconCloseCircleFill,
 };
-function Alert({ children, className, type = 'info' }: AlertProps) {
+function Alert({ children, className, type = 'info' }: AlertProps): JSX.Element {
   return (
     <div className={classNames('zzf-alert', type && `zzf-alert-${type}`, className)}>
       <span className={`zzf-alert-${type}-icon`}>

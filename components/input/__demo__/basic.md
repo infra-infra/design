@@ -12,7 +12,7 @@ import { Input } from '@oc/design';
 const App = () => {
   return (
     <>
-      <Input />
+        <Input placeholder="placeholder" />
     </>
   );
 };

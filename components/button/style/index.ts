@@ -18,7 +18,6 @@ export const style = {
     border: none;
 
     &:hover {
-      //background-color: hsla(var(--md-sys-color-primary-hsl), 0.08);
       background: var(--md-sys-color-surface-2);
       box-shadow: var(--md-sys-elevation-2);
     }
@@ -34,13 +33,11 @@ export const style = {
     color: var(--md-sys-color-primary);
 
     &:hover {
-      background-color: hsla(var(--md-sys-color-primary-hsl), 0.08);
+      box-shadow: var(--md-sys-elevation-1);
     }
 
-    &:active,
-    &:focus {
-      border-color: var(--md-sys-color-primary);
-      background-color: hsla(var(--md-sys-color-primary-hsl), 0.12);
+    &:active {
+      box-shadow: var(--md-sys-elevation-1);
     }
   `,
   filled: css`
@@ -65,7 +62,7 @@ export const style = {
     border: none;
 
     &:hover {
-      background-color: hsla(var(--md-sys-color-primary-hsl), 0.08);
+      box-shadow: var(--md-sys-elevation-1);
     }
 
     &:active {

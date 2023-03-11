@@ -12,10 +12,11 @@ import { Tag, Space } from '@oc/design';
 const App = () => {
   return (
     <Space size="large">
-      <Tag>Default</Tag>
-      <Tag>Tag 1</Tag>
-      <Tag>Tag 2</Tag>
-      <Tag>Complete</Tag>
+      <Tag variant="elevated">elevated</Tag>
+      <Tag variant="filled">filled</Tag>
+      <Tag variant="tonal">tonal</Tag>
+      <Tag variant="text">text</Tag>
+      <Tag variant="outlined">outlined</Tag>
     </Space>
   );
 };

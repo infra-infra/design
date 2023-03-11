@@ -1,34 +1,24 @@
 import React from 'react';
 import classNames from '../_util/classNames';
+import { input } from './style';
 
 interface InputType {
   className?: string;
-  round?: boolean;
   type?: string;
-  autoFocus?: boolean;
   placeholder?: string;
   value?: string;
   onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-function Input(props: InputType) {
-  const {
-    type = 'text',
-    className,
-    autoFocus = false,
-    placeholder,
-    value,
-    onChange,
-    round,
-  } = props;
+function Input(props: InputType): JSX.Element {
+  const { type = 'text', className, placeholder, value, onChange } = props;
 
   return type === 'textarea' ? (
     <textarea
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      autoFocus={autoFocus}
-      className={classNames('zzf-ipt', className)}
+      className={classNames(input, className)}
       rows={4}
     />
   ) : (
@@ -36,9 +26,8 @@ function Input(props: InputType) {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      autoFocus={autoFocus}
       type={type}
-      className={classNames('zzf-ipt', round && 'zzf-ipt-round', className)}
+      className={classNames(input, className)}
     />
   );
 }
