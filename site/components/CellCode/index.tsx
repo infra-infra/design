@@ -42,17 +42,19 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
     };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     const t = locales['zh-CN'];
-    const clipboard = new ClipboardJS(findDOMNode(this.btnCopy) as Element, {
-      text: () =>
-        ((this.codeEle as any as HTMLElement).querySelector('.language-js') as HTMLElement)
-          .innerText,
-    });
-    clipboard.on('success', (e) => {
-      e.clearSelection();
-      Message.success(t.copied);
-    });
+    if (this.btnCopy) {
+      const clipboard = new ClipboardJS(this.btnCopy, {
+        text: () =>
+          ((this.codeEle as never as HTMLElement).querySelector('.language-js') as HTMLElement)
+            .innerText,
+      });
+      clipboard.on('success', (e) => {
+        e.clearSelection();
+        Message.success(t.copied);
+      });
+    }
   }
 
   toggleCode = (e: any) => {
@@ -75,7 +77,6 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
           <span>
             <Button
               aria-describedby="code"
-              size="small"
               onClick={this.toggleCode}
               aria-label={t.collapse}
               variant="outlined"
@@ -86,12 +87,7 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
         </Tooltip>
         <Tooltip content={t.copy}>
           <span>
-            <Button
-              size="small"
-              ref={(ref: any) => (this.btnCopy = ref)}
-              variant="outlined"
-              aria-label={t.copy}
-            >
+            <Button ref={(ref: any) => (this.btnCopy = ref)} variant="outlined" aria-label={t.copy}>
               <IconCopy />
             </Button>
           </span>

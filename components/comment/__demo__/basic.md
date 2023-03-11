@@ -12,29 +12,28 @@ title: 基础用法
 A basic comment component with author, avatar, time and actions.
 
 ```js
-import React from "react";
-import { Comment } from "@oc/design";
+import React from 'react';
+import { Comment } from '@oc/design';
 
 const App = () => {
   return (
-      <>
+    <>
+      <Comment
+        author="Socrates"
+        avatar={'https://source.unsplash.com/1600x900/?nature,water&t=1'}
+        content="Comment body content.Comment body content.Comment body content.Comment body content."
+        datetime="1 hour"
+        actions={[<div>Action</div>]}
+      >
         <Comment
-                author="Socrates"
-                avatar={'https://source.unsplash.com/1600x900/?nature,water&t=1'}
-                content='Comment body content.Comment body content.Comment body content.Comment body content.'
-                datetime="1 hour"
-                actions={[<div>Action</div>]}
-        >
-          <Comment
-                  author="Socrates"
-                  avatar={'https://source.unsplash.com/1600x900/?nature,water&t=2'}
-                  content='Comment body content.'
-                  datetime="1 hour"
-                  actions={[<div>Action</div>]}
-          >
-          </Comment>
-        </Comment>
-      </>
+          author="Socrates"
+          avatar={'https://source.unsplash.com/1600x900/?nature,water&t=2'}
+          content="Comment body content."
+          datetime="1 hour"
+          actions={[<div>Action</div>]}
+        ></Comment>
+      </Comment>
+    </>
   );
 };
 

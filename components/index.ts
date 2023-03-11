@@ -10,6 +10,5 @@ export { Card } from './card';
 export { Input } from './input';
 export { Tag } from './tag';
 export { SvgIcon } from './SvgIcon';
-export { Loading } from './loading';
 export { Progress } from './progress';
 export { Popover } from './popover';

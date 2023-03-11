@@ -11,9 +11,9 @@ import { Input } from '@oc/design';
 
 const App = () => {
   return (
-          <>
-            <Input placeholder='placeholder'/>
-          </>
+    <>
+      <Input placeholder="placeholder" />
+    </>
   );
 };
 

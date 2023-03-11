@@ -9,8 +9,8 @@ title: 基本用法
 import { Alert } from '@oc/design';
 
 const App = () => {
-  return <Alert>Here is an example text</Alert>
-}
+  return <Alert>Here is an example text</Alert>;
+};
 
-export default App
+export default App;
 ```

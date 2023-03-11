@@ -1,5 +1,3 @@
-// only used by trigger. Plan to replace ../Portal
-
 import React, { useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { isServerRendering } from '../../_util/dom';
@@ -11,7 +9,7 @@ export interface PortalProps {
   children?: React.ReactNode;
 }
 
-function Portal(props: PortalProps) {
+function Portal(props: PortalProps): React.ReactPortal | null {
   const { getContainer, children } = props;
   const containerRef = useRef<HTMLElement | null>();
   const isFirstRender = useIsFirstRender();

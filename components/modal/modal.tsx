@@ -31,14 +31,13 @@ function Modal(props: ModalType) {
       <Portal>
         <div ref={containerRef} className={classNames('zzf-modal-mask')}>
           <div ref={ref} className="zzf-modal-container">
-            <header className="zzf-modal-header">
-              <div>{title}</div>
-              <IconClose className="zzf-model-close" onClick={onCancel} />
-            </header>
+            <header className="zzf-modal-header">{title}</header>
             <div>{children}</div>
             <footer className="zzf-modal-footer">
-              <Button onClick={onCancel}>取消</Button>
-              <Button type="primary" onClick={onConfirm}>
+              <Button variant="text" onClick={onCancel}>
+                取消
+              </Button>
+              <Button variant="text" onClick={onConfirm}>
                 确定
               </Button>
             </footer>

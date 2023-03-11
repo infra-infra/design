@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React,{ createElement } from 'react';
+import React, { createElement } from 'react';
 import CommonLayout from './components/CommonLayout';
 import useMenu from './components/useMenu';
 import IconDemo from './components/Icons';

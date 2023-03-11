@@ -11,14 +11,15 @@ import { Card } from '@oc/design';
 
 const App = () => {
   return (
-          <div className="card-container">
-            <Card variant='elevated'>123123</Card>
-          </div>
+    <div className="card-container">
+      <Card variant="elevated">123123</Card>
+    </div>
   );
 };
 
 export default App;
 ```
+
 ```css
 .card-container {
   background-color: #f2f3f5;

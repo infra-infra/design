@@ -5,7 +5,6 @@ title: 不同类型
 
 警告提示的类型有 `info`, `success`, `warning`, `error` 四种。
 
-
 ```js
 import { Alert } from '@oc/design';
 

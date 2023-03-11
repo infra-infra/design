@@ -1,7 +1,6 @@
-
 const config = {
-    verbose: true,
-    testEnvironment: "jsdom"
+  verbose: true,
+  testEnvironment: 'jsdom',
 };
 
 export default config;
