@@ -11,4 +11,5 @@ export { Input } from './input';
 export { Tag } from './tag';
 export { SvgIcon } from './SvgIcon';
 export { Progress } from './progress';
+export { Menu } from './menu';
 export { Popover } from './popover';
