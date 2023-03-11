@@ -10,10 +10,11 @@ import { Button,Space } from '@oc/design';
 
 const App = () => {
   return <Space>
-    <Button type="primary">Primary</Button>
-    <Button type="secondary">Secondary</Button>
-    <Button type="outline">Outline</Button>
-    <Button type="text">Text</Button>
+    <Button>filled</Button>
+    <Button variant='elevated' type="secondary">elevated</Button>
+    <Button variant="outlined">outlined</Button>
+    <Button variant="text">Text</Button>
+    <Button variant="tonal">tonal</Button>
   </Space>
 }
 

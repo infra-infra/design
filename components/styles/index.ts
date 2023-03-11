@@ -5,7 +5,6 @@ import '../layout/style';
 import '../space/style';
 import '../modal/style';
 import '../comment/style';
-import '../card/style';
 import '../input/style';
 import '../message/style';
 import '../tag/style';

@@ -4,12 +4,12 @@
 }
 .oc-tooltip {
   padding: 12px;
-  background-color: var(--overlay-alpha-80-reverse);
+  background-color: var(--md-sys-color-inverse-surface);
   font-size: 14px;
   border-radius: 8px;
   color: var(--primary-text-reverse);
   line-height: 1.5715;
-  box-shadow: 0 2px 4px 0 var(--shadow-5-reverse);
+  box-shadow: var(--md-sys-elevation-3);
   transition-property: opacity;
   transition-duration: var(--fds-duration-extra-extra-short-in);
   transition-timing-function: var(--fds-animation-fade-in);

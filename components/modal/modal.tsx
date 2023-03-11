@@ -14,6 +14,7 @@ type ModalType = {
   onConfirm?: () => void;
   onCancel?: () => void;
 };
+
 function Modal(props: ModalType) {
   const { title, children, visible, onConfirm = () => {}, onCancel = () => {} } = props;
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
