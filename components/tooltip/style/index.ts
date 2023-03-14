@@ -6,7 +6,7 @@ export const style = {
     background-color: var(--md-sys-color-inverse-surface);
     font-size: 14px;
     border-radius: 8px;
-    color: var(--primary-text-reverse);
+    color: var(--md-sys-color-inverse-on-surface);
     line-height: 1.5715;
     box-shadow: var(--md-sys-elevation-3);
     transition-property: opacity;

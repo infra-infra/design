@@ -12,17 +12,17 @@ export const style = css`
   appearance: none;
   border: none;
   background-color: transparent;
-  color: var(--accent);
+  color: var(--md-sys-color-primary);
 
   &::-webkit-progress-bar {
     background-color: transparent;
   }
 
   &::-webkit-progress-value {
-    background-color: var(--accent);
+    background-color: var(--md-sys-color-primary);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--accent);
+    background-color: var(--md-sys-color-primary);
   }
 `;

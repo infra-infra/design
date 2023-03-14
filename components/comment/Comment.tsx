@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { comment, avatarStyle, container, actionsStyle, contentStyle, authorStyle } from './style';
 
 interface CommentProps {
   author?: ReactNode;
@@ -8,20 +9,21 @@ interface CommentProps {
   children?: ReactNode;
 }
 
-function Comment(props: CommentProps) {
+function Comment(props: CommentProps): JSX.Element {
   const { author, avatar, content, actions, children } = props;
   return (
-    <div className="zzf-comment">
-      <img className="zzf-comment-avatar" src={avatar} alt={avatar} />
+    <div className={comment}>
+      <img className={avatarStyle} src={avatar} alt={avatar} />
       <div>
-        <div className="zzf-comment-container">
-          <header className="zzf-comment-author">{author}</header>
-          <p className="zzf-comment-content">{content}</p>
+        <div className={container}>
+          <header className={authorStyle}>{author}</header>
+          <p className={contentStyle}>{content}</p>
         </div>
-        <ul className="zzf-comment-actions">{actions}</ul>
+        <ul className={actionsStyle}>{actions}</ul>
         <span>{children}</span>
       </div>
     </div>
   );
 }
+
 export default Comment;

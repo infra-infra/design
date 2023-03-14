@@ -1,7 +1,6 @@
 :root,
 [data-color-mode='light'] {
   --md-sys-color-primary: var(--md-sys-color-primary-light);
-  --md-sys-color-primary-hsl: var(--md-sys-color-primary-light-hsl);
   --md-sys-color-on-primary: var(--md-sys-color-on-primary-light);
   --md-sys-color-primary-container: var(--md-sys-color-primary-container-light);
   --md-sys-color-on-primary-container: var(--md-sys-color-on-primary-container-light);
@@ -20,7 +19,6 @@
   --md-sys-color-background: var(--md-sys-color-background-light);
   --md-sys-color-on-background: var(--md-sys-color-on-background-light);
   --md-sys-color-surface: var(--md-sys-color-surface-light);
-  --md-sys-color-surface-hsl: var(--md-sys-color-surface-light-hsl);
   --md-sys-color-on-surface: var(--md-sys-color-on-surface-light);
   --md-sys-color-surface-variant: var(--md-sys-color-surface-variant-light);
   --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-light);
@@ -33,17 +31,28 @@
   --md-sys-color-outline-variant: var(--md-sys-color-outline-variant-light);
   --md-sys-color-scrim: var(--md-sys-color-scrim-light);
   /*surface*/
-  /*--md-sys-color-surface-1: hsla(var(--md-sys-color-surface-hsl), 1.05);*/
-  --md-sys-color-surface-1: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), var(--md-sys-color-surface);
-  --md-sys-color-surface-2: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), var(--md-sys-color-surface);
-  /*--md-sys-color-surface-2: hsla(var(--md-sys-color-surface-hsl), 1.08);*/
-  --md-sys-color-surface-3: hsla(var(--md-sys-color-surface-hsl), 0.11);
-  --md-sys-color-surface-4: hsla(var(--md-sys-color-surface-hsl), 0.12);
-  --md-sys-color-surface-5: hsla(var(--md-sys-color-surface-hsl), 0.14);
+  --md-sys-color-surface-1: rgb(var(--md-sys-color-primary-rgb) / 0.05);
+  --md-sys-color-surface-2: rgb(var(--md-sys-color-primary-rgb) / 0.08);
+  --md-sys-color-surface-3: rgb(var(--md-sys-color-primary-rgb) / 0.11);
+  --md-sys-color-surface-4: rgb(var(--md-sys-color-primary-rgb) / 0.12);
+  --md-sys-color-surface-5: rgb(var(--md-sys-color-primary-rgb) / 0.14);
   /*elevation*/
-  --md-sys-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-0: 0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-1: 0px 3px 1px -2px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 2px 2px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 1px 5px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-2: 0px 2px 4px -1px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 4px 5px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 1px 10px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-3: 0px 5px 5px -3px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 8px 10px 1px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 3px 14px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-4: 0px 5px 5px -3px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 8px 10px 1px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 3px 14px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-5: 0px 8px 10px -6px rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 16px 24px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 6px 30px 5px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
 }

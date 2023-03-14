@@ -13,6 +13,7 @@ export const style = {
     display: 'flex',
     alignItems: 'center',
     padding: '0 12px',
+    fontSize: '14px',
     '&:hover': {
       color: 'var(--md-sys-color-on-surface)',
       background:

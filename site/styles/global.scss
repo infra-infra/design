@@ -1,23 +1,14 @@
 @import "reset.css";
-@import "../../components/styles/theme";
 @import "../../components/styles/theme.css";
 @import "./highlight";
-:root,
-[data-color-mode="light"] {
-  @include colors-light;
-}
-
-[data-color-mode="dark"] {
-  @include colors-dark;
-}
 .oc-icon{
   width: 1em;
   height: 1em;
   vertical-align: -2px;
 }
 body {
-  color: var(--primary-text);
-  background-color: var(--wash);
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
   Helvetica, Arial, sans-serif;

@@ -17,7 +17,7 @@ type ModalType = {
 
 function Modal(props: ModalType): JSX.Element {
   const { title, children, visible, onConfirm, onCancel } = props;
-  const ref = useOutsideClick<HTMLDivElement>(onCancel);
+  const ref = useOutsideClick(onCancel);
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -30,6 +30,7 @@ function Modal(props: ModalType): JSX.Element {
     >
       <Portal>
         <div ref={containerRef} className={classNames(style.backDrop)}>
+          {/* @ts-ignore */}
           <div ref={ref} className={style.container}>
             <header className="zzf-modal-header">{title}</header>
             <div>{children}</div>

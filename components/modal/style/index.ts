@@ -11,7 +11,7 @@ export const style = {
     transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   `,
   container: css`
-    background-color: var(--card-background);
+    background-color: var(--md-sys-color-surface);
     position: relative;
     display: flex;
     min-width: 280px;

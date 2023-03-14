@@ -2,16 +2,15 @@ import React from 'react';
 import classNames from '../_util/classNames';
 import { tagStyle, style } from './style';
 
-type VariantEnum = 'outlined' | 'elevated' | 'filled' | 'tonal' | 'text';
-
 type TagType = {
   children: React.ReactNode;
-  variant?: VariantEnum;
+  variant?: 'outlined' | 'elevated' | 'filled' | 'tonal' | 'text';
   className?: string;
   onClick?: () => void;
 };
 
-function Tag({ children, variant = 'outlined', onClick, className }: TagType): JSX.Element {
+function Tag(props: TagType): JSX.Element {
+  const { children, variant = 'outlined', onClick, className } = props;
   return (
     <span
       role="presentation"

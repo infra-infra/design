@@ -5,6 +5,7 @@ import { buttonStyle, style } from './style';
 type VariantEnum = 'outlined' | 'elevated' | 'filled' | 'tonal' | 'text';
 
 interface ButtonProps {
+  className?: string;
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent) => void;
   onMouseEnter?: MouseEventHandler<HTMLButtonElement>;
@@ -16,7 +17,7 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = functio
   props: ButtonProps,
   ref
 ) {
-  const { variant = 'filled', children, onClick, onMouseEnter, onMouseLeave } = props;
+  const { variant = 'filled', children, onClick, onMouseEnter, onMouseLeave, className } = props;
 
   return (
     <button
@@ -25,7 +26,7 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = functio
       onMouseLeave={onMouseLeave}
       ref={ref}
       onClick={onClick}
-      className={classNames(buttonStyle, style[variant])}
+      className={classNames(buttonStyle, style[variant], className)}
     >
       {children}
     </button>

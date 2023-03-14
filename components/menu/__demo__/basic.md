@@ -11,10 +11,7 @@ import { Menu, Button } from '@oc/design';
 function App() {
   const [visible, setVisible] = React.useState(false);
   return (
-    <Menu items={[
-        <p>item 1</p>, 
-        <p>item 2</p>
-    ]}>
+    <Menu items={[<p>item 1</p>, <p>item 2</p>]}>
       <Button>menu</Button>
     </Menu>
   );

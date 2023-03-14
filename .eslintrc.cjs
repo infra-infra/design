@@ -38,6 +38,7 @@ module.exports = {
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['error'],
         'jsx-a11y/anchor-is-valid': ['error', { components: ['Link'], specialLink: ['hrefLeft', 'hrefRight'], aspects: ['invalidHref', 'preferButton'] }],
+        "@typescript-eslint/explicit-function-return-type": [ 'error', { allowExpressions: true}]
     },
     settings: {
         react: {

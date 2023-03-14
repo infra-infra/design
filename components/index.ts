@@ -13,3 +13,7 @@ export { SvgIcon } from './SvgIcon';
 export { Progress } from './progress';
 export { Menu } from './menu';
 export { Popover } from './popover';
+export { Tabs, Tab } from './tabs';
+export { List, ListItem } from './list';
+export { NavigationRail } from './navigation-rail';
+export { IconButton } from './icon-button';

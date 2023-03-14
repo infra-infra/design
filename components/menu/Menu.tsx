@@ -6,7 +6,7 @@ import { Position } from '../tooltip/Position';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import { style } from './style';
 
-function Menu({ items, children, placement, defaultVisible = false }: any) {
+function Menu({ items, children, placement, defaultVisible = false }: any): JSX.Element {
   const nodeEl = useRef<HTMLElement>(null);
   const [isOpen, show, hide, toggle] = useToggle(defaultVisible);
   const ref = useOutsideClick<HTMLDivElement>(hide);
@@ -29,8 +29,9 @@ function Menu({ items, children, placement, defaultVisible = false }: any) {
         <Portal>
           <Position ref={ref} triggerRef={nodeEl} placement={placement}>
             <ul className={style.container}>
-              {items.map((item: ReactNode) =>
-                React.createElement('li', { className: style.item }, item)
+              {items.map((item: ReactNode, index: number) =>
+                // eslint-disable-next-line react/no-array-index-key
+                React.createElement('li', { className: style.item, key: index }, item)
               )}
             </ul>
           </Position>

@@ -1,4 +1,3 @@
-// pick item from object
 export default function pick<T extends object, K extends keyof T>(
   obj: T,
   keys: Array<K | string>
@@ -10,26 +9,5 @@ export default function pick<T extends object, K extends keyof T>(
       clone[k] = obj[k];
     }
   });
-  return clone;
-}
-
-export function pickDataAttributes<T extends object, K extends keyof T>(
-  obj: T
-): { [key in K]: any } {
-  const clone = {} as { [key in K]: any };
-
-  obj &&
-    Object.keys(obj).forEach((key) => {
-      const k = String(key);
-      if (k.indexOf('data-') === 0) {
-        // @ts-ignore
-        clone[k] = obj[k];
-      }
-      if (k.indexOf('aria-') === 0) {
-        // @ts-ignore
-        clone[k] = obj[k];
-      }
-    });
-
   return clone;
 }

@@ -86,6 +86,8 @@ const getPosition = (
         position.left += triggerRect.left + triggerRect.width;
         position.top += top + triggerRect.top + dHeight;
         break;
+      default:
+        break;
     }
   }
   return position;

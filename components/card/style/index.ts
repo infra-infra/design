@@ -6,7 +6,7 @@ export const card = css`
 `;
 export const style = {
   outlined: css`
-    background-color: var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface-1);
     border: 1px solid var(--md-sys-color-outline);
     &:hover {
       border-color: var(--md-sys-color-outline);
@@ -19,7 +19,8 @@ export const style = {
     box-shadow: var(--md-sys-elevation-2);
   `,
   filled: css`
-    background-color: var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-surface-1);
+    color: var(--md-sys-color-on-surface);
     border: 1px solid var(--md-sys-color-outline-variant);
   `,
 };
