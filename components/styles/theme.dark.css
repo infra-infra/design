@@ -21,6 +21,8 @@
   --md-sys-color-on-surface: var(--md-sys-color-on-surface-dark);
   --md-sys-color-surface-variant: var(--md-sys-color-surface-variant-dark);
   --md-sys-color-on-surface-variant: var(--md-sys-color-on-surface-variant-dark);
+  --md-sys-on-surface-variant-2: linear-gradient(0deg,hsla(140,3%,77%,.08),hsla(140,3%,77%,.08));
+  --md-sys-on-surface-variant-4: linear-gradient(0deg,hsla(140,3%,77%,.12),hsla(140,3%,77%,.12));
   --md-sys-color-outline: var(--md-sys-color-outline-dark);
   --md-sys-color-inverse-on-surface: var(--md-sys-color-inverse-on-surface-dark);
   --md-sys-color-inverse-surface: var(--md-sys-color-inverse-surface-dark);
@@ -29,12 +31,19 @@
   --md-sys-color-surface-tint: var(--md-sys-color-surface-tint-dark);
   --md-sys-color-outline-variant: var(--md-sys-color-outline-variant-dark);
   --md-sys-color-scrim: var(--md-sys-color-scrim-dark);
+  --md-sys-color-on-surface-variant-2: linear-gradient(0deg,hsla(140,3%,77%,.08),hsla(140,3%,77%,.08));
+  --md-sys-color-on-surface-variant-4: linear-gradient(0deg,hsla(140,3%,77%,.12),hsla(140,3%,77%,.12));
+  --md-sys-color-on-surface-2: linear-gradient(0deg,hsla(0,0%,89%,.08),hsla(0,0%,89%,.08)),var(--md-sys-color-secondary-container);
+  --md-sys-color-on-surface-4: linear-gradient(0deg,hsla(0,0%,89%,.12),hsla(0,0%,89%,.12)),var(--md-sys-color-secondary-container);
+
+  --md-sys-color-mask: rgba(0,0,0,0.2);
+  --md-sys-color-utility-outline: #8e918f;
   /*surface*/
-  --md-sys-color-surface-1: rgb(var(--md-sys-color-primary-rgb) / 0.05);
-  --md-sys-color-surface-2: rgb(var(--md-sys-color-primary-rgb) / 0.08);
-  --md-sys-color-surface-3: rgb(var(--md-sys-color-primary-rgb) / 0.11);
-  --md-sys-color-surface-4: rgb(var(--md-sys-color-primary-rgb) / 0.12);
-  --md-sys-color-surface-5: rgb(var(--md-sys-color-primary-rgb) / 0.14);
+  --md-sys-color-surface-1: #28292a;
+  --md-sys-color-surface-2: #2d2f31;
+  --md-sys-color-surface-3: #333438;
+  --md-sys-color-surface-4: #34363a;
+  --md-sys-color-surface-5: #383a3e;
 
   /*elevation*/
   --md-sys-elevation-0: 0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.2),

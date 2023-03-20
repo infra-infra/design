@@ -16,4 +16,5 @@ export { Popover } from './popover';
 export { Tabs, Tab } from './tabs';
 export { List, ListItem } from './list';
 export { NavigationRail } from './navigation-rail';
+export { NavigationDraw } from './navigation-draw';
 export { IconButton } from './icon-button';

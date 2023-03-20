@@ -6,18 +6,18 @@ title: 基本用法
 警告提示，展现需要关注的信息，适用于简短的警告提示。
 
 ```js
-import { Button, Space } from '@oc/design';
+import { IconButton, Space } from '@oc/design';
 
 const App = () => {
   return (
     <Space>
-      <Button>filled</Button>
-      <Button variant="elevated" type="secondary">
+      <IconButton>filled</IconButton>
+      <IconButton variant="elevated" type="secondary">
         elevated
-      </Button>
-      <Button variant="outlined">outlined</Button>
-      <Button variant="text">Text</Button>
-      <Button variant="tonal">tonal</Button>
+      </IconButton>
+      <IconButton variant="outlined">outlined</IconButton>
+      <IconButton variant="text">Text</IconButton>
+      <IconButton variant="tonal">tonal</IconButton>
     </Space>
   );
 };

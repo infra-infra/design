@@ -5,7 +5,7 @@ export const style = {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--md-sys-color-surface-1);
+    background-color: var(--md-sys-color-surface-2);
     width: 80px;
     height: 100vh;
   `,

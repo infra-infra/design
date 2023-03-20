@@ -21,6 +21,7 @@ function Tabs(props: TabsProps): JSX.Element {
     <div
       className={classNames(
         css({
+          width: '100%',
           display: 'flex',
           backgroundColor: 'var(--md-sys-color-surface-1)',
           height: '48px',
