@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
+import type { ReactPortal } from 'react';
 
-interface PortalType {
-  children: React.ReactNode;
-}
+type PortalProps = {
+  children: ReactNode;
+};
 
-function Portal({ children }: PortalType): React.ReactPortal | null {
-  const [container, setContainer] = useState<HTMLElement>();
+function Portal({ children }: PortalProps): ReactPortal | null {
+  const containerElement = useMemo(() => document.createElement('div'), []);
 
   useEffect(() => {
-    const el = document.createElement('div');
-    el.classList.add('portal-container');
-    document.body.appendChild(el);
-    setContainer(el);
+    containerElement.setAttribute('portal-container-id', String(Date.now()));
+    document.body.appendChild(containerElement);
     return () => {
-      document.body.removeChild(el);
+      document.body.removeChild(containerElement);
     };
   }, []);
 
-  return container ? ReactDOM.createPortal(children, container) : null;
+  return ReactDOM.createPortal(children, containerElement);
 }
 
 export { Portal };

@@ -25,21 +25,28 @@ export const style = {
     display: block;
   `,
   transition: css`
-    &-enter {
-      transform: translateX(0);
+    &-enter,
+    &-appear {
+      transform: translateX(-100%);
     }
 
-    &-enter-active {
-      transform: translateX(-100%);
+    &-enter-active,
+    &-appear-active {
+      transform: translateX(0);
+      transition: transform 300ms ease-in-out;
+    }
+
+    &-enter-done {
+      transform: translateX(0);
       transition: transform 300ms ease-in-out;
     }
 
     &-exit {
-      transform: translateX(-100%);
+      transform: translateX(0);
     }
 
     &-exit-active {
-      transform: translateX(0);
+      transform: translateX(-100%);
       transition: transform 300ms ease-in-out;
     }
   `,

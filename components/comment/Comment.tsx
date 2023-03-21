@@ -19,7 +19,7 @@ function Comment(props: CommentProps): JSX.Element {
           <header className={authorStyle}>{author}</header>
           <p className={contentStyle}>{content}</p>
         </div>
-        <ul className={actionsStyle}>{actions}</ul>
+        <div className={actionsStyle}>{actions}</div>
         <span>{children}</span>
       </div>
     </div>

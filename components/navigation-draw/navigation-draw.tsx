@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import React, { useRef } from 'react';
+import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
 import { style } from './style';
@@ -7,17 +7,16 @@ import classNames from '../_util/classNames';
 import useOutsideClick from '../_hooks/useOutsideClick';
 
 type NavigationDrawProps = {
-  className?: string;
   children?: ReactNode;
   visible?: boolean;
-  onConfirm?: () => void;
   onCancel?: () => void;
 };
 
 function NavigationDraw(props: NavigationDrawProps): JSX.Element {
-  const { className, children, visible, onConfirm, onCancel } = props;
-  const containerRef = useRef<HTMLDivElement>(null);
-  const ref = useOutsideClick(onCancel);
+  const { children, visible, onCancel } = props;
+  const containerRef = useOutsideClick<HTMLDivElement>(() => {
+    onCancel?.();
+  });
 
   return (
     <CSSTransition
@@ -25,15 +24,13 @@ function NavigationDraw(props: NavigationDrawProps): JSX.Element {
       classNames={style.transition}
       unmountOnExit
       timeout={300}
+      appear
       in={visible}
     >
       <Portal>
-        <div ref={containerRef}>
-          <div className={classNames(style.mask, visible && style.active)} />
-          {/* @ts-ignore */}
-          <div ref={ref} className={style.container}>
-            {children}
-          </div>
+        <div className={classNames(style.mask, visible && style.active)} />
+        <div ref={containerRef} className={style.container}>
+          {children}
         </div>
       </Portal>
     </CSSTransition>

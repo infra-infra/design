@@ -31,8 +31,7 @@ export const container = css`
 export const actionsStyle = css`
   margin-top: 3px;
   font-size: 13px;
-  display: flex;
-  list-style: none;
+  padding: 0 12px;
 `;
 export const contentStyle = css`
   font-size: 15px;

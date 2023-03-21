@@ -77,24 +77,21 @@ export const style = {
   `,
   transition: css`
     &-enter {
-      opacity: 0;
-      transform: scale(0.9);
+      transform: translateX(-100%);
     }
 
     &-enter-active {
-      opacity: 1;
       transform: translateX(0);
-      transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
 
     &-exit {
-      opacity: 1;
+      transform: translateX(0);
     }
 
     &-exit-active {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transform: translateX(-100%);
+      transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
   `,
 };
