@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 基本用法
+title: 基本用法1
 ---
 
 警告提示，展现需要关注的信息，适用于简短的警告提示。
@@ -25,9 +25,7 @@ const App = () => {
         'bottomLeft',
         'bottomRight',
       ].map((_) => (
-        <Tooltip key={_} placement={_} content={<span className="word">
-            {`This is ${_} content\nThis is ${_} content`}
-        </span>}>
+        <Tooltip key={_} placement={_} content={`This is ${_} content`}>
           <Button>{_}</Button>
         </Tooltip>
       ))}
@@ -35,9 +33,4 @@ const App = () => {
   );
 };
 export default App;
-```
-```css
-.word {
-    white-space: pre-wrap;
-}
 ```

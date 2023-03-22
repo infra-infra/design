@@ -1,7 +1,9 @@
-import React, { ReactNode, RefObject } from 'react';
+import React, { ReactNode, RefObject, useEffect, useState } from 'react';
+import { css } from '@emotion/css';
 import { getPlacement, Placement } from './getPlacement';
 import { useClientRect } from '../_hooks/useClientRect';
 import classNames from '../_util/classNames';
+import { usePosition } from '../_hooks/usePosition';
 
 interface IPositionProps {
   triggerRef: RefObject<HTMLElement>;
@@ -16,18 +18,19 @@ const Position: React.ForwardRefRenderFunction<HTMLDivElement, IPositionProps> =
 ): JSX.Element {
   const triggerRect = useClientRect(triggerRef);
   const contentRect = useClientRect(ref as RefObject<HTMLElement>);
-
-  const position = getPlacement({ triggerRect, contentRect, placement });
+  const position = usePosition({ triggerRect, contentRect, placement });
 
   return (
     <div
-      className={classNames('oc-position', className)}
-      style={{
-        position: 'absolute',
-        left: position.left,
-        top: position.top,
-        willChange: 'transform',
-      }}
+      className={classNames(
+        css({
+          position: 'absolute',
+          left: position.left,
+          top: position.top,
+          willChange: 'transform',
+        }),
+        className
+      )}
       ref={ref}
     >
       {children}

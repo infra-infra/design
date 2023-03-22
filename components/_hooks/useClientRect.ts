@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import { RefObject, useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import debounce from '../_util/debounce';
 
 export const useClientRect = (rectRef: RefObject<HTMLElement>): DOMRect | undefined => {
@@ -9,8 +9,11 @@ export const useClientRect = (rectRef: RefObject<HTMLElement>): DOMRect | undefi
     }
   }, [rectRef]);
 
-  useEffect(() => {
-    updateClientRect();
+  useLayoutEffect(() => {
+    // todo 优雅解决setTimeout问题
+    setTimeout(() => {
+      updateClientRect();
+    }, 0);
     const debouncedUpdateClientRect = debounce(updateClientRect, 100);
     window.addEventListener('resize', debouncedUpdateClientRect);
     window.addEventListener('scroll', debouncedUpdateClientRect);
@@ -18,7 +21,7 @@ export const useClientRect = (rectRef: RefObject<HTMLElement>): DOMRect | undefi
       window.removeEventListener('resize', debouncedUpdateClientRect);
       window.removeEventListener('scroll', debouncedUpdateClientRect);
     };
-  }, [updateClientRect]);
+  }, [rectRef, updateClientRect]);
 
   return clientRect;
 };
