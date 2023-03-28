@@ -5,16 +5,15 @@ import { useToggle } from '../_hooks/useToggle';
 import { Position } from '../tooltip/Position';
 import useOutsideClick from '../_hooks/useOutsideClick';
 
-function Popover({ content, children, placement, defaultVisible = false }: any) {
+function Popover({ content, children, placement, visible = false, show,hide }: any) {
   const nodeEl = useRef<HTMLElement>(null);
-  const [isOpen, show, hide, toggle] = useToggle(defaultVisible);
   const ref = useOutsideClick<HTMLDivElement>(hide);
 
   return (
     <>
       {React.cloneElement(React.Children.only(children), {
         ref: nodeEl,
-        onClick: toggle,
+        onClick: show,
       })}
       <CSSTransition
         nodeRef={ref}
@@ -22,7 +21,7 @@ function Popover({ content, children, placement, defaultVisible = false }: any) 
         classNames="oc-transition"
         unmountOnExit
         mountOnEnter
-        in={isOpen}
+        in={visible}
         timeout={300}
       >
         <Portal>

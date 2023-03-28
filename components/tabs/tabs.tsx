@@ -5,7 +5,7 @@ import classNames from '../_util/classNames';
 interface TabsProps {
   children: React.ReactNode;
   onChange?: (key: string) => void;
-  className: string;
+  className?: string;
 }
 
 function Tabs(props: TabsProps): JSX.Element {

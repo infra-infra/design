@@ -9,7 +9,6 @@ interface ButtonProps {
   onClick?: () => void;
 }
 const item = css`
-  background-color: var(--md-sys-color-surface-1);
   padding: 12px 0;
   display: flex;
   width: 100%;

@@ -1,3 +1,4 @@
+import { cx } from '@emotion/css';
 import React from 'react';
 import classNames from '../_util/classNames';
 import { tagStyle, style } from './style';
@@ -15,7 +16,7 @@ function Tag(props: TagType): JSX.Element {
     <span
       role="presentation"
       onClick={onClick}
-      className={classNames(tagStyle, style[variant], className)}
+      className={cx(tagStyle, style[variant], className)}
     >
       {children}
     </span>

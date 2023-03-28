@@ -1,18 +1,18 @@
 import { css } from '@emotion/css';
 
 export const tagStyle = css`
-  border-radius: 8px;
-  height: 40px;
-  padding: 0 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+    border-radius: 8px;
+    height: 32px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 `;
 export const style = {
   elevated: css`
     background: var(--md-sys-color-surface-1);
     box-shadow: var(--md-sys-elevation-1);
-    color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-surface);
     line-height: 20px;
     font-weight: 500;
     font-size: 14px;
@@ -33,10 +33,11 @@ export const style = {
     background-color: transparent;
     border: 1px solid var(--md-sys-color-outline);
     box-shadow: var(--md-sys-elevation-0);
-    color: var(--md-sys-color-primary);
-
+    color: var(--md-sys-color-on-surface);
+    transition: box-shadow 0.3s ease-in-out 0s;
     &:hover {
       box-shadow: var(--md-sys-elevation-1);
+      color: var(--md-sys-color-on-surface-variant);
     }
 
     &:active {
@@ -46,7 +47,7 @@ export const style = {
   filled: css`
     box-shadow: var(--md-sys-elevation-0);
     background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
+    color: var(--md-sys-color-on-surface);
     border: none;
 
     &:hover {
@@ -60,7 +61,7 @@ export const style = {
     }
   `,
   text: css`
-    color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-surface);
     background-color: transparent;
     border: none;
 

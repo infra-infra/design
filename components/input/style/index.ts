@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 
 export const input = css`
-  height: 56px;
+  min-height: 56px;
   font-size: 14px;
   line-height: 20px;
   color: var(--primary-text);

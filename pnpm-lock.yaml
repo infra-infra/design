@@ -13,7 +13,7 @@ specifiers:
   '@emotion/react': ^11.10.6
   '@multiavatar/multiavatar': ^1.0.7
   '@oc/doc-loader': ^0.0.3
-  '@oc/icon': ^0.0.15
+  '@oc/icon': ^0.0.18
   '@testing-library/react': ^14.0.0
   '@types/jest': ^29.5.0
   '@types/node': ^18.15.3
@@ -85,7 +85,7 @@ devDependencies:
   '@babel/runtime-corejs3': 7.21.0
   '@multiavatar/multiavatar': 1.0.7
   '@oc/doc-loader': 0.0.3
-  '@oc/icon': 0.0.15
+  '@oc/icon': 0.0.18
   '@types/jest': 29.5.0
   '@types/node': 18.15.3
   '@types/react': 18.0.28
@@ -2472,8 +2472,8 @@ packages:
       - supports-color
     dev: true
 
-  /@oc/icon/0.0.15:
-    resolution: {integrity: sha512-iF9CtImwCkThR4s0AqO/cFyegOQ63njSQEsozUwvLdYe9sXMiNUBvGai3Eq8hsLNiLaToheBRvlIoY8mODgsng==}
+  /@oc/icon/0.0.18:
+    resolution: {integrity: sha512-JSGn5oUWeRjTuCNIvuJaoQKesYOHITT+hOPeNwd7EdpftqEkbIifA1MZ0O6aXdSdfXdOc5Ibw2TMIchMAfnDJA==}
     dev: true
 
   /@polka/url/1.0.0-next.21:

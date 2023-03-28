@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -55,7 +55,7 @@
     "@babel/runtime-corejs3": "^7.21.0",
     "@multiavatar/multiavatar": "^1.0.7",
     "@oc/doc-loader": "^0.0.3",
-    "@oc/icon": "^0.0.15",
+    "@oc/icon": "^0.0.18",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
