@@ -28,7 +28,7 @@ const getPosition = (
   contentRect: DOMRect | undefined,
   placement: Placement
 ) => {
-  const top = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+  const top = Math.max(document.documentElement.scrollTop, document.body.scrollTop, window.scrollY);
   const left = document.documentElement.scrollLeft;
   const position = {
     top: 0,
@@ -38,9 +38,6 @@ const getPosition = (
     const dWidth = contentRect.width - triggerRect.width;
     const dHeight = triggerRect.height - contentRect.height;
     const calculatePosition = (placement: Placement) => {
-      if (placement === 'topLeft') {
-        console.log(1, top, 2, triggerRect.top, 3, contentRect.height)
-      }
       switch (placement) {
         case 'top':
           position.left = left + triggerRect.left - dWidth / 2;
@@ -93,7 +90,7 @@ const getPosition = (
         default:
           break;
       }
-    }
+    };
     calculatePosition(placement);
     // 边界检查和调整
     const windowWidth = window.innerWidth;
@@ -114,7 +111,6 @@ const getPosition = (
     };
 
     let adjustedPlacement = placement;
-
     // 检查左右边界
     if (position.left < 0 || position.left + contentRect.width > windowWidth) {
       if (adjustedPlacement.startsWith('left')) {
@@ -125,18 +121,17 @@ const getPosition = (
     }
 
     // 检查上下边界
-    if (position.top < 0 || position.top + contentRect.height > windowHeight) {
+    if (position.top < 0 || position.top - top + contentRect.height > windowHeight) {
       if (adjustedPlacement.startsWith('top')) {
         adjustedPlacement = oppositePlacementMap[adjustedPlacement];
       } else if (adjustedPlacement.startsWith('bottom')) {
         adjustedPlacement = oppositePlacementMap[adjustedPlacement];
       }
     }
-    console.log(adjustedPlacement, placement)
     // 如果调整后的位置与初始位置不同，则重新计算位置
     if (adjustedPlacement !== placement) {
-      position.left = 0
-      position.top = 0
+      position.left = 0;
+      position.top = 0;
       calculatePosition(adjustedPlacement);
     }
   }

@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
-import { useToggle } from '../_hooks/useToggle';
 import { Position } from '../tooltip/Position';
 import useOutsideClick from '../_hooks/useOutsideClick';
 
-function Popover({ content, children, placement, visible = false, show,hide }: any) {
+function Popover({ content, children, placement, visible = false, show, hide }: any) {
   const nodeEl = useRef<HTMLElement>(null);
   const ref = useOutsideClick<HTMLDivElement>(hide);
 

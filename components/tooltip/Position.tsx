@@ -1,6 +1,6 @@
-import React, { ReactNode, RefObject, useEffect, useState } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import { css } from '@emotion/css';
-import { getPlacement, Placement } from './getPlacement';
+import { Placement } from './getPlacement';
 import { useClientRect } from '../_hooks/useClientRect';
 import classNames from '../_util/classNames';
 import { usePosition } from '../_hooks/usePosition';
