@@ -2,7 +2,7 @@ import React, { ForwardRefRenderFunction, MouseEventHandler } from 'react';
 import classNames from '../_util/classNames';
 import { iconButtonStyle, style } from './style';
 
-type VariantEnum = 'outlined' | 'filled';
+type VariantEnum = 'outlined' | 'filled' | 'default';
 
 interface IconButtonProps {
   className?: string;
@@ -24,7 +24,7 @@ const IconButton: ForwardRefRenderFunction<HTMLButtonElement, IconButtonProps> =
         ref={ref}
         type="button"
         onClick={onClick}
-        className={classNames(iconButtonStyle, style[variant], className)}
+        className={classNames(style[variant], className)}
       >
         {children}
       </button>

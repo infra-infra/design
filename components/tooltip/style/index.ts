@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 
 export const style = {
   tooltip: css`
+    z-index: 999;
     padding: 12px;
     background-color: var(--md-sys-color-inverse-surface);
     font-size: 14px;
