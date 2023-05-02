@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -111,6 +111,7 @@
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
+    "@oc/design": "^0.0.21",
     "@testing-library/react": "^14.0.0",
     "react-transition-group": "^4.4.5"
   }
