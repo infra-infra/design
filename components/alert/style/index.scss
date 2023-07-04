@@ -1,0 +1,16 @@
+@import '../../styles/_prefix.scss';
+
+@include component-prefix('alert') {
+  padding: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  &-success {
+    background-color: var(--bgColor-success-muted);
+    border-color: var(--borderColor-success-muted);
+  }
+  &-default {
+    background-color: var(--bgColor-accent-muted);
+    border-color: var(--borderColor-accent-muted);
+  }
+}

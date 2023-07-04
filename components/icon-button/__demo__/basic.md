@@ -3,15 +3,14 @@ order: 0
 title: 基本用法
 ---
 
-警告提示，展现需要关注的信息，适用于简短的警告提示。
-
+xxxxxx
 ```js
 import { IconButton, Space } from '@oc/design';
-
+const Icon = ()=> <span>abc</span>
 const App = () => {
   return (
     <Space>
-      <IconButton>filled</IconButton>
+      <IconButton icon={Icon}/>
       <IconButton variant="elevated" type="secondary">
         elevated
       </IconButton>

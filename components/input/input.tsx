@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from '../_util/classNames';
-import { input } from './style';
+import getPrefix from '../_util/getPrefix';
 
 interface InputType {
   className?: string;
@@ -18,7 +18,7 @@ function Input(props: InputType): JSX.Element {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={classNames(input, className)}
+      className={classNames(getPrefix('input'), className)}
       rows={4}
     />
   ) : (
@@ -27,7 +27,7 @@ function Input(props: InputType): JSX.Element {
       onChange={onChange}
       placeholder={placeholder}
       type={type}
-      className={classNames(input, className)}
+      className={classNames(getPrefix('input'), className)}
     />
   );
 }

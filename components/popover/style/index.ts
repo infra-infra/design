@@ -1,1 +1,1 @@
-import './popover.scss';
+import './index.scss';

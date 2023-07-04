@@ -1,9 +1,9 @@
 ---
 order: 0
-title: 基本用法
+title: 基础
 ---
 
-警告提示，展现需要关注的信息，适用于简短的警告提示。
+按钮的 type 分别为 default、tertiary、primary、info、success、warning 和 error。
 
 ```js
 import { Button, Space } from '@oc/design';

@@ -74,19 +74,14 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
       <div className="arco-code-operations">
         <Tooltip content={showAll ? t.collapse : t.expand}>
           <span>
-            <Button
-              aria-describedby="code"
-              onClick={this.toggleCode}
-              aria-label={t.collapse}
-              variant="outlined"
-            >
+            <Button aria-describedby="code" onClick={this.toggleCode} aria-label={t.collapse}>
               <IconCode fontSize={16} />
             </Button>
           </span>
         </Tooltip>
         <Tooltip content={t.copy}>
           <span>
-            <Button ref={(ref: any) => (this.btnCopy = ref)} variant="outlined" aria-label={t.copy}>
+            <Button ref={(ref: any) => (this.btnCopy = ref)} aria-label={t.copy}>
               <IconCopy fontSize={16} />
             </Button>
           </span>

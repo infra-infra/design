@@ -53,6 +53,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
     "@babel/runtime-corejs3": "^7.21.0",
+    "@emotion/css": "^11.11.2",
     "@multiavatar/multiavatar": "^1.0.7",
     "@oc/doc-loader": "^0.0.3",
     "@oc/icon": "^0.0.18",
@@ -72,7 +73,7 @@
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "dotenv-webpack": "^8.0.1",
-    "esbuild": "^0.17.12",
+    "esbuild": "^0.18.10",
     "eslint": "^8.36.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.7.0",
@@ -98,7 +99,6 @@
     "sass-loader": "^13.2.1",
     "standard-version": "^9.5.0",
     "style-loader": "^3.3.2",
-    "styled-components": "^5.3.9",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^4.9.5",
     "webpack": "^5.76.2",
@@ -109,9 +109,8 @@
     "zx": "^7.2.1"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.6",
-    "@emotion/react": "^11.10.6",
-    "@oc/design": "^0.0.21",
+    "@primer/css": "^21.0.7",
+    "@primer/primitives": "^7.11.13",
     "@testing-library/react": "^14.0.0",
     "react-transition-group": "^4.4.5"
   }

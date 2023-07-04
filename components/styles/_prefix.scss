@@ -1,0 +1,5 @@
+@mixin component-prefix($component) {
+  .cw-#{$component} {
+    @content;
+  }
+}

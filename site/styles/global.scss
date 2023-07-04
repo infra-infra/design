@@ -1,14 +1,26 @@
 @import "reset.css";
-@import "../../components/styles/theme.css";
+@import "../../components/styles/index";
 @import "./highlight";
+@import '@primer/primitives/tokens-next-private/css/base/size/size';
+@import '@primer/primitives/tokens-next-private/css/base/typography/typography';
+@import '@primer/primitives/tokens-next-private/css/functional/size/border';
+@import '@primer/primitives/tokens-next-private/css/functional/size/breakpoints';
+@import '@primer/primitives/tokens-next-private/css/functional/size/size-coarse';
+@import '@primer/primitives/tokens-next-private/css/functional/size/size-fine';
+@import '@primer/primitives/tokens-next-private/css/functional/size/size';
+@import '@primer/primitives/tokens-next-private/css/functional/size/viewport';
+@import '@primer/primitives/tokens-next-private/css/functional/typography/typography';
+@import '@primer/primitives/tokens-next-private/css/functional/themes/dark';
+@import '@primer/primitives/tokens-next-private/css/functional/themes/light';
+
 .oc-icon{
   width: 1em;
   height: 1em;
   vertical-align: -2px;
 }
 body {
-  color: var(--md-sys-color-on-background);
-  background-color: var(--md-sys-color-background);
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
   Helvetica, Arial, sans-serif;

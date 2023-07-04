@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconMoon, IconSun } from '@oc/icon';
-import { Card, Layout, Progress } from '@oc/design';
+import { Card, Layout } from '@oc/design';
 import { css } from '@emotion/css';
 import classNames from '../../components/_util/classNames';
 import useMenu from './useMenu';
@@ -60,11 +60,14 @@ function CommonLayout() {
     document.querySelector('html')?.setAttribute('data-color-mode', theme);
     setTheme(theme);
   }
-
+  useEffect(() => {
+    document.querySelector('html')?.setAttribute('data-color-mode', 'auto');
+    document.querySelector('html')?.setAttribute('data-dark-theme', 'dark');
+    document.querySelector('html')?.setAttribute('data-light-theme', 'light');
+  }, []);
   return (
     <Layout>
       <Layout.Header>
-        <Progress />
         <header className={headerStyle}>
           <span>组件库文档</span>
           {theme === 'dark' && (
@@ -79,12 +82,6 @@ function CommonLayout() {
         <div className={mainStyle}>
           <Card>
             <div className={navStyle}>
-              <NavLink
-                className={({ isActive }) => classNames(aStyle, isActive && 'active')}
-                to="/icon"
-              >
-                icon
-              </NavLink>
               {list.map((item) => (
                 <NavLink
                   className={({ isActive }) => classNames(aStyle, isActive && 'active')}

@@ -1,8 +1,6 @@
-import { css } from '@emotion/css';
-
-export const style = css`
+.ccw-space{
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   align-items: center;
-`;
+}

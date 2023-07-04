@@ -4,7 +4,7 @@ import { Portal } from '../portal';
 import { Position } from '../tooltip/Position';
 import useOutsideClick from '../_hooks/useOutsideClick';
 
-function Popover({ content, children, placement, visible = false, show, hide }: any) {
+function Popover({ content, children, placement, visible = false, show, hide }: any): JSX.Element {
   const nodeEl = useRef<HTMLElement>(null);
   const ref = useOutsideClick<HTMLDivElement>(hide);
 

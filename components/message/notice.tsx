@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { IconClose } from '@oc/icon';
 import classNames from '../_util/classNames';
-import { style } from './style';
+// import { style } from './style';
 
 export type MessageType = 'info' | 'success' | 'error' | 'warning' | 'loading';
 
@@ -25,7 +25,7 @@ const Notice: FC<MessageProps> = (props: MessageProps) => {
     window.setTimeout(() => onClose(id), 3000);
   }, []);
   return (
-    <div className={style.message}>
+    <div className="style.message">
       <div className="message-content">
         {React.createElement(renderIcon[type], { className: classNames('icon', type) })}
         <div className="text">{text}</div>

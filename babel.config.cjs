@@ -4,7 +4,7 @@ module.exports = {
         [
             '@babel/preset-react',
             {
-                runtime: 'automatic', "importSource": "@emotion/react"
+                runtime: 'automatic'
             },
         ],
         '@babel/preset-typescript',

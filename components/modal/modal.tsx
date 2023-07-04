@@ -5,7 +5,6 @@ import { Portal } from '../portal';
 import { Button } from '../button';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import classNames from '../_util/classNames';
-import { style } from './style';
 
 type ModalType = {
   title?: string;
@@ -23,14 +22,14 @@ function Modal(props: ModalType): JSX.Element {
   return (
     <CSSTransition
       nodeRef={containerRef}
-      classNames={style.transition}
+      classNames="modal-transition"
       unmountOnExit
       timeout={300}
       in={visible}
     >
       <Portal>
-        <div ref={containerRef} className={classNames(style.backDrop)}>
-          <div ref={ref} className={style.container}>
+        <div ref={containerRef} className={classNames('backDrop')}>
+          <div ref={ref} className="container">
             <header className="zzf-modal-header">{title}</header>
             <div>{children}</div>
             <footer className="zzf-modal-footer">

@@ -1,0 +1,8 @@
+@import '../../styles/_prefix.scss';
+
+@include component-prefix('button') {
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-scale-gray-1);
+  background-color: var(--bgColor-default);
+}

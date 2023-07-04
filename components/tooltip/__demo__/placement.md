@@ -1,9 +1,7 @@
 ---
 order: 0
-title: 基本用法1
+title: 位置
 ---
-
-警告提示，展现需要关注的信息，适用于简短的警告提示。
 
 ```js
 import { Tooltip, Space, Button } from '@oc/design';

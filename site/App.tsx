@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { createElement } from 'react';
 import CommonLayout from './components/CommonLayout';
 import useMenu from './components/useMenu';
-import IconDemo from './components/Icons';
+// import IconDemo from './components/Icons';
 function App(): JSX.Element {
   const list = useMenu();
   return (
@@ -20,7 +20,6 @@ function App(): JSX.Element {
               </div>
             }
           />
-          <Route path="/icon" element={<IconDemo />} />
           {list.map((item) => (
             <Route key={item.path} path={item.path} element={createElement(item.component)} />
           ))}

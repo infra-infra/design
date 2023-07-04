@@ -1,6 +1,5 @@
-import { css } from '@emotion/css';
-
-export const input = css`
+@import '../../styles/_prefix.scss';
+@include component-prefix('button') {
   min-height: 56px;
   font-size: 14px;
   line-height: 20px;
@@ -16,16 +15,4 @@ export const input = css`
   transition: border 0.2s ease 0s, box-shadow 0.2s ease 0s;
   caret-color: var(--md-sys-color-primary);
   padding: 15px 13px;
-
-  &-round {
-    border-radius: 50px;
-  }
-
-  &:hover {
-  }
-
-  &:focus,
-  &:active {
-    border: 2px solid var(--md-sys-color-primary);
-  }
-`;
+}

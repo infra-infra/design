@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Notice, { MessageType } from './notice';
-import { style } from './style';
+// import { style } from './style';
 
 export interface Notice {
   text: string;
@@ -26,7 +26,7 @@ function addInstance(type: string, text: string): void {
     messageInstance.add({ type, text });
   } else {
     const div = document.createElement('div');
-    div.setAttribute('class', style.container);
+    div.setAttribute('class', 'style.container');
     document.body.appendChild(div);
     createRoot(div).render(
       <Message
@@ -75,18 +75,18 @@ class Message extends React.Component<any, any> {
     const { notices } = this.state;
     return (
       <TransitionGroup component={null} className="oc">
-        {notices.map(({ text, key, type, onClose }: any) => (
-          <CSSTransition
-            key={key}
-            onExited={onClose}
-            timeout={{
-              enter: 100,
-              exit: 300,
-            }}
-          >
-            <Notice id={key} onClose={this.remove} type={type} text={text} />
-          </CSSTransition>
-        ))}
+        {/* {notices.map(({ text, key, type, onClose }: any) => ( */}
+        {/*  <CSSTransition */}
+        {/*    key={key} */}
+        {/*    onExited={onClose} */}
+        {/*    timeout={{ */}
+        {/*      enter: 100, */}
+        {/*      exit: 300, */}
+        {/*    }} */}
+        {/*  > */}
+        {/*    <Notice id={key} onClose={this.remove} type={type} text={text} /> */}
+        {/*  </CSSTransition> */}
+        {/* ))} */}
       </TransitionGroup>
     );
   }

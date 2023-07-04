@@ -1,6 +1,6 @@
 import React, { ForwardRefRenderFunction, MouseEventHandler } from 'react';
 import classNames from '../_util/classNames';
-import { buttonStyle, style } from './style';
+import getPrefix from '../_util/getPrefix';
 
 type VariantEnum = 'outlined' | 'elevated' | 'filled' | 'tonal' | 'text';
 
@@ -17,7 +17,7 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = functio
   props: ButtonProps,
   ref
 ) {
-  const { variant = 'filled', children, onClick, onMouseEnter, onMouseLeave, className } = props;
+  const { variant = 'default', children, onClick, onMouseEnter, onMouseLeave, className } = props;
 
   return (
     <button
@@ -26,7 +26,7 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = functio
       onMouseLeave={onMouseLeave}
       ref={ref}
       onClick={onClick}
-      className={classNames(buttonStyle, style[variant], className)}
+      className={classNames(getPrefix('button'), getPrefix(`button-${variant}`), className)}
     >
       {children}
     </button>
