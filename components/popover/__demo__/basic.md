@@ -12,8 +12,13 @@ function App() {
   const [visible, setVisible] = React.useState(false);
   return (
     <Popover
+        visible={visible}
+        hide={()=>setVisible(false)}
+        show={()=>setVisible(true)}
       content={
         <span>
+          <p>Here is the text content</p>
+          <p>Here is the text content</p>
           <p>Here is the text content</p>
           <p>Here is the text content</p>
         </span>

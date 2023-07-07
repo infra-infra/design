@@ -1,6 +1,6 @@
 @import '../../styles/_prefix.scss';
 
-@include component-prefix('button') {
+@include component-prefix('card') {
   border-radius: 12px;
   padding: 16px;
   border: 1px solid var(--color-scale-gray-1);

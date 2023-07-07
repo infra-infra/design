@@ -1,0 +1,7 @@
+@import '../../styles/_prefix.scss';
+
+@include component-prefix('popover') {
+  background-color: var(--bgColor-default);
+  padding: 12px;
+  border: 1px solid var(--borderColor-default);
+}

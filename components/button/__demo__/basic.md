@@ -11,13 +11,7 @@ import { Button, Space } from '@oc/design';
 const App = () => {
   return (
     <Space>
-      <Button>filled</Button>
-      <Button variant="elevated" type="secondary">
-        elevated
-      </Button>
-      <Button variant="outlined">outlined</Button>
-      <Button variant="text">Text</Button>
-      <Button variant="tonal">tonal</Button>
+      <Button>按钮</Button>
     </Space>
   );
 };

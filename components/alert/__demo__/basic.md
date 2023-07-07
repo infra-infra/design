@@ -6,10 +6,15 @@ title: 基本用法
 警告提示，展现需要关注的信息，适用于简短的警告提示。
 
 ```js
-import { Alert } from '@oc/design';
+import { Alert,Space } from '@oc/design';
 
 const App = () => {
-  return <Alert>Here is an example text</Alert>;
+    return (
+        <Space>
+            <Alert type="default">Here is a info text</Alert>
+            <Alert type="success">Here is a success text</Alert>
+        </Space>
+    );
 };
 
 export default App;

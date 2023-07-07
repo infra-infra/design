@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { IconMoon, IconSun } from '@oc/icon';
-import { Card, Layout } from '@oc/design';
+import { Card } from '@oc/design';
 import { css } from '@emotion/css';
 import classNames from '../../components/_util/classNames';
 import useMenu from './useMenu';
@@ -66,8 +66,8 @@ function CommonLayout() {
     document.querySelector('html')?.setAttribute('data-light-theme', 'light');
   }, []);
   return (
-    <Layout>
-      <Layout.Header>
+    <div>
+      <div>
         <header className={headerStyle}>
           <span>组件库文档</span>
           {theme === 'dark' && (
@@ -77,8 +77,8 @@ function CommonLayout() {
             <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
           )}
         </header>
-      </Layout.Header>
-      <Layout.Main>
+      </div>
+      <div>
         <div className={mainStyle}>
           <Card>
             <div className={navStyle}>
@@ -97,9 +97,9 @@ function CommonLayout() {
             <Outlet />
           </Card>
         </div>
-      </Layout.Main>
-      <Layout.Footer>power by cc</Layout.Footer>
-    </Layout>
+      </div>
+      <div>power by cc</div>
+    </div>
   );
 }
 export default CommonLayout;

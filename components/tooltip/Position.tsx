@@ -1,5 +1,4 @@
 import React, { ReactNode, RefObject } from 'react';
-import { css } from '@emotion/css';
 import { Placement } from './getPlacement';
 import { useClientRect } from '../_hooks/useClientRect';
 import classNames from '../_util/classNames';
@@ -22,15 +21,13 @@ const Position: React.ForwardRefRenderFunction<HTMLDivElement, IPositionProps> =
 
   return (
     <div
-      className={classNames(
-        css({
-          position: 'absolute',
-          left: position.left,
-          top: position.top,
-          willChange: 'transform',
-        }),
-        className
-      )}
+      style={{
+        position: 'absolute',
+        left: position.left,
+        top: position.top,
+        willChange: 'transform',
+      }}
+      className={classNames(className)}
       ref={ref}
     >
       {children}
