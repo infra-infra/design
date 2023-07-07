@@ -24,7 +24,7 @@ const IconButton: ForwardRefRenderFunction<HTMLButtonElement, IconButtonProps> =
         type="button"
         onClick={onClick}
       >
-        {icon && React.createElement(icon)}
+        {icon && React.createElement(icon as any)}
       </button>
     );
   };

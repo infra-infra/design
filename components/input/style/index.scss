@@ -1,6 +1,5 @@
 @import '../../styles/_prefix.scss';
-@include component-prefix('button') {
-  min-height: 56px;
+@include component-prefix('input') {
   font-size: 14px;
   line-height: 20px;
   color: var(--primary-text);
@@ -8,11 +7,14 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid var(--md-sys-color-outline);
+  border: 1px solid var(--borderColor-default);
   border-radius: 4px;
   outline: none;
   width: 100%;
   transition: border 0.2s ease 0s, box-shadow 0.2s ease 0s;
   caret-color: var(--md-sys-color-primary);
-  padding: 15px 13px;
+  &:focus{
+    //border-color: var(--borderColor-accent-emphasis);
+    box-shadow: 0 0 0 2px var(--borderColor-accent-emphasis);
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from '../_util/classNames';
+import getPrefix from '../_util/getPrefix';
 
 type TagType = {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ type TagType = {
 function Tag(props: TagType): JSX.Element {
   const { children, onClick, className } = props;
   return (
-    <span role="presentation" onClick={onClick} className={classNames('cw-tag', className)}>
+    <span role="presentation" onClick={onClick} className={classNames(getPrefix('tag'), className)}>
       {children}
     </span>
   );
