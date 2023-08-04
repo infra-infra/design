@@ -1,6 +1,7 @@
 @import '../../styles/_prefix.scss';
 @include component-prefix('input') {
   font-size: 14px;
+  min-height: 32px;
   line-height: 20px;
   color: var(--primary-text);
   vertical-align: middle;
@@ -13,6 +14,7 @@
   width: 100%;
   transition: border 0.2s ease 0s, box-shadow 0.2s ease 0s;
   caret-color: var(--md-sys-color-primary);
+  padding: 0 12px;
   &:focus{
     //border-color: var(--borderColor-accent-emphasis);
     box-shadow: 0 0 0 2px var(--borderColor-accent-emphasis);

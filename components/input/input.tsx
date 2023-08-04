@@ -1,6 +1,4 @@
-'use client';
-
-import React from 'react';
+import type { ReactElement } from 'react';
 import classNames from '../_util/classNames';
 import getPrefix from '../_util/getPrefix';
 
@@ -11,7 +9,7 @@ interface InputType {
   onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-function Input(props: InputType): JSX.Element {
+function Input(props: InputType): ReactElement {
   const { className, placeholder, value, onChange } = props;
 
   return (
