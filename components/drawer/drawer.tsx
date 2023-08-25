@@ -12,7 +12,7 @@ type NavigationDrawProps = {
   onCancel?: () => void;
 };
 
-function Draw(props: NavigationDrawProps): JSX.Element {
+function Drawer(props: NavigationDrawProps): JSX.Element {
   const { children, visible, onCancel } = props;
   const containerRef = useOutsideClick<HTMLDivElement>(() => {
     onCancel?.();
@@ -37,4 +37,4 @@ function Draw(props: NavigationDrawProps): JSX.Element {
   );
 }
 
-export default Draw;
+export default Drawer;

@@ -8,6 +8,6 @@ export { Space } from './space';
 export { Modal } from './modal';
 export { Input } from './input';
 export { Tag } from './tag';
-export { Draw } from './draw';
+export { Drawer } from './drawer';
 export { Popover } from './popover';
 export { IconButton } from './icon-button';
