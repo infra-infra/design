@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
-import { Button, Message, Tooltip } from '@oc/design';
+import { Button, IconButton, Message, Space, Tooltip } from '@oc/design';
 import { IconCode, IconCopy } from '@oc/icon';
 import ClipboardJS from 'clipboard';
 import Css from './css';
@@ -72,20 +72,28 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
 
     return (
       <div className="arco-code-operations">
-        <Tooltip content={showAll ? t.collapse : t.expand}>
-          <span>
-            <Button aria-describedby="code" onClick={this.toggleCode} aria-label={t.collapse}>
-              <IconCode fontSize={16} />
-            </Button>
-          </span>
-        </Tooltip>
-        <Tooltip content={t.copy}>
-          <span>
-            <Button ref={(ref: any) => (this.btnCopy = ref)} aria-label={t.copy}>
-              <IconCopy fontSize={16} />
-            </Button>
-          </span>
-        </Tooltip>
+        <Space>
+          <Tooltip content={showAll ? t.collapse : t.expand}>
+            <span>
+              <IconButton
+                border
+                icon={IconCode}
+                onClick={this.toggleCode}
+                aria-label={t.collapse}
+              />
+            </span>
+          </Tooltip>
+          <Tooltip content={t.copy}>
+            <span>
+              <IconButton
+                border
+                ref={(ref: any) => (this.btnCopy = ref)}
+                icon={IconCopy}
+                aria-label={t.copy}
+              />
+            </span>
+          </Tooltip>
+        </Space>
       </div>
     );
   };

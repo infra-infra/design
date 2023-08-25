@@ -1,30 +1,27 @@
-import { css } from '@emotion/css';
+@import '../../styles/_prefix.scss';
 
-export const style = {
-  container: css`
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: var(--md-sys-color-surface-1);
-    width: 320px;
-    height: 100vh;
-    z-index: 6;
-  `,
-  mask: css`
+@include component-prefix('draw') {
+  &-mask {
     position: fixed;
     inset: 0;
     z-index: 5;
     transition-property: opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(0, 0, 0, 0.32);
-    display: none;
-  `,
-  active: css`
-    display: block;
-  `,
-  transition: css`
+  }
+  &-container {
+    border-top-right-radius: var(--borderRadius-large);
+    border-bottom-right-radius: var(--borderRadius-large);
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--bgColor-default);
+    padding: var(--space-medium);
+    width: 320px;
+    height: 100vh;
+    z-index: 6;
+  }
+  &-transition {
     &-enter,
     &-appear {
       transform: translateX(-100%);
@@ -49,5 +46,5 @@ export const style = {
       transform: translateX(-100%);
       transition: transform 300ms ease-in-out;
     }
-  `,
-};
+  }
+}

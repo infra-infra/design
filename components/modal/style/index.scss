@@ -82,3 +82,11 @@
     padding: 20px;
   }
 }
+@import '../../styles/_prefix.scss';
+@include component-prefix('modal-container') {
+  background: var(--bgColor-default);
+  position: absolute;
+  top: 30%;
+  width: 60%;
+  left:50%
+}

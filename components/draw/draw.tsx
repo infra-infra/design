@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
-import { style } from './style';
 import classNames from '../_util/classNames';
 import useOutsideClick from '../_hooks/useOutsideClick';
+import getPrefix from '../_util/getPrefix';
 
 type NavigationDrawProps = {
   children?: ReactNode;
@@ -12,7 +12,7 @@ type NavigationDrawProps = {
   onCancel?: () => void;
 };
 
-function NavigationDraw(props: NavigationDrawProps): JSX.Element {
+function Draw(props: NavigationDrawProps): JSX.Element {
   const { children, visible, onCancel } = props;
   const containerRef = useOutsideClick<HTMLDivElement>(() => {
     onCancel?.();
@@ -21,15 +21,15 @@ function NavigationDraw(props: NavigationDrawProps): JSX.Element {
   return (
     <CSSTransition
       nodeRef={containerRef}
-      classNames={style.transition}
+      classNames={getPrefix('draw-transition')}
       unmountOnExit
       timeout={300}
       appear
       in={visible}
     >
       <Portal>
-        <div className={classNames(style.mask, visible && style.active)} />
-        <div ref={containerRef} className={style.container}>
+        <div className={getPrefix('draw-mask')} />
+        <div ref={containerRef} className={getPrefix('draw-container')}>
           {children}
         </div>
       </Portal>
@@ -37,4 +37,4 @@ function NavigationDraw(props: NavigationDrawProps): JSX.Element {
   );
 }
 
-export default NavigationDraw;
+export default Draw;

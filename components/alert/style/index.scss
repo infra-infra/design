@@ -5,12 +5,30 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 6px;
+  color: var(--fgColor-default);
   &-success {
     background-color: var(--bgColor-success-muted);
     border-color: var(--borderColor-success-muted);
+    &-icon{
+      color: var(--fgColor-success);
+    }
   }
-  &-default {
+  &-info {
     background-color: var(--bgColor-accent-muted);
     border-color: var(--borderColor-accent-muted);
+  }
+  &-warning {
+    background-color: var(--bgColor-accent-muted);
+    border-color: var(--borderColor-accent-muted);
+    &-icon{
+      color: var(--fgColor-success);
+    }
+  }
+  &-danger {
+    background-color: var(--bgColor-danger-muted);
+    border-color: var(--borderColor-danger-muted);
+    &-icon{
+      color: var(--fgColor-danger);
+    }
   }
 }

@@ -10,8 +10,8 @@
 @import '@primer/primitives/tokens-next-private/css/functional/size/size';
 @import '@primer/primitives/tokens-next-private/css/functional/size/viewport';
 @import '@primer/primitives/tokens-next-private/css/functional/typography/typography';
-@import '@primer/primitives/tokens-next-private/css/functional/themes/dark';
-@import '@primer/primitives/tokens-next-private/css/functional/themes/light';
+@import '@primer/primitives/tokens-next-private/css/functional/themes/dark-high-contrast';
+@import '@primer/primitives/tokens-next-private/css/functional/themes/light-high-contrast';
 
 .oc-icon{
   width: 1em;
@@ -128,7 +128,7 @@ h2 {
 .codebox-wrapper .arco-code-wrapper pre.code_block {
   position: relative;
   width: 100%;
-  background-color: var(--comment-background);
+  background-color: var(--codeMirror-activeline-bgColor);
   font-size: 14px;
   margin: 0;
   border: 0;
@@ -153,7 +153,7 @@ h2 {
 .codebox-wrapper .oc-code-wrapper-css pre.code_block, .codebox-wrapper .arco-code-wrapper pre.code_block {
   position: relative;
   width: 100%;
-  background-color: var(--comment-background);
+  background-color: var(--bgColor-muted);
   font-size: 14px;
   margin: 0;
   border: 0;

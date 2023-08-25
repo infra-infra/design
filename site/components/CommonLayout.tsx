@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { IconMoon, IconSun } from '@oc/icon';
-import { Card } from '@oc/design';
 import { css } from '@emotion/css';
 import classNames from '../../components/_util/classNames';
 import useMenu from './useMenu';
@@ -51,6 +50,7 @@ const aStyle = css`
     background-color: var(--hover-overlay);
   }
 `;
+
 function CommonLayout() {
   const list = useMenu();
   const [theme, setTheme] = useState('light');
@@ -60,10 +60,11 @@ function CommonLayout() {
     document.querySelector('html')?.setAttribute('data-color-mode', theme);
     setTheme(theme);
   }
+
   useEffect(() => {
     document.querySelector('html')?.setAttribute('data-color-mode', 'auto');
-    document.querySelector('html')?.setAttribute('data-dark-theme', 'dark');
-    document.querySelector('html')?.setAttribute('data-light-theme', 'light');
+    document.querySelector('html')?.setAttribute('data-dark-theme', 'dark_high_contrast');
+    document.querySelector('html')?.setAttribute('data-light-theme', 'light_high_contrast');
   }, []);
   return (
     <div>
@@ -80,7 +81,7 @@ function CommonLayout() {
       </div>
       <div>
         <div className={mainStyle}>
-          <Card>
+          <div>
             <div className={navStyle}>
               {list.map((item) => (
                 <NavLink
@@ -92,14 +93,13 @@ function CommonLayout() {
                 </NavLink>
               ))}
             </div>
-          </Card>
-          <Card>
-            <Outlet />
-          </Card>
+          </div>
+          <Outlet />
         </div>
       </div>
       <div>power by cc</div>
     </div>
   );
 }
+
 export default CommonLayout;

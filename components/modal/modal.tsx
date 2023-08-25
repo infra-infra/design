@@ -5,6 +5,7 @@ import { Portal } from '../portal';
 import { Button } from '../button';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import classNames from '../_util/classNames';
+import getPrefix from '../_util/getPrefix';
 
 type ModalType = {
   title?: string;
@@ -29,7 +30,7 @@ function Modal(props: ModalType): JSX.Element {
     >
       <Portal>
         <div ref={containerRef} className={classNames('backDrop')}>
-          <div ref={ref} className="container">
+          <div ref={ref} className={getPrefix('modal-container')}>
             <header className="zzf-modal-header">{title}</header>
             <div>{children}</div>
             <footer className="zzf-modal-footer">

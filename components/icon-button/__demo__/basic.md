@@ -3,20 +3,16 @@ order: 0
 title: 基本用法
 ---
 
-xxxxxx
 ```js
 import { IconButton, Space } from '@oc/design';
-const Icon = ()=> <span>abc</span>
+import { IconAuto, IconCode, IconCopy } from '@oc/icon';
 const App = () => {
   return (
     <Space>
-      <IconButton icon={Icon}/>
-      <IconButton variant="elevated" type="secondary">
-        elevated
-      </IconButton>
-      <IconButton variant="outlined">outlined</IconButton>
-      <IconButton variant="text">Text</IconButton>
-      <IconButton variant="tonal">tonal</IconButton>
+      <IconButton icon={IconAuto}/>
+      <IconButton border icon={IconCode}/>
+      <IconButton icon={IconCopy}/>
+      <IconButton>OK</IconButton>
     </Space>
   );
 };

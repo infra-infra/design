@@ -1,30 +1,31 @@
-import React, { ForwardRefRenderFunction, MouseEventHandler } from 'react';
+import React, { ForwardRefRenderFunction, MouseEventHandler, ReactElement, ReactNode } from 'react';
 import classNames from '../_util/classNames';
 import getPrefix from '../_util/getPrefix';
 
 interface IconButtonProps {
-  className?: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
+  children: ReactNode;
   onClick?: (event: React.MouseEvent) => void;
   onMouseEnter?: MouseEventHandler<HTMLButtonElement>;
   onMouseLeave?: MouseEventHandler<HTMLButtonElement>;
-  variant?: 'outlined' | 'filled' | 'default';
+  border?: boolean;
 }
 
 const IconButton: ForwardRefRenderFunction<HTMLButtonElement, IconButtonProps> =
   function IconButton(props: IconButtonProps, ref) {
-    const { icon, onClick, className, onMouseEnter, onMouseLeave, variant = 'filled' } = props;
+    const { icon, border, children, onClick, onMouseEnter, onMouseLeave } = props;
 
     return (
       <button
-        className={classNames(getPrefix('icon-button'))}
+        className={classNames(getPrefix('icon-button'), border && getPrefix('icon-button-border'))}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ref={ref}
         type="button"
         onClick={onClick}
       >
-        {icon && React.createElement(icon as any)}
+        {children && children}
+        {icon && React.createElement(icon as never)}
       </button>
     );
   };
