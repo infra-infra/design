@@ -29,10 +29,10 @@ steps:
     depends_on:
       - clone
     commands:
-      - pwd
-      - ls -a
-      - npm install
-      - npm run doc:build
+      - corepack enable
+      - corepack prepare pnpm@latest --activate
+      - pnpm install
+      - pnpm run doc:build
   - name: oss
     image: wwma/drone-aliyun-oss
     depends_on:
