@@ -9,9 +9,8 @@ import { IconAuto, IconCode, IconCopy } from '@oc/icon';
 const App = () => {
   return (
     <Space>
-      <IconButton icon={IconAuto}/>
-      <IconButton border icon={IconCode}/>
-      <IconButton icon={IconCopy}/>
+      <IconButton><IconAuto/></IconButton>
+      <IconButton border><IconCode/></IconButton>
       <IconButton>OK</IconButton>
     </Space>
   );

@@ -23,24 +23,15 @@ function Modal(props: ModalType): JSX.Element {
   return (
     <CSSTransition
       nodeRef={containerRef}
-      classNames="modal-transition"
+      classNames={getPrefix('modal-transition')}
       unmountOnExit
       timeout={300}
       in={visible}
     >
       <Portal>
-        <div ref={containerRef} className={classNames('backDrop')}>
+        <div ref={containerRef} className={getPrefix('modal-mask')}>
           <div ref={ref} className={getPrefix('modal-container')}>
-            <header className="zzf-modal-header">{title}</header>
-            <div>{children}</div>
-            <footer className="zzf-modal-footer">
-              <Button variant="text" onClick={onCancel}>
-                取消
-              </Button>
-              <Button variant="text" onClick={onConfirm}>
-                确定
-              </Button>
-            </footer>
+            {children}
           </div>
         </div>
       </Portal>
