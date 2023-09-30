@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
@@ -16,10 +16,19 @@ type ModalType = {
 };
 
 function Modal(props: ModalType): JSX.Element {
-  const { title, children, visible, onConfirm, onCancel } = props;
+  const { children, visible, onCancel } = props;
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
   const containerRef = useRef<HTMLDivElement>(null);
-
+  useEffect(() => {
+    let originalOverflow = '';
+    if (visible) {
+      originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [visible]);
   return (
     <CSSTransition
       nodeRef={containerRef}
