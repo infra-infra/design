@@ -15,7 +15,7 @@ function Input(props: InputType): ReactElement {
 
   return (
     <input
-    autoFocus={autoFocus}
+      autoFocus={autoFocus}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
