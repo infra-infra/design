@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import React, { forwardRef } from 'react';
 import classNames from '../_util/classNames';
 import getPrefix from '../_util/getPrefix';
 
@@ -10,11 +10,12 @@ interface InputType {
   onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-function Input(props: InputType): ReactElement {
+const Input = forwardRef<HTMLInputElement, InputType>((props, ref) => {
   const { className, placeholder, value, onChange, autoFocus } = props;
 
   return (
     <input
+      ref={ref}
       autoFocus={autoFocus}
       value={value}
       onChange={onChange}
@@ -23,6 +24,6 @@ function Input(props: InputType): ReactElement {
       className={classNames(getPrefix('input'), className)}
     />
   );
-}
+});
 
 export default Input;
