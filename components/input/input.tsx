@@ -6,14 +6,16 @@ interface InputType {
   className?: string;
   placeholder?: string;
   value?: string;
+  autoFocus?: boolean;
   onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
 function Input(props: InputType): ReactElement {
-  const { className, placeholder, value, onChange } = props;
+  const { className, placeholder, value, onChange, autoFocus } = props;
 
   return (
     <input
+    autoFocus={autoFocus}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
