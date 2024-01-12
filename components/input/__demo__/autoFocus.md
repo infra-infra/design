@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 基础用法
+title: autoFocus
 ---
 
 一个基本的评论组件，带有作者、头像、时间和操作。

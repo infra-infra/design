@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
-import classNames from '../_util/classNames';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import getPrefix from '../_util/getPrefix';
 
