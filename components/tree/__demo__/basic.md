@@ -10,10 +10,20 @@ import React from 'react';
 import { Tree } from '@oc/design';
 
 const App = () => {
+    const [treeData, setTreeData] = useState(Array.from({ length: 10 }, (_, i) => ({
+        id: i,
+        title: `title ${i}`,
+        children: Array.from({ length: 10 }, (_, j) => ({
+            id: `${i}-${j}`,
+            title: `title ${i}-${j}`,
+            children: Array.from({ length: 10 }, (_, k) => ({
+                id: `${i}-${j}-${k}`,
+                title: `title ${i}-${j}-${k}`,
+            })),
+        })),
+    })));
   return (
-    <>
-      <Tree placeholder="placeholder" />
-    </>
+      <Tree treeData={treeData} placeholder="placeholder" />
   );
 };
 

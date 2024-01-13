@@ -1,17 +1,24 @@
 import React, { forwardRef } from 'react';
+import TreeNode from './TreeNode';
 
 interface InputType {
   className?: string;
   placeholder?: string;
   value?: string;
-  autoFocus?: boolean;
+  treeData?: any[];
   onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
 const Tree = forwardRef<HTMLInputElement, InputType>((props, ref) => {
-  const { className, placeholder, value, onChange, autoFocus } = props;
+  const { treeData = [], placeholder, value, onChange, autoFocus } = props;
 
-  return <div>111</div>;
+  return (
+    <div>
+      {treeData.map((item) => (
+        <TreeNode data={item} key={item.id} />
+      ))}
+    </div>
+  );
 });
 
 export default Tree;
