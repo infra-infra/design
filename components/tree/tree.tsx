@@ -2,15 +2,12 @@ import React, { forwardRef } from 'react';
 import TreeNode from './TreeNode';
 
 interface InputType {
-  className?: string;
-  placeholder?: string;
-  value?: string;
   treeData?: any[];
-  onChange?: (value: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
+// eslint-disable-next-line react/display-name
 const Tree = forwardRef<HTMLInputElement, InputType>((props, ref) => {
-  const { treeData = [], placeholder, value, onChange, autoFocus } = props;
+  const { treeData = [] } = props;
 
   return (
     <div>

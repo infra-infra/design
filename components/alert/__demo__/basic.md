@@ -11,7 +11,7 @@ import { Alert,Space } from '@oc/design';
 const App = () => {
     return (
         <Space>
-            <Alert type="info">Here is a info text</Alert>
+            <Alert type="info"><div>Here is a info text</div></Alert>
             <Alert type="success">Here is a success text</Alert>
             <Alert type="warning">Here is a warning text</Alert>
             <Alert type="danger">Here is a danger text</Alert>
