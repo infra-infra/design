@@ -40,20 +40,21 @@ const navStyle = css`
 const aStyle = css`
   height: 40px;
   padding: 8px 18px;
-  transition-duration: var(--fds-duration-extra-extra-short-out);
-  transition-timing-function: var(--fds-animation-fade-out);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
   transition-property: opacity;
   border-radius: 8px;
-  color: var(--primary-text);
+  color: var(--fgColor-default)
   text-decoration: none;
 
   &[class~='active'] {
-    color: var(--md-sys-color-primary);
+    background-color: var(--bgColor-accent-muted);
+    color: var(--fgColor-accent);
     font-weight: 600;
   }
 
   &:hover {
-    background-color: var(--hover-overlay);
+    background-color: var(--bgColor-accent-muted);
   }
 `;
 
