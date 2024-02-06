@@ -7,12 +7,15 @@ import useMenu from './useMenu';
 
 const headerStyle = css`
   width: 100%;
-  color: var(--md-sys-color-primary);
+  color: var(--fgColor-default);
+  position: fixed;
+  top: 0;
   height: 60px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bgColor-default);
 ]
 `;
 const iconStyle = css`
@@ -26,13 +29,16 @@ const mainStyle = css`
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-column-gap: 20px;
-  padding: 20px;
+  padding: 60px 20px 20px;
 `;
 const navStyle = css`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 60px;
 `;
 const aStyle = css`
+  height: 40px;
   padding: 8px 18px;
   transition-duration: var(--fds-duration-extra-extra-short-out);
   transition-timing-function: var(--fds-animation-fade-out);
@@ -77,23 +83,21 @@ function CommonLayout() {
           <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
         )}
       </header>
-      <div>
-        <div className={mainStyle}>
-          <div>
-            <div className={navStyle}>
-              {list.map((item) => (
-                <NavLink
-                  className={({ isActive }) => classNames(aStyle, isActive && 'active')}
-                  key={item.path}
-                  to={item.path}
-                >
-                  {item.path}
-                </NavLink>
-              ))}
-            </div>
+      <div className={mainStyle}>
+        <div>
+          <div className={navStyle}>
+            {list.map((item) => (
+              <NavLink
+                className={({ isActive }) => classNames(aStyle, isActive && 'active')}
+                key={item.path}
+                to={item.path}
+              >
+                {item.path}
+              </NavLink>
+            ))}
           </div>
-          <Outlet />
         </div>
+        <Outlet />
       </div>
       <div>power by cc</div>
     </>
