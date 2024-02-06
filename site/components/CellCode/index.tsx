@@ -1,7 +1,8 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
-import { Button, IconButton, Message, Space, Tooltip } from '@oc/design';
+import { IconButton, Message, Space, Tooltip } from '@oc/design';
 import { IconCode, IconCopy } from '@oc/icon';
 import ClipboardJS from 'clipboard';
+import { motion, AnimatePresence } from 'framer-motion';
 import Css from './css';
 
 interface CellCodeProps {
@@ -104,11 +105,27 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
     return (
       <div className="arco-code-wrapper">
         {this.renderOperations()}
-        <div className={`content-code-design ${showAll ? 'show-all' : ''}`}>
-          <div className="code" ref={(ref: any) => (this.codeEle = ref)}>
-            {codeType === CODE_TSX ? props.tsx : props.children}
-          </div>
-        </div>
+        <AnimatePresence initial={false}>
+          {showAll && (
+            <motion.div
+              key="content"
+              initial="collapsed"
+              animate="open"
+              exit="collapsed"
+              variants={{
+                open: { opacity: 1, height: 'auto' },
+                collapsed: { opacity: 0, height: 0 },
+              }}
+              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            >
+              <div className="content-code-design show-all">
+                <div className="code" ref={(ref: any) => (this.codeEle = ref)}>
+                  {codeType === CODE_TSX ? props.tsx : props.children}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }

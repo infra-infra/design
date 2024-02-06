@@ -112,6 +112,7 @@
     "@primer/css": "^21.1.1",
     "@primer/primitives": "^7.15.5",
     "@testing-library/react": "^14.1.2",
+    "framer-motion": "^11.0.3",
     "react-transition-group": "^4.4.5"
   }
 }
