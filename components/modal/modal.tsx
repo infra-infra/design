@@ -1,17 +1,13 @@
-import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Portal } from '../portal';
-import { Button } from '../button';
 import useOutsideClick from '../_hooks/useOutsideClick';
-import classNames from '../_util/classNames';
 import getPrefix from '../_util/getPrefix';
 
 type ModalType = {
-  title?: string;
   children?: ReactNode;
   visible?: boolean;
-  onConfirm?: () => void;
   onCancel?: () => void;
 };
 

@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useRef } from 'react';
 
 interface IClickAwayListenerProps {
-  children: ReactElement<any>;
+  children: ReactElement<HTMLElement>;
   onClickAway: (evt: Event) => void;
 }
 
