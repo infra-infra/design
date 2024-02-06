@@ -21,3 +21,8 @@ const App = () => {
 
 export default App;
 ```
+```css
+.alert {
+    margin-bottom: 16px;
+}
+```
