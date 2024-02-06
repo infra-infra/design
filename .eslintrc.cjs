@@ -38,7 +38,8 @@ module.exports = {
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['error'],
         'jsx-a11y/anchor-is-valid': ['error', { components: ['Link'], specialLink: ['hrefLeft', 'hrefRight'], aspects: ['invalidHref', 'preferButton'] }],
-        "@typescript-eslint/explicit-function-return-type": [ 'error', { allowExpressions: true}]
+        "@typescript-eslint/explicit-function-return-type": 'off',
+        "@typescript-eslint/explicit-module-boundary-types": 'off'
     },
     settings: {
         react: {
@@ -74,8 +75,8 @@ module.exports = {
                 'import/prefer-default-export': 0,
                 '@typescript-eslint/no-use-before-define': ['error'],
                 '@typescript-eslint/no-shadow': ['error'],
-                '@typescript-eslint/explicit-function-return-type': ['error'],
-                '@typescript-eslint/explicit-module-boundary-types': ['error'],
+                '@typescript-eslint/explicit-function-return-type': ['off'],
+                '@typescript-eslint/explicit-module-boundary-types': ['off'],
             },
         },
     ],

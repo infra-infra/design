@@ -7,10 +7,9 @@ export default function CellDemo({ children }: { children: React.ReactNode }) {
       className={css`
         margin-top: 24px;
         padding: 48px;
-        background-color: var(--bgColor-muted);
-        border: 1px solid var(--divider);
-        border-radius: 2px 2px 0 0;
-        color: var(--primary-text);
+        background-color: var(--bgColor-neutral-muted);
+        border: 1px solid var(--borderColor-severe-muted);
+        border-radius: var(--control-xsmall-size);
       `}
     >
       {children}

@@ -76,15 +76,23 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
         <Space>
           <Tooltip content={showAll ? t.collapse : t.expand}>
             <span>
-              <IconButton border onClick={this.toggleCode} aria-label={t.collapse}>
-                <IconCode />
-              </IconButton>
+              <IconButton
+                border
+                icon={IconCode}
+                onClick={this.toggleCode}
+                aria-label={t.collapse}
+              />
             </span>
           </Tooltip>
           <Tooltip content={t.copy}>
-            <IconButton border ref={(ref: any) => (this.btnCopy = ref)} aria-label={t.copy}>
-              <IconCopy />
-            </IconButton>
+            <span>
+              <IconButton
+                border
+                ref={(ref: any) => (this.btnCopy = ref)}
+                icon={IconCopy}
+                aria-label={t.copy}
+              />
+            </span>
           </Tooltip>
         </Space>
       </div>
@@ -108,7 +116,7 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
                 open: { opacity: 1, height: 'auto' },
                 collapsed: { opacity: 0, height: 0 },
               }}
-              transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
               <div className="content-code-design show-all">
                 <div className="code" ref={(ref: any) => (this.codeEle = ref)}>
@@ -123,4 +131,8 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
   }
 }
 
-export default CellCode;
+type CellCodeType = typeof CellCode & { Css: any };
+
+(CellCode as CellCodeType).Css = Css;
+
+export default CellCode as CellCodeType;
