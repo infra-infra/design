@@ -76,22 +76,16 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
         <Space>
           <Tooltip content={showAll ? t.collapse : t.expand}>
             <span>
-              <IconButton
-                border
-                icon={IconCode}
-                onClick={this.toggleCode}
-                aria-label={t.collapse}
-              />
+              <IconButton border onClick={this.toggleCode} aria-label={t.collapse}>
+                <IconCode />
+              </IconButton>
             </span>
           </Tooltip>
           <Tooltip content={t.copy}>
             <span>
-              <IconButton
-                border
-                ref={(ref: any) => (this.btnCopy = ref)}
-                icon={IconCopy}
-                aria-label={t.copy}
-              />
+              <IconButton border ref={(ref: any) => (this.btnCopy = ref)} aria-label={t.copy}>
+                <IconCopy />
+              </IconButton>
             </span>
           </Tooltip>
         </Space>

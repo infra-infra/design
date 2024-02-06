@@ -67,18 +67,16 @@ function CommonLayout() {
     document.querySelector('html')?.setAttribute('data-light-theme', 'light_high_contrast');
   }, []);
   return (
-    <div>
-      <div>
-        <header className={headerStyle}>
-          <span>组件库文档</span>
-          {theme === 'dark' && (
-            <IconMoon className={iconStyle} onClick={() => setThemeAction('light')} />
-          )}
-          {theme === 'light' && (
-            <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
-          )}
-        </header>
-      </div>
+    <>
+      <header className={headerStyle}>
+        <span>组件库文档</span>
+        {theme === 'dark' && (
+          <IconMoon className={iconStyle} onClick={() => setThemeAction('light')} />
+        )}
+        {theme === 'light' && (
+          <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
+        )}
+      </header>
       <div>
         <div className={mainStyle}>
           <div>
@@ -98,7 +96,7 @@ function CommonLayout() {
         </div>
       </div>
       <div>power by cc</div>
-    </div>
+    </>
   );
 }
 

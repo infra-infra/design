@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { css } from '@emotion/css';
 
-export default function CellDescription(props: any) {
+export default function CellDescription(props: PropsWithChildren<any>) {
+  const { children } = props;
   return (
     <div
       className={css`
@@ -14,7 +15,7 @@ export default function CellDescription(props: any) {
           flex: 1;
         `}
       >
-        {props.children}
+        {children}
       </div>
     </div>
   );
