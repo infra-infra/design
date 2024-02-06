@@ -49,9 +49,6 @@ devDependencies:
   '@emotion/css':
     specifier: ^11.11.2
     version: 11.11.2
-  '@multiavatar/multiavatar':
-    specifier: ^1.0.7
-    version: 1.0.7
   '@oc/doc-loader':
     specifier: ^0.0.3
     version: 0.0.3
@@ -163,9 +160,6 @@ devDependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-is:
-    specifier: ^18.2.0
-    version: 18.2.0
   react-router-dom:
     specifier: ^6.22.0
     version: 6.22.0(react-dom@18.2.0)(react@18.2.0)
@@ -2623,10 +2617,6 @@ packages:
 
   /@leichtgewicht/ip-codec@2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
-    dev: true
-
-  /@multiavatar/multiavatar@1.0.7:
-    resolution: {integrity: sha512-Yg9Uw57bmlErsWL0CSv4d6D4ZqVBE00OZmYr9MRgygoXZdboNtsEI6FbBRw1AY8l88Sm1ARcyojtlm2uwUn0Zg==}
     dev: true
 
   /@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1:

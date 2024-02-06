@@ -1,6 +1,7 @@
 import { css } from '@emotion/css';
+import { type ReactNode } from 'react';
 
-export default function CellDemo({ children }: { children: React.ReactNode }) {
+export default function CellDemo({ children }: { children: ReactNode }) {
   return (
     <div
       className={css`
