@@ -13,12 +13,6 @@
 @import '@primer/primitives/tokens-next-private/css/functional/themes/dark-high-contrast';
 @import '@primer/primitives/tokens-next-private/css/functional/themes/light-high-contrast';
 
-.oc-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -2px;
-}
-
 :root {
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) var(--bgColor-default);

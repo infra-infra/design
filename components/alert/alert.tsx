@@ -17,9 +17,7 @@ const getIcon = {
 function Alert({ children, className, type = 'info' }: AlertProps): JSX.Element {
   return (
     <div className={classNames(getPrefix('alert'), type && getPrefix(`alert-${type}`), className)}>
-      <span className={`zzf-alert-${type}-icon`}>
-        {React.createElement(getIcon[type], { className: getPrefix(`alert-${type}-icon`) })}
-      </span>
+      {React.createElement(getIcon[type], { className: getPrefix(`alert-${type}-icon`) })}
       {children}
     </div>
   );
