@@ -1,10 +1,17 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { forwardRef, PropsWithChildren, ReactElement, useEffect, useRef } from 'react';
 
 interface IClickAwayListenerProps {
   children: ReactElement<HTMLElement>;
   onClickAway: (evt: Event) => void;
 }
 
+const ChildrenWithRef = forwardRef<HTMLElement, PropsWithChildren<any>>((props, ref) =>
+  React.cloneElement(React.Children.only(props.children), {
+    ...props,
+    ref,
+  })
+);
+ChildrenWithRef.displayName = 'ChildrenWithRef';
 export const ClickAwayListener: React.FC<IClickAwayListenerProps> = ({ children, onClickAway }) => {
   const childrenEl = useRef<HTMLDivElement>(null);
 
@@ -27,8 +34,5 @@ export const ClickAwayListener: React.FC<IClickAwayListenerProps> = ({ children,
       document.body.removeEventListener('click', handleOutSideClick);
     };
   }, []);
-
-  return React.cloneElement(React.Children.only(children), {
-    ref: childrenEl,
-  });
+  return <ChildrenWithRef ref={childrenEl}>{children}</ChildrenWithRef>;
 };
