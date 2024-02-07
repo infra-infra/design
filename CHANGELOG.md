@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.34](https://github.com/oocc-run/oc-design/compare/v0.0.28...v0.0.34) (2024-02-07)
+
+
+### Features
+
+* 0.0.32 ([f657f7b](https://github.com/oocc-run/oc-design/commit/f657f7b7f13d475ad8389abeae75714047b586e6))
+* 31 ([68649a1](https://github.com/oocc-run/oc-design/commit/68649a13e41ae971813700a9e3a6011393d3c100))
+* autoFocus ([1299d81](https://github.com/oocc-run/oc-design/commit/1299d8113365664cae39b21c02efd13018c90396))
+* docker ([3f42d20](https://github.com/oocc-run/oc-design/commit/3f42d2089f2a17eeb9d90a7b0f95b13df31b8354))
+* docker ([bd6bb20](https://github.com/oocc-run/oc-design/commit/bd6bb20a1a6466d3e62295ab525f6d812cbd04ca))
+* input ([d7efaa8](https://github.com/oocc-run/oc-design/commit/d7efaa8fe58f28b211edc0f5a68f6ec050715c05))
+* up ([a0a5199](https://github.com/oocc-run/oc-design/commit/a0a5199902ca02834ff9b56e0c4fd7be41e60974))
+
 ### [0.0.28](https://github.com/oocc-run/oc-design/compare/v0.0.27...v0.0.28) (2023-08-25)
 
 ### [0.0.27](https://github.com/oocc-run/oc-design/compare/v0.0.26...v0.0.27) (2023-08-25)
