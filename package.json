@@ -106,7 +106,6 @@
     "zx": "^7.2.3"
   },
   "dependencies": {
-    "@primer/css": "^21.1.1",
     "@primer/primitives": "^7.15.6",
     "@testing-library/react": "^14.2.1",
     "framer-motion": "^11.0.3",

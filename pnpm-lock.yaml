@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@primer/css':
-    specifier: ^21.1.1
-    version: 21.1.1
   '@primer/primitives':
     specifier: ^7.15.6
     version: 7.15.6
@@ -2272,54 +2269,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@github/auto-check-element@5.4.1:
-    resolution: {integrity: sha512-AJeHV1ifpby5Hp2wJIzcsdIB5YAq869F7ilNv2GygTVpHOSCfYSS29/hJ5GGTLgfKpPRgTmJcMi5OetKR8eH1g==}
-    dependencies:
-      '@github/mini-throttle': 2.1.1
-    dev: false
-
-  /@github/auto-complete-element@3.6.0:
-    resolution: {integrity: sha512-u8fG8nCosSFv2wlKMsGga+FaFu/jkexZVFIDxLiCyLVTB8zRRu/RJyufzNnmbOZHYBezCMNBgJ0quuEBoyRh9Q==}
-    dependencies:
-      '@github/combobox-nav': 2.3.1
-    dev: false
-
-  /@github/catalyst@1.6.0:
-    resolution: {integrity: sha512-u8A+DameixqpeyHzvnJWTGj+wfiskQOYHzSiJscCWVfMkIT3rxnbHMtGh3lMthaRY21nbUOK71WcsCnCrXhBJQ==}
-    dev: false
-
-  /@github/clipboard-copy-element@1.3.0:
-    resolution: {integrity: sha512-wyntkQkwoLbLo+Hqg2LIVMXDIzcvUb9bSDz+clX6nVJItwzh103rHxdXFRZD+DmxVbuEW5xSznYQXkz1jZT+xg==}
-    dev: false
-
-  /@github/combobox-nav@2.3.1:
-    resolution: {integrity: sha512-gwxPzLw8XKecy1nP63i9lOBritS3bWmxl02UX6G0TwMQZbMem1BCS1tEZgYd3mkrkiDrUMWaX+DbFCuDFo3K+A==}
-    dev: false
-
-  /@github/details-menu-element@1.0.13:
-    resolution: {integrity: sha512-gMkii86w/oUP5dq8yOWZn1sgbgtFj3AYETxxtpsqRggZktgd8te4+npAn4Hm+936c/lxmEzXqfjARL/CzGR4+w==}
-    dev: false
-
-  /@github/image-crop-element@5.0.0:
-    resolution: {integrity: sha512-Vgm2OwWAs1ESoib/t5sjxsAYo6YTOxxAjWDRxswX7qrqoyCejTZ3hshdo4Ep5e+Mz/GVTZC3rdMtg06dk/eT4g==}
-    dev: false
-
-  /@github/include-fragment-element@6.3.0:
-    resolution: {integrity: sha512-BJTt8ZE/arsbC9lQtTH8c1hZS0ZigiN+kzH54ffQ6MhHLT83h0OpSdS9NEVocPl2uuO6w3qxnEKTDzUGMQ5rdQ==}
-    dev: false
-
-  /@github/mini-throttle@2.1.1:
-    resolution: {integrity: sha512-KtOPaB+FiKJ6jcKm9UKyaM5fPURHGf+xcp+b4Mzoi81hOc6M1sIGpMZMAVbNzfa2lW5+RPGKq888Px0j76OZ/A==}
-    dev: false
-
-  /@github/relative-time-element@4.3.1:
-    resolution: {integrity: sha512-zL79nlhZVCg7x2Pf/HT5MB0mowmErE71VXpF10/3Wy8dQwkninNO1M9aOizh2wKC5LkSpDXqNYjDZwbH0/bcSg==}
-    dev: false
-
-  /@github/tab-container-element@3.3.0:
-    resolution: {integrity: sha512-vHlN/GXgaJFJhh4oUYRh1pc4RAqduKlQOrEjVgSxR4JhLXsQcZ/hKWfCsRZAuZbSPzUGEYvggdieamS4FRSe4g==}
-    dev: false
-
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -2673,10 +2622,6 @@ packages:
     resolution: {integrity: sha512-VTsHrjC0V86HRuIvrmNrn5e8gc346ecZlbayWK8VyMVz3NRXyiwdIn9493lkdyAH8Y3kt6sp0KcxINuugcJj9Q==}
     dev: true
 
-  /@oddbird/popover-polyfill@0.3.8:
-    resolution: {integrity: sha512-+aK7EHL3VggfsWGVqUwvtli2+kP5OWyseAsrefhzR2XWoi2oALUCeoDn63i5WS3ZOmLiXHRNBwHPeta8w+aM1g==}
-    dev: false
-
   /@pkgr/core@0.1.1:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -2686,36 +2631,8 @@ packages:
     resolution: {integrity: sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==}
     dev: true
 
-  /@primer/behaviors@1.5.1:
-    resolution: {integrity: sha512-ApPbNhiWPHscs0+rLV76sCY75IEpPvDEZq9+iQXQqU6Tv5SLdax3PmzJlUHftlQ7O/eJnLO1dTEMEwj2Yn1BLA==}
-    dev: false
-
-  /@primer/css@21.1.1:
-    resolution: {integrity: sha512-1XRx8FwWxrr8SSZit2C9KxaofTi0CELKbGmHGpmYQmRIAECIa912Emp4BlAC7iQmf3Tb5oZOkke5zuAt+seDxg==}
-    engines: {node: '>=16.0.0'}
-    dependencies:
-      '@primer/primitives': 7.15.6
-      '@primer/view-components': 0.14.0
-    dev: false
-
   /@primer/primitives@7.15.6:
     resolution: {integrity: sha512-+wifGbIqc1m/vemDadp2gQfYgpO6u3AXmQJ/q9WomqmeHq40MhfyoDuplJJk4LBkXWeaD7V0fHlBl4Hu/DRRVA==}
-    dev: false
-
-  /@primer/view-components@0.14.0:
-    resolution: {integrity: sha512-q5kctH/ujpVYYljZGWjmwZXU7s1VT70TEE6+JeIAgtohkIIMFKdlHsrzmrQ+4AwDW01Pi3maHLiIcDy3HTe1JA==}
-    dependencies:
-      '@github/auto-check-element': 5.4.1
-      '@github/auto-complete-element': 3.6.0
-      '@github/catalyst': 1.6.0
-      '@github/clipboard-copy-element': 1.3.0
-      '@github/details-menu-element': 1.0.13
-      '@github/image-crop-element': 5.0.0
-      '@github/include-fragment-element': 6.3.0
-      '@github/relative-time-element': 4.3.1
-      '@github/tab-container-element': 3.3.0
-      '@oddbird/popover-polyfill': 0.3.8
-      '@primer/behaviors': 1.5.1
     dev: false
 
   /@remix-run/router@1.15.0:

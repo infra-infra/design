@@ -40,3 +40,5 @@ pnpm add @oc/design --registry=https://npm.zzfzzf.com
 ## 本地实时预览
 
 `pnpm run doc:dev`
+
+[token](https://primer.style/primitives/storybook/)

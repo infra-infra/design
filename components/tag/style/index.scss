@@ -1,27 +1,21 @@
 @import '../../styles/_prefix.scss';
 @include component-prefix('tag'){
-  border-radius: 8px;
-  height: 28px;
-  padding: 0 16px;
+  height: var(--base-size-28);
+  padding-inline: var(--control-xsmall-paddingInline-spacious);
   cursor: pointer;
   display: flex;
   align-items: center;
-  background: var(--md-sys-color-surface-1);
-  box-shadow: var(--md-sys-elevation-1);
-  color: var(--md-sys-color-on-surface);
-  line-height: 20px;
-  font-weight: 500;
-  font-size: 14px;
+  background: var(--bgColor-default);
+  color: var(--fgColor-default);
+  line-height: var(--control-xsmall-lineBoxHeight);
+  font-weight: var(--base-text-weight-normal);
+  font-size: var(--text-body-size-small);
   transition: box-shadow 0.2s ease-in-out 0s;
-  border: 1px solid var(--borderColor-default);
+  border-radius: var(--borderRadius-medium);
+  border: var(--borderWidth-thin) solid var(--borderColor-default);
 
   &:hover {
-    //background-color: hsla(var(--md-sys-color-primary-hsl), 0.08);
-    background: var(--md-sys-color-surface-2);
-    box-shadow: var(--md-sys-elevation-2);
-  }
-
-  &:focus {
-    box-shadow: var(--md-sys-elevation-2);
+    border-color: var(--borderColor-muted);
+    background: var(--bgColor-muted);
   }
 }

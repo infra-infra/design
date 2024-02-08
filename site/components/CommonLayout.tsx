@@ -63,15 +63,14 @@ function CommonLayout() {
   const [theme, setTheme] = useState('light');
 
   function setThemeAction(theme: string) {
-    document.body.setAttribute('arco-theme', theme);
     document.querySelector('html')?.setAttribute('data-color-mode', theme);
     setTheme(theme);
   }
 
   useEffect(() => {
     document.querySelector('html')?.setAttribute('data-color-mode', 'auto');
-    document.querySelector('html')?.setAttribute('data-dark-theme', 'dark_high_contrast');
-    document.querySelector('html')?.setAttribute('data-light-theme', 'light_high_contrast');
+    document.querySelector('html')?.setAttribute('data-dark-theme', 'dark');
+    document.querySelector('html')?.setAttribute('data-light-theme', 'light');
   }, []);
   return (
     <>

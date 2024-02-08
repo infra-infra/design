@@ -8,15 +8,17 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: right 8px center;
-  border: 1px solid var(--borderColor-default);
+  border: 1px solid var(--control-borderColor-rest, var(--borderColor-default));
   border-radius: 4px;
   outline: none;
   width: 100%;
   transition: border 0.2s ease 0s, box-shadow 0.2s ease 0s;
-  caret-color: var(--md-sys-color-primary);
+  caret-color: var(--fgColor-accent);
   padding: 0 12px;
-  &:focus{
-    //border-color: var(--borderColor-accent-emphasis);
-    box-shadow: 0 0 0 2px var(--borderColor-accent-emphasis);
+  box-shadow: rgba(208, 215, 222, 0.2) 0px 1px 0px inset;
+  &:focus-within{
+    box-shadow: inset 0 0 0 1px var(--fgColor-accent);
+    border-color: var(--fgColor-accent);
+    outline: none;
   }
 }
