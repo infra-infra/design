@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React, { createElement, createRef, ReactElement } from 'react';
+import React, { createElement, ReactElement } from 'react';
+import { ConfigProvider } from '@oc/design';
 import CommonLayout from './components/CommonLayout';
 import useMenu from './components/useMenu';
-import ConfigProvider from '../components/_context/ConfigProvider';
 
 // import IconDemo from './components/Icons';
 function App(): ReactElement {
@@ -10,7 +10,6 @@ function App(): ReactElement {
   return (
     <ConfigProvider
       value={{
-        messageRef: createRef(),
         getPrefix: (name) => `cw-${name}`,
       }}
     >

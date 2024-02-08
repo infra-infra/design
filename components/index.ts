@@ -12,3 +12,4 @@ export { Drawer } from './drawer';
 export { Popover } from './popover';
 export { IconButton } from './icon-button';
 export { Tree } from './tree';
+export { ConfigProvider } from './ConfigProvider/ConfigProvider';
