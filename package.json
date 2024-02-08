@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -103,11 +103,11 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-env": "^0.8.0",
+    "@testing-library/react": "^14.2.1",
     "zx": "^7.2.3"
   },
   "dependencies": {
     "@primer/primitives": "^7.15.6",
-    "@testing-library/react": "^14.2.1",
     "framer-motion": "^11.0.3",
     "react-transition-group": "^4.4.5"
   }
