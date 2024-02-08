@@ -10,7 +10,7 @@ function App(): ReactElement {
   return (
     <ConfigProvider
       value={{
-        getPrefix: (name) => `cw-${name}`,
+        prefix: 'cw',
       }}
     >
       <BrowserRouter>

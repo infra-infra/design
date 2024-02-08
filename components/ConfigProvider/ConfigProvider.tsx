@@ -1,19 +1,25 @@
 'use client';
 
-import { createRef, PropsWithChildren } from 'react';
+import { createRef, PropsWithChildren, useMemo } from 'react';
 import ConfigContext from '../_context/ConfigContext';
 import MessagePortal from '../message/message';
 import { IMessageRef } from '../message/useStore';
 
-function ConfigProvider(
-  props: PropsWithChildren<{ value: { getPrefix: (name: string) => string } }>
-) {
-  const messageRef = createRef<IMessageRef>();
-  const { children, value } = props;
+function ConfigProvider(props: PropsWithChildren<{ value: { prefix: string } }>) {
+  const { value, children } = props;
+
+  const config = useMemo(
+    () => ({
+      prefix: value.prefix,
+      getPrefix: (name: string) => `${value.prefix}-${name}`,
+      messageRef: createRef<IMessageRef>(),
+    }),
+    [value]
+  );
 
   return (
-    <ConfigContext.Provider value={{ messageRef, ...value }}>
-      <MessagePortal ref={messageRef} />
+    <ConfigContext.Provider value={config}>
+      <MessagePortal ref={config.messageRef} />
       {children}
     </ConfigContext.Provider>
   );
