@@ -1,34 +1,13 @@
-.tooltip {
+@import '../../styles/_prefix.scss';
+
+@include component-prefix('tooltip') {
   z-index: 999;
-  padding: 12px;
+  padding-inline: var(--control-large-paddingInline-normal);
+  padding-block: var(--control-large-paddingBlock);
   background-color: var(--bgColor-emphasis);
-  font-size: 14px;
-  border-radius: 8px;
+  font-size: var(--text-body-size-medium);
+  border-radius: var(--borderRadius-medium);
   color: var(--fgColor-onEmphasis);
-  line-height: 1.5715;
-  box-shadow: var(--md-sys-elevation-3);
-  transition-property: opacity;
-  transition-duration: var(--fds-duration-extra-extra-short-in);
-  transition-timing-function: var(--fds-animation-fade-in);
-}
-
-.transition {
-  &-enter {
-    opacity: 0;
-  }
-
-  &-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 500ms ease-in;
-  }
-
-  &-exit {
-    opacity: 1;
-  }
-
-  &-exit-active {
-    opacity: 0;
-    transition: opacity 500ms ease-in;
-  }
+  line-height: var(--text-body-lineHeight-medium);
+  box-shadow: var(--boxShadow-thin);
 }

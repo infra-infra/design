@@ -6,16 +6,16 @@ title: 基本用法
 警告提示，展现需要关注的信息，适用于简短的警告提示。
 
 ```js
-import { Message, Button, Space } from '@oc/design';
+import { useMessage, Button, Space } from '@oc/design';
 
 const App = () => {
+    const message = useMessage();
   return (
     <Space>
-      <Button onClick={() => Message.success('success', null)}>success</Button>
-      <Button onClick={() => Message.info('info')}>info</Button>
-      <Button onClick={() => Message.error('error')}>error</Button>
-      <Button onClick={() => Message.warning('warning')}>warning</Button>
-      <Button onClick={() => Message.loading('loading')}>loading</Button>
+      <Button onClick={() => message.add({
+        type: 'info',
+        content: Date.now(),
+      })}>success</Button>
     </Space>
   );
 };

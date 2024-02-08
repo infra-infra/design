@@ -1,15 +1,16 @@
-import React, { ReactNode, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { Children, cloneElement, type ReactElement, type ReactNode, useRef } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { Position } from './Position';
 import { Portal } from '../portal';
 import { useToggle } from '../_hooks/useToggle';
 import { Placement } from './getPlacement';
-// import { style } from './style';
+// import getPrefix from '../_util/getPrefix';
+import usePrefix from '../_hooks/usePrefix';
 
 interface ITooltipsProps {
   content?: ReactNode;
   placement?: Placement;
-  children: React.ReactElement;
+  children: ReactElement;
 }
 
 const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
@@ -17,31 +18,31 @@ const Tooltip: (props: ITooltipsProps) => JSX.Element = function Tooltip({
   placement,
   children,
 }) {
+  const getPrefix = usePrefix();
   const [isOpen, show, hide] = useToggle();
   const triggerEl = useRef<HTMLDivElement>(null);
   const nodeRef = useRef(null);
   return (
     <>
-      {React.cloneElement(React.Children.only(children), {
+      {cloneElement(Children.only(children), {
         ref: nodeRef,
         onMouseEnter: show,
         onMouseLeave: hide,
       })}
-      <CSSTransition
-        nodeRef={triggerEl}
-        appear
-        classNames="transition"
-        unmountOnExit
-        mountOnEnter
-        in={isOpen}
-        timeout={300}
-      >
-        <Portal>
-          <Position ref={triggerEl} className="tooltip" triggerRef={nodeRef} placement={placement}>
-            <span>{content}</span>
-          </Position>
-        </Portal>
-      </CSSTransition>
+      <AnimatePresence>
+        {isOpen && (
+          <Portal>
+            <Position
+              ref={triggerEl}
+              className={getPrefix('tooltip')}
+              triggerRef={nodeRef}
+              placement={placement}
+            >
+              {content}
+            </Position>
+          </Portal>
+        )}
+      </AnimatePresence>
     </>
   );
 };

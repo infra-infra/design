@@ -2,7 +2,7 @@
 
 export { Alert } from './alert';
 export { Tooltip } from './tooltip';
-export { Message } from './message';
+export { useMessage } from './message';
 export { Button } from './button';
 export { Space } from './space';
 export { Modal } from './modal';
