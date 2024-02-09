@@ -11,7 +11,7 @@ function MessageSingle(props: PropsWithChildren<{ message: any; remove: any }>) 
       clearTimeout(timer);
     };
   }, []);
-  return <Alert>{message.content}</Alert>;
+  return <Alert type={message.type}>{message.content}</Alert>;
 }
 
 export default MessageSingle;

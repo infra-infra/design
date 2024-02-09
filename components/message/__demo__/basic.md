@@ -15,7 +15,19 @@ const App = () => {
       <Button onClick={() => message.add({
         type: 'info',
         content: Date.now(),
-      })}>success</Button>
+      })}>info</Button>
+        <Button onClick={() => message.add({
+            type: 'success',
+            content: Date.now(),
+        })}>success</Button>
+        <Button onClick={() => message.add({
+            type: 'error',
+            content: Date.now(),
+        })}>error</Button>
+        <Button onClick={() => message.add({
+            type: 'warning',
+            content: Date.now(),
+        })}>warning</Button>
     </Space>
   );
 };
