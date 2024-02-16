@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { AnimatePresence } from 'framer-motion';
 import { Portal } from '../portal';
 import { Position } from '../tooltip/Position';
 import useOutsideClick from '../_hooks/useOutsideClick';
@@ -15,26 +15,20 @@ function Popover({ content, children, placement, visible = false, show, hide }: 
         ref: nodeEl,
         onClick: show,
       })}
-      <CSSTransition
-        nodeRef={ref}
-        appear
-        classNames="oc-transition"
-        unmountOnExit
-        mountOnEnter
-        in={visible}
-        timeout={300}
-      >
-        <Portal>
-          <Position
-            className={getPrefix('popover')}
-            ref={ref}
-            triggerRef={nodeEl}
-            placement={placement}
-          >
-            <span>{content}</span>
-          </Position>
-        </Portal>
-      </CSSTransition>
+      <AnimatePresence>
+        {visible && (
+          <Portal>
+            <Position
+              className={getPrefix('popover')}
+              ref={ref}
+              triggerRef={nodeEl}
+              placement={placement}
+            >
+              {content}
+            </Position>
+          </Portal>
+        )}
+      </AnimatePresence>
     </>
   );
 }

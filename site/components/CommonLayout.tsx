@@ -44,7 +44,7 @@ const aStyle = css`
   transition-timing-function: ease-in-out;
   transition-property: opacity;
   border-radius: 8px;
-  color: var(--fgColor-default)
+  color: var(--fgColor-default);
   text-decoration: none;
 
   &[class~='active'] {
@@ -75,7 +75,9 @@ function CommonLayout() {
   return (
     <>
       <header className={headerStyle}>
-        <span>组件库文档</span>
+        <NavLink className={({ isActive }) => classNames(isActive && 'active')} to="/">
+          组件库文档
+        </NavLink>
         {theme === 'dark' && (
           <IconMoon className={iconStyle} onClick={() => setThemeAction('light')} />
         )}
