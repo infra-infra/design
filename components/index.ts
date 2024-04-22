@@ -13,3 +13,4 @@ export { Popover } from './popover';
 export { IconButton } from './icon-button';
 export { Tree } from './tree';
 export { ConfigProvider } from './ConfigProvider/ConfigProvider';
+export { Portal } from './portal';
