@@ -3,8 +3,8 @@ import React, { createElement, ReactElement } from 'react';
 import { ConfigProvider } from '@oc/design';
 import CommonLayout from './components/CommonLayout';
 import useMenu from './components/useMenu';
+import HomePage from './components/HomePage';
 
-// import IconDemo from './components/Icons';
 function App(): ReactElement {
   const list = useMenu();
   return (
@@ -16,17 +16,7 @@ function App(): ReactElement {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CommonLayout />}>
-            <Route
-              path="/"
-              element={
-                <div>
-                  <h3 aria-label="查看所有快速访问项">欢迎使用👏</h3>
-                  <pre>
-                    <code>npm i @oc/design --registry=https://npm.zzfzzf.com</code>
-                  </pre>
-                </div>
-              }
-            />
+            <Route path="/" element={<HomePage />} />
             {list.map((item) => (
               <Route key={item.path} path={item.path} element={createElement(item.component)} />
             ))}

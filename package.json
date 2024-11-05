@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -107,6 +107,7 @@
     "zx": "^7.2.3"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.27",
     "@primer/primitives": "^7.15.6",
     "framer-motion": "^11.0.3",
     "nanoid": "^5.0.5",

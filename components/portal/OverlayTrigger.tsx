@@ -10,14 +10,12 @@ export interface IOverlayTriggerProps {
   visible?: boolean;
 }
 
-export const OverlayTrigger: React.FC<IOverlayTriggerProps> = ({
+export function OverlayTrigger({
   content,
   children,
   placement,
   visible = false,
-}) => {
-  // TODO: visible 状态的控制，究竟是在内部还是在外部？
-
+}: IOverlayTriggerProps) {
   const triggerEl = useRef<HTMLElement>(null);
 
   // click out side 绑定到每一个 Popover，因为每一个 Popover 判断 outside 的对象不同。who's outside?
@@ -37,4 +35,4 @@ export const OverlayTrigger: React.FC<IOverlayTriggerProps> = ({
       )}
     </>
   );
-};
+}

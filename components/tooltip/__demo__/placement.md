@@ -11,17 +11,17 @@ const App = () => {
     <Space>
       {[
         'left',
-        'leftTop',
-        'leftBottom',
+        'left-start',
+        'left-end',
         'right',
-        'rightTop',
-        'rightBottom',
+        'right-start',
+        'right-end',
         'top',
-        'topLeft',
-        'topRight',
+        'top-start',
+        'top-end',
         'bottom',
-        'bottomLeft',
-        'bottomRight',
+        'bottom-start',
+        'bottom-end',
       ].map((_) => (
         <Tooltip key={_} placement={_} content={`This is ${_} content`}>
           <Button>{_}</Button>

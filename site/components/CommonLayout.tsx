@@ -57,6 +57,35 @@ const aStyle = css`
     background-color: var(--bgColor-accent-muted);
   }
 `;
+const footerStyle = css`
+  text-align: center;
+  padding: 24px;
+  color: var(--fgColor-muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--borderColor-default);
+`;
+
+const logoStyle = css`
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--fgColor-default);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--fgColor-accent);
+    transform: scale(1.02);
+  }
+
+  // 可以添加 logo 图标
+  &::before {
+    content: '📚'; // 或者使用其他图标
+    margin-right: 8px;
+    font-size: 24px;
+  }
+`;
 
 function CommonLayout() {
   const list = useMenu();
@@ -75,7 +104,7 @@ function CommonLayout() {
   return (
     <>
       <header className={headerStyle}>
-        <NavLink className={({ isActive }) => classNames(isActive && 'active')} to="/">
+        <NavLink className={({ isActive }) => classNames(logoStyle, isActive && 'active')} to="/">
           组件库文档
         </NavLink>
         {theme === 'dark' && (
@@ -101,7 +130,7 @@ function CommonLayout() {
         </div>
         <Outlet />
       </div>
-      <div>power by cc</div>
+      <footer className={footerStyle}>power by cc</footer>
     </>
   );
 }
