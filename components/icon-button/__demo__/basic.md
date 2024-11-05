@@ -5,13 +5,11 @@ title: 基本用法
 
 ```js
 import { IconButton, Space } from '@oc/design';
-import { IconAuto, IconCode, IconCopy } from '@oc/icon';
+import { SquareStack } from 'lucide-react';
 const App = () => {
   return (
     <Space>
-      <IconButton><IconAuto/></IconButton>
-      <IconButton border><IconCode/></IconButton>
-      <IconButton>OK</IconButton>
+      <IconButton><SquareStack/></IconButton>
     </Space>
   );
 };

@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, RefObject } from 'react';
 import { motion } from 'framer-motion';
-import { Placement } from './getPlacement';
+import { Placement } from '@floating-ui/react';
 import { useClientRect } from '../_hooks/useClientRect';
 import classNames from '../_util/classNames';
 import { usePosition } from '../_hooks/usePosition';
@@ -13,7 +13,7 @@ interface IPositionProps {
 }
 
 const Position: React.ForwardRefRenderFunction<HTMLDivElement, IPositionProps> = function Position(
-  { triggerRef, placement = 'bottomLeft', className, children },
+  { triggerRef, placement = 'bottom-start', className, children },
   ref
 ): ReactElement {
   const triggerRect = useClientRect(triggerRef);

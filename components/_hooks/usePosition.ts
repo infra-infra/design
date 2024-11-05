@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { getPlacement, Placement } from '../tooltip/getPlacement';
+import { Placement } from '@floating-ui/react';
+import { getPlacement } from '../tooltip/getPlacement';
 
 interface IPositionOptions {
   triggerRect: DOMRect | undefined;

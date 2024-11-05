@@ -1,7 +1,6 @@
 import React, { FC, useEffect } from 'react';
-import { IconClose } from '@oc/icon';
+import { X } from 'lucide-react';
 import classNames from '../_util/classNames';
-// import { style } from './style';
 
 export type MessageType = 'info' | 'success' | 'error' | 'warning' | 'loading';
 
@@ -13,11 +12,11 @@ export interface MessageProps {
 }
 
 const renderIcon = {
-  info: IconClose,
-  success: IconClose,
-  error: IconClose,
-  warning: IconClose,
-  loading: IconClose,
+  info: X,
+  success: X,
+  error: X,
+  warning: X,
+  loading: X,
 };
 const Notice: FC<MessageProps> = (props: MessageProps) => {
   const { text, type, onClose, id } = props;

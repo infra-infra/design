@@ -1,7 +1,5 @@
 import { Children, cloneElement, useRef, type ReactElement, type ReactNode } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Portal } from '../portal';
-import { useToggle } from '../_hooks/useToggle';
 import {
   useFloating,
   offset,
@@ -11,6 +9,8 @@ import {
   arrow,
   type Placement,
 } from '@floating-ui/react';
+import { Portal } from '../portal';
+import { useToggle } from '../_hooks/useToggle';
 import usePrefix from '../_hooks/usePrefix';
 
 interface ITooltipsProps {

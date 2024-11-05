@@ -1,5 +1,5 @@
 import React, { ReactElement, useContext } from 'react';
-import { IconCancel, IconCheck, IconInfo, IconWarning } from '@oc/icon';
+import { Info, TriangleAlert, BadgeAlert, CircleX } from 'lucide-react';
 import classNames from '../_util/classNames';
 import ConfigContext from '../_context/ConfigContext';
 
@@ -10,10 +10,10 @@ interface AlertProps {
 }
 
 const getIcon = {
-  info: IconInfo,
-  success: IconCheck,
-  warning: IconWarning,
-  error: IconCancel,
+  info: Info,
+  success: BadgeAlert,
+  warning: TriangleAlert,
+  error: CircleX,
 };
 
 function Alert({ children, className, type = 'info' }: AlertProps): ReactElement {

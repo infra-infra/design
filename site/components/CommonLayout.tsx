@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { IconMoon, IconSun } from '@oc/icon';
+import { Moon, Sun } from 'lucide-react';
 import { css } from '@emotion/css';
 import classNames from '../../components/_util/classNames';
 import useMenu from './useMenu';
@@ -107,12 +107,8 @@ function CommonLayout() {
         <NavLink className={({ isActive }) => classNames(logoStyle, isActive && 'active')} to="/">
           组件库文档
         </NavLink>
-        {theme === 'dark' && (
-          <IconMoon className={iconStyle} onClick={() => setThemeAction('light')} />
-        )}
-        {theme === 'light' && (
-          <IconSun className={iconStyle} onClick={() => setThemeAction('dark')} />
-        )}
+        {theme === 'dark' && <Moon className={iconStyle} onClick={() => setThemeAction('light')} />}
+        {theme === 'light' && <Sun className={iconStyle} onClick={() => setThemeAction('dark')} />}
       </header>
       <div className={mainStyle}>
         <div>

@@ -1,6 +1,6 @@
 {
   "name": "@oc/design",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "不知火组件库",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -55,7 +55,6 @@
     "@babel/runtime-corejs3": "^7.23.9",
     "@emotion/css": "^11.11.2",
     "@oc/doc-loader": "^1.0.0",
-    "@oc/icon": "^0.1.0",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.17",
@@ -99,7 +98,7 @@
     "style-loader": "^3.3.4",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.3.3",
-    "webpack": "^5.90.1",
+    "webpack": "^5.96.1",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
@@ -107,10 +106,14 @@
     "zx": "^7.2.3"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.26.27",
-    "@primer/primitives": "^7.15.6",
-    "framer-motion": "^11.0.3",
     "nanoid": "^5.0.5",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "@floating-ui/react": "^0.26.27"
+  },
+  "peerDependencies": {
+    "@primer/primitives": ">=7.0.0",
+    "framer-motion": ">=11.0.0",
+    "lucide-react": ">=0.454.0",
+    "react": ">=18.0.0"
   }
 }

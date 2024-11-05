@@ -1,5 +1,5 @@
-import React, { ReactElement, ReactNode, useEffect, useRef } from 'react';
-import { Placement } from '../tooltip/getPlacement';
+import React, { ReactElement, ReactNode, useRef } from 'react';
+import { Placement } from '@floating-ui/react';
 import { Portal } from './Portal';
 import { Position } from '../tooltip/Position';
 

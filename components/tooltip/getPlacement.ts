@@ -1,16 +1,4 @@
-export type Placement =
-  | 'left'
-  | 'leftTop'
-  | 'leftBottom'
-  | 'right'
-  | 'rightTop'
-  | 'rightBottom'
-  | 'top'
-  | 'topLeft'
-  | 'topRight'
-  | 'bottom'
-  | 'bottomLeft'
-  | 'bottomRight';
+import { Placement } from '@floating-ui/react';
 
 interface IPosition {
   left: number;
@@ -43,11 +31,11 @@ const getPosition = (
           position.left = left + triggerRect.left - dWidth / 2;
           position.top = top + triggerRect.top - contentRect.height;
           break;
-        case 'topLeft':
+        case 'top-start':
           position.left += triggerRect.left;
           position.top += top + triggerRect.top - contentRect.height;
           break;
-        case 'topRight':
+        case 'top-end':
           position.left += triggerRect.left - dWidth;
           position.top += top + triggerRect.top - contentRect.height;
           break;
@@ -55,11 +43,11 @@ const getPosition = (
           position.left = left + triggerRect.left - dWidth / 2;
           position.top = top + triggerRect.top + triggerRect.height;
           break;
-        case 'bottomLeft':
+        case 'bottom-start':
           position.left = left + triggerRect.left;
           position.top = top + triggerRect.top + triggerRect.height;
           break;
-        case 'bottomRight':
+        case 'bottom-end':
           position.left = left + triggerRect.left - dWidth;
           position.top = top + triggerRect.top + triggerRect.height;
           break;
@@ -67,11 +55,11 @@ const getPosition = (
           position.left += triggerRect.left - contentRect.width;
           position.top += top + triggerRect.top + dHeight / 2;
           break;
-        case 'leftTop':
+        case 'left-start':
           position.left += triggerRect.left - contentRect.width;
           position.top += top + triggerRect.top;
           break;
-        case 'leftBottom':
+        case 'left-end':
           position.left += triggerRect.left - contentRect.width;
           position.top += top + triggerRect.top + dHeight;
           break;
@@ -79,11 +67,11 @@ const getPosition = (
           position.left += triggerRect.left + triggerRect.width;
           position.top += top + triggerRect.top + dHeight / 2;
           break;
-        case 'rightTop':
+        case 'right-start':
           position.left += triggerRect.left + triggerRect.width;
           position.top += top + triggerRect.top;
           break;
-        case 'rightBottom':
+        case 'right-end':
           position.left += triggerRect.left + triggerRect.width;
           position.top += top + triggerRect.top + dHeight;
           break;
@@ -97,17 +85,17 @@ const getPosition = (
     const windowHeight = window.innerHeight;
     const oppositePlacementMap: Record<Placement, Placement> = {
       top: 'bottom',
-      topLeft: 'bottomLeft',
-      topRight: 'bottomRight',
+      right: 'top',
       bottom: 'top',
-      bottomLeft: 'topLeft',
-      bottomRight: 'topRight',
-      left: 'right',
-      leftTop: 'rightTop',
-      leftBottom: 'rightBottom',
-      right: 'left',
-      rightTop: 'leftTop',
-      rightBottom: 'leftBottom',
+      left: 'top',
+      'top-start': 'top',
+      'top-end': 'top',
+      'right-start': 'top',
+      'right-end': 'top',
+      'bottom-start': 'top',
+      'bottom-end': 'top',
+      'left-start': 'top',
+      'left-end': 'top',
     };
 
     let adjustedPlacement = placement;

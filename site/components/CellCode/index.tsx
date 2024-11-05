@@ -1,6 +1,6 @@
 import { type PropsWithChildren, type ReactNode, useRef, useState } from 'react';
 import { IconButton, Space, Tooltip, useMessage } from '@oc/design';
-import { IconCode, IconCopy } from '@oc/icon';
+import { Code, Copy } from 'lucide-react';
 import classNames from 'components/_util/classNames';
 import { css } from '@emotion/css';
 
@@ -49,21 +49,29 @@ function CellCode(props: PropsWithChildren<any>) {
     <div ref={ins} className={codeBlockStyles}>
       <Space className="code-actions">
         <Tooltip content="展开代码">
-          <IconButton 
-            border 
+          <IconButton
+            border
             onClick={() => setIsShow(!isShow)}
             className={css({
               '&:hover': {
                 backgroundColor: '#e1e4e8',
-              }
+              },
             })}
           >
-            <IconCode />
+            <Code />
           </IconButton>
         </Tooltip>
-        <Tooltip content={<span className={css({
-          whiteSpace: 'nowrap',
-        })}>复制代码</span>}>
+        <Tooltip
+          content={
+            <span
+              className={css({
+                whiteSpace: 'nowrap',
+              })}
+            >
+              复制代码
+            </span>
+          }
+        >
           <IconButton
             border
             onClick={async () => {
@@ -79,14 +87,14 @@ function CellCode(props: PropsWithChildren<any>) {
             className={css({
               '&:hover': {
                 backgroundColor: '#e1e4e8',
-              }
+              },
             })}
           >
-            <IconCopy />
+            <Copy />
           </IconButton>
         </Tooltip>
       </Space>
-      <div 
+      <div
         className={classNames(
           'code-content',
           css({
