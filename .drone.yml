@@ -46,4 +46,4 @@ steps:
       key:
         from_secret: caddy_ssh_key
       target: /etc/caddy/${DRONE_REPO_NAME}
-      source: ./dist
+      source: ./dist/index.html
