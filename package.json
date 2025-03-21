@@ -54,7 +54,7 @@
     "@babel/preset-typescript": "^7.23.3",
     "@babel/runtime-corejs3": "^7.23.9",
     "@emotion/css": "^11.11.2",
-    "@oc/doc-loader": "^1.0.0",
+    "@oc/doc-loader": "^1.0.1",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.17",
@@ -106,9 +106,9 @@
     "zx": "^7.2.3"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.27",
     "nanoid": "^5.0.5",
-    "react-transition-group": "^4.4.5",
-    "@floating-ui/react": "^0.26.27"
+    "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
     "@primer/primitives": ">=7.0.0",
