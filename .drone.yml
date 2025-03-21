@@ -35,8 +35,7 @@ steps:
       source: ./dist
   - name: deploy
     image: appleboy/drone-scp
-    depends_on:
-      - build
+    depends_on: [build]
     settings:
       host:
         from_secret: caddy_host
@@ -45,5 +44,7 @@ steps:
         from_secret: caddy_username
       key:
         from_secret: caddy_ssh_key
+      #      target: /etc/caddy/design
+      #      source: ./dist
       target: /etc/caddy/${DRONE_REPO_NAME}
       source: ./dist/index.html
